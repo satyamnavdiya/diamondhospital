@@ -1,0 +1,78 @@
+.achi-gradient {
+    background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+}
+
+.achievement-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2d3748;
+}
+
+.achi-sec {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}
+.achi-img{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+.achi-div{
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+    height: auto;
+    border: none;
+    border-radius: 10px;
+
+    transition: all 1s;
+    margin: 0 auto;
+    border: 1px solid rgba(128, 128, 128, 0.23);
+}
+
+.achi-div:hover{
+    box-shadow: 5px 5px 10px 1px gray;
+    margin-top: -1rem;
+}
+
+.achi-div1, .achi-div2{
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 991px) {
+    .achi-sec {
+        display: block;
+    }
+    .achi-div2{
+        margin-top: 2rem;
+    }
+}
+@media screen and (max-width: 640px) {
+    .achi-div2{
+        display: block;
+    }
+    .achi-div1{
+        display: block;
+    }
+    .achi-div{
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .achievement-heading {
+        font-size: 2.5rem;
+    }
+    .achi-gradient{
+        font-size: 2.5rem;
+    }
+}

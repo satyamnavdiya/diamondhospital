@@ -1,0 +1,204 @@
+footer {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 1rem;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 0px;
+}
+
+.footer-logo {
+    width: 12rem;
+    z-index: 10;
+    position: relative;
+    margin: 0 auto;
+}
+
+.hospital-name-footer {
+    color: rgb(0, 0, 128);
+    font-weight: bolder;
+}
+
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.main-map {
+    width: 70%;
+    margin: 0 auto;
+}
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+
+
+.footer-social {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.social-icon {
+    color: #fc0019;
+    border: 1px solid navy;
+    font-size: 3rem;
+    padding: 10px;
+    border-radius: 100%;
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+.social-icon:hover {
+    color: white;
+    background-color: #fc0019;
+    border: 1px solid transparent;
+}
+
+/* heading font style */
+.footer-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.social-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-gradient {
+    background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+}
+
+.footer-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2d3748;
+}
+
+.elementor-shape-fill {
+    fill: white;
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.div-map {
+    height: 50vh;
+    margin: 0 auto;
+    /* animation: heartbeat 1.5s infinite ease-in-out; */
+}
+
+@media screen and (max-width: 991px) {
+    .main-map {
+        width: 100%;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 1rem;
+        width: 80%;
+    }
+
+    .footer-logo {
+        width: 10rem;
+    }
+
+    .hospital-name-footer {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .div2-footer>h1,
+    .div3-footer>h1,
+    .div4-footer>h1,
+    .div5-footer>h1 {
+        font-size: 1.2rem;
+    }
+
+    .div2-footer>p,
+    .div3-footer>p,
+    .div4-footer>p,
+    .div5-footer>p {
+        font-size: 12px;
+    }
+
+    .div3-footer,
+    .div4-footer {
+        margin-top: 2.5rem;
+    }
+
+    .div6-footer {
+        padding-bottom: 7rem;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .footer-heading {
+        font-size: 1.5rem;
+    }
+
+    .div-map {
+        width: 80%;
+    }
+
+    footer {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .div4-footer {
+        margin-top: 1rem;
+    }
+
+    .div3-footer {
+        margin-top: 1rem;
+    }
+
+    .div6-footer {
+        padding-bottom: 4rem;
+        font-size: 12px;
+    }
+}
