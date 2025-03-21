@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
+import Logo from './Images/Logo.png'
+import Nabh from './Images/NABH.png'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './CSS/Book.css'
 
@@ -26,9 +28,9 @@ import './CSS/Book.css'
 
 const PageCover = React.forwardRef((props, ref) => {
   return (
-    <div className="page page-cover" ref={ref} data-density="hard">
-      <div className="relative h-[500px] bg-[whitea] shadow-lg flex items-center justify-center">
-        <h2 className="text-4xl font-serif">{props.children}</h2>
+    <div className='page ' ref={ref} data-density="soft">
+      <div >
+        <h2>{props.children}</h2>
       </div>
     </div>
   );
@@ -74,9 +76,11 @@ function AboutUsBook() {
 
   return (
     <>
-      <div className='mx-auto text-center'>
-        <span className='text-center bg-teal-500 text-white px-2 py-1 rounded-full text-[10px] '>About Us</span>
-        <h2 className="text-3xl font-bold text-gray-900 mb-6"><span className="Dimond-heading Dimond-gradient">Dimond Hospital</span></h2>
+
+
+      <div className='about-div'>
+        <h1 className='about-heading about-gradient'>About Us</h1>
+        <p className='text-2xl inline mr-5'>Open The Book</p>
       </div>
 
       <div className="flex items-center justify-center p-4">
@@ -96,17 +100,59 @@ function AboutUsBook() {
               className="book-content"
               ref={book}
             >
-              <PageCover>
-                <span className='text-center bg-teal-500 text-white px-2 py-1 rounded-full text-[10px] '>About Us</span>
-                <h2 className="text-[2.5rem] font-bold text-white mb-6 "><span className="">Dimond Hospital</span></h2>
-              </PageCover>
-              <PageCover>Logo with Text</PageCover>
-              <PageCover>Welcome to Diamond Hospital Surat, a premier multi-speciality healthcare facility located in the heart of Surat, Gujarat. We are dedicated to providing comprehensive, patient-focused care around the clock, ensuring that every individual receives timely and personalized treatment. Our state-of-the-art facility is equipped with advanced diagnostic tools, modern surgical suites, and a range of specialized care units to meet the diverse health needs of our community.</PageCover>
 
+              <div className='f-page'>
+                <div className="font-bold text-2xl book-cover-logo">
+                  <img src={Logo} alt="Hospital Logo" className='logo-nav' /><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
+                </div>
+                <div>
+                  <span className="bg-teal-500 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                  <p className='text-white mt-2 text-2xl font-bold'>
+                    SDA DIAMOND HOSPITAL
+                    <br />
+                    AND MEDICAL RESEARCH CENTER
+                  </p>
+                </div>
+                <div className="font-bold text-2xl nabh-div ml-5">
+                </div>
+              </div>
 
-              {/* {bookPages.map((page) => (
-                <Page key={page.id} page={page}>Page NO1 </Page>
-              ))} */}
+              <div className='book-left-page'>
+                <img src={Logo} alt="Hospital Logo" className='logo-nav w-[20rem] p-10 mt-18 ' />
+              </div>
+
+              <div className='book-right-page'>
+                <p className=" mb-4 dimond-text">
+                  Welcome to Diamond Hospital Surat, a premier multi-speciality healthcare facility located in the heart of Surat, Gujarat. We are dedicated to providing comprehensive, patient-focused care around the clock, ensuring that every individual receives timely and personalized treatment. Our state-of-the-art facility is equipped with advanced diagnostic tools, modern surgical suites, and a range of specialized care units to meet the diverse health needs of our community.
+                </p>
+              </div>
+
+              <div className='book-left-page'>
+                <img src={Logo} alt="Hospital Logo" className='logo-nav w-[20rem] p-10 mt-18 ' />
+              </div>
+
+              <div className='book-right-page'>
+                <p className=" mb-4 dimond-text">
+                  Our team of highly skilled physicians, experienced specialists, and compassionate support staff work together to deliver world-class healthcare services. Whether it's emergency care, routine check-ups, or advanced surgical procedures, we combine cutting-edge technology with a patient-first approach to ensure the best outcomes for every patient.
+                </p>
+              </div>
+
+              <div className='book-left-page'>
+                <img src={Logo} alt="Hospital Logo" className='logo-nav w-[20rem] p-10 mt-18 ' />
+              </div>
+
+              <div className='book-right-page'>
+                <p className=" mb-4 dimond-text">
+                  At Diamond Hospital Surat, quality and compassion go hand in hand. We are committed to upholding the highest standards of medical excellence while creating a comfortable, welcoming environment for our patients and their families. Experience a new standard of healthcare where every patient is treated like family.
+                </p>
+              </div>
+
+              <div className='book-right-page'>
+                <p className=" s dimond-text">
+                  Discover the difference of truly dedicated care at Diamond Hospital Surat—your trusted partner in health.
+                </p>
+              </div>
+
               <PageCover>The End</PageCover>
             </HTMLFlipBook>
 
