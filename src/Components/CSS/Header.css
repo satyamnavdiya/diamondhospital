@@ -55,6 +55,7 @@
     width: 43px;
     position: absolute;
     margin-top: -11px;
+    margin-left: -1px;
 }
 
 @keyframes float {
@@ -72,7 +73,7 @@
 .topbar {
     color: white;
     padding: 10px 0;
-    width: 30%;
+    width: 35%;
     float: right;
     right: 0;
     top: 0;
@@ -231,17 +232,21 @@
     box-shadow: -10px 0px 10px 1px grey;
 }
 
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 1440px) {
     .logo-name-div {
-        margin-left: 10%;
-        margin-top: -30px;
+        margin-left: 4.8%;
+        margin-top: -45px;
     }
     .desktop-nav{
         margin-top: -1.9rem;
-        margin-left: -17%;
+    }
+    .desktop-navbar {
+        margin-left: 5rem;
+        margin-top: 30px;
     }
 }
 @media screen and (max-width: 1024px) {
+   
     .hospital-Desk-name {
         font-size: 1.2rem;
         margin-top: 2px;
