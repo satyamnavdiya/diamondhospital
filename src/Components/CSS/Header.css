@@ -32,6 +32,7 @@
     width: 4rem;
     z-index: 20;
 }
+
 .desktop-nav {
     font-size: 1rem;
     height: auto;
@@ -51,7 +52,7 @@
     animation: float 3s ease-in-out infinite;
 }
 
-.tri-img{
+.tri-img {
     width: 43px;
     position: absolute;
     margin-top: -11px;
@@ -232,21 +233,59 @@
     box-shadow: -10px 0px 10px 1px grey;
 }
 
+/* google transter style */
+/* Custom Style for Language div */
+/* .div-translate{
+    border: 1px solid red;
+    width: 7rem;
+    padding: 0;
+    position: relative;
+    margin: 0 auto;
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+} */
+
+/* Hide the Google Translate top bar */
+/* .goog-te-banner-frame {
+    display: none !important;
+} */
+
+/* Prevent page from shifting when Google Translate bar appears */
+/* body {
+    top: 0px !important;
+} */
+
+/* Hide the extra Google Translate dropdown */
+/* .goog-te-gadget {
+    display: none !important;
+} */
+
+Hide Google Translate iframe
+iframe.skiptranslate {
+    display: none !important;
+}
+
+
+
 @media screen and (min-width: 1440px) {
     .logo-name-div {
         margin-left: 4.8%;
         margin-top: -45px;
     }
-    .desktop-nav{
+
+    .desktop-nav {
         margin-top: -1.9rem;
     }
+
     .desktop-navbar {
         margin-left: 5rem;
         margin-top: 30px;
     }
 }
+
 @media screen and (max-width: 1024px) {
-   
+
     .hospital-Desk-name {
         font-size: 1.2rem;
         margin-top: 2px;
@@ -360,7 +399,8 @@
         position: relative;
         display: inline;
     }
-    .bottombar-name{
+
+    .bottombar-name {
         margin-top: -1px;
     }
 }

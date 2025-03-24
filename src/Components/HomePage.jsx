@@ -2,10 +2,9 @@ import React from 'react'
 import Slider from './Slider'
 import Achievement from './Achievement'
 import Testimonials from './Testimonials'
-import { motion } from "framer-motion";
 // import Hospital from './Images/hospital.jpg';
-import Stack from './Stack';
 import AboutUsBook from './AboutUsBook';
+import Certifications from './Certifications'
 
 const images = [
     { id: 1, img: "/diamondhospital/IMG/152.JPG" },
@@ -24,7 +23,10 @@ function HomePage() {
             {/* About us */}
             <AboutUsBook />
 
+            <Certifications />
             <Achievement />
+
+
             <Testimonials />
             {/* <Map /> */}
         </div>

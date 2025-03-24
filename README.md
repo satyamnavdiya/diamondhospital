@@ -10,3 +10,4 @@ gh-pages(insatall panding for deployment)
 
 color
 bg-red-700
+bg-teal-500

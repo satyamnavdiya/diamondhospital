@@ -5,6 +5,7 @@ import Tri from './Images/tri.png'
 import './CSS/Header.css'
 import { House, Hospital, LibraryBig, BriefcaseMedical, Images, ClipboardPlus, Stethoscope, Accessibility, Phone, Clock, HeartPulse, ChevronDown, Ellipsis, X } from 'lucide-react';
 import { Link } from "react-router-dom";
+import GoogleTranslate from "./GoogleTranslate";
 
 
 export default function Header() {
@@ -117,7 +118,6 @@ export default function Header() {
 
             {/* Main Navigation */}
             {/* logo And Name */}
-
             <div className="flex items-center logo-name-div">
                 <div className="font-bold text-2xl logo-div"><img src={Logo} alt="Hospital Logo" className='logo-nav' />
                 </div>
@@ -135,6 +135,11 @@ export default function Header() {
                 <div className="font-bold text-2xl nabh-div ml-5"><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
                 </div>
             </div>
+
+            {/* Google Translate */}
+            {/* <div className="div-translate">
+                <GoogleTranslate />
+            </div> */}
 
             {/* Desktop Navbar */}
             <nav className="bg-transparen mt-1 desktop-nav ">
@@ -221,6 +226,8 @@ export default function Header() {
                     </div>
                 </div>
             </nav>
+
+
 
             {/* Mobile NavBar */}
             <div className="mobile-nav">
