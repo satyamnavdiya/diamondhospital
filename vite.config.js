@@ -45,6 +45,6 @@ export default defineConfig({
   ],
   base: '/diamondhospital',
   optimizeDeps: {
-    exclude: ['lucide-react', 'ogl'],
+    exclude: ['lucide-react', 'framer-motion', ],
   },
 })
