@@ -50,37 +50,37 @@ export default function Header() {
     const menuItems = [
         {
             icon: Stethoscope, label: 'Specialties', to: '/diamondhospital', delay: 0, submenu: [
-                { label: 'Obstetric & Gynecology', to: '/diamondhospital/ObsGyne', delay: 0 },
-                { label: 'Pediatrics', to: '/diamondhospital/Pediatrics', delay: 50 },
-                { label: 'Orthopedics', to: '/diamondhospital/Orthopedics', delay: 100 },
-                { label: 'General Surgery', to: '/diamondhospital/GeneralSurgery', delay: 150 },
-                { label: 'Ophthalmology', to: '/diamondhospital/Ophthalmology', delay: 200 },
-                { label: 'Pulmonology', to: '/diamondhospital/Pulmonology', delay: 250 },
-                { label: 'Urology', to: '/diamondhospital/Urology', delay: 300 },
-                { label: 'Neurology', to: '/diamondhospital/Neurology', delay: 350 },
-                { label: 'ENT', to: '/diamondhospital/ENT', delay: 400 },
-                { label: 'Dental', to: '/diamondhospital/DentalSurgery', delay: 450 },
-                { label: 'Physio Therapy', to: '/diamondhospital/PhysioTherapy', delay: 500 },
+                { label: 'Obstetric & Gynecology', to: '/ObsGyne', delay: 0 },
+                { label: 'Pediatrics', to: '/Pediatrics', delay: 50 },
+                { label: 'Orthopedics', to: '/Orthopedics', delay: 100 },
+                { label: 'General Surgery', to: '/GeneralSurgery', delay: 150 },
+                { label: 'Ophthalmology', to: '/Ophthalmology', delay: 200 },
+                { label: 'Pulmonology', to: '/Pulmonology', delay: 250 },
+                { label: 'Urology', to: '/Urology', delay: 300 },
+                { label: 'Neurology', to: '/Neurology', delay: 350 },
+                { label: 'ENT', to: '/ENT', delay: 400 },
+                { label: 'Dental', to: '/DentalSurgery', delay: 450 },
+                { label: 'Physio Therapy', to: '/PhysioTherapy', delay: 500 },
             ]
         },
-        { icon: BriefcaseMedical, label: "Doctor's Profile", to: '/diamondhospital/Doctor-Profile', delay: 100 },
+        { icon: BriefcaseMedical, label: "Doctor's Profile", to: '/Doctor-Profile', delay: 100 },
         {
             icon: ClipboardPlus, label: 'Services', to: '/diamondhospital', delay: 150, submenu: [
-                { label: 'Laboratory', to: '/diamondhospital/Laboratory' },
-                { label: 'Radiology', to: '/diamondhospital/Radiology' },
-                { label: 'NICU', to: '/diamondhospital/NICU' },
-                { label: 'Dialysis', to: '/diamondhospital/Dialysis' },
-                { label: 'Pharmacy', to: '/diamondhospital/Pharmacy' },
-                { label: 'IPD', to: '/diamondhospital/IPD' },
-                { label: 'Ambulance', to: '/diamondhospital/Ambulance' },
+                { label: 'Laboratory', to: '/Laboratory' },
+                { label: 'Radiology', to: '/Radiology' },
+                { label: 'NICU', to: '/NICU' },
+                { label: 'Dialysis', to: '/Dialysis' },
+                { label: 'Pharmacy', to: '/Pharmacy' },
+                { label: 'IPD', to: '/IPD' },
+                { label: 'Ambulance', to: '/Ambulance' },
                 { label: 'Government Schemes', to: '/diamondhospital' },
             ]
         },
         {
-            icon: Accessibility, label: 'Patient Guide', to: '/diamondhospital/Patient-Guide', delay: 200, submenu: [
-                { label: 'Floor Plan', to: '/diamondhospital/Floorplan' },
-                { label: 'General Guide', to: '/diamondhospital/GeneralGuide' },
-                { label: "Do's & Don'ts", to: '/diamondhospital/DoAndDonts' },
+            icon: Accessibility, label: 'Patient Guide', to: '/Patient-Guide', delay: 200, submenu: [
+                { label: 'Floor Plan', to: '/Floorplan' },
+                { label: 'General Guide', to: '/GeneralGuide' },
+                { label: "Do's & Don'ts", to: '/DoAndDonts' },
             ]
         },
         {
@@ -153,30 +153,30 @@ export default function Header() {
                                 <a href="#" className="nav-a">About <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div1">
                                     <ul className="p-2">
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Dimond-Hospital" className="drop-a">Dimond Hospital</Link></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Hospital-Team" className="drop-a">Our Team</Link></li>
+                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Dimond-Hospital" className="drop-a">Dimond Hospital</Link></li>
+                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Hospital-Team" className="drop-a">Our Team</Link></li>
                                     </ul>
                                 </div>
                             </li>
 
-                            <li className="hover:bg-red-600 navbar-link"><Link to="/diamondhospital/Doctor-Profile" className="nav-a">Doctor's Profile</Link></li>
+                            <li className="hover:bg-red-600 navbar-link"><Link to="/Doctor-Profile" className="nav-a">Doctor's Profile</Link></li>
 
                             <li className="hover:bg-red-600 navbar-link dropdown2">
                                 <a href="#" className="nav-a">Specialties <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div2">
                                     <ul className="p-2">
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/ObsGyne" className="drop-a">Obstetric & Gynecology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Pediatrics" className="drop-a">Pediatrics</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/ObsGyne" className="drop-a">Obstetric & Gynecology</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Pediatrics" className="drop-a">Pediatrics</Link></li>
                                         {/* <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><a href="/" className="drop-a">General Medicine</a></li> */}
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Orthopedics" className="drop-a">Orthopedics</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/GeneralSurgery" className="drop-a">General Surgery</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Ophthalmology" className="drop-a">Ophthalmology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Pulmonology" className="drop-a">Pulmonology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Urology" className="drop-a">Urology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Neurology" className="drop-a">Neurology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/ENT" className="drop-a">ENT</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/DentalSurgery" className="drop-a">Dental</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/PhysioTherapy" className="drop-a">Physio Therapy</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Orthopedics" className="drop-a">Orthopedics</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/GeneralSurgery" className="drop-a">General Surgery</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Ophthalmology" className="drop-a">Ophthalmology</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Pulmonology" className="drop-a">Pulmonology</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Urology" className="drop-a">Urology</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Neurology" className="drop-a">Neurology</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/ENT" className="drop-a">ENT</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/DentalSurgery" className="drop-a">Dental</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/PhysioTherapy" className="drop-a">Physio Therapy</Link></li>
                                     </ul>
                                 </div>
                             </li>
@@ -188,14 +188,14 @@ export default function Header() {
                                 <a href="#" className="nav-a">Services <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div3">
                                     <ul className="p-2">
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Laboratory" className="drop-a">Laboratory</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Radiology" className="drop-a">Radiology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/NICU" className="drop-a">NICU</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Dialysis" className="drop-a">Dialysis</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Pharmacy" className="drop-a">Pharmacy</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/IPD" className="drop-a">IPD</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Ambulance" className="drop-a">Ambulance</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/GovermentSchemes" className="drop-a">Government Schemes</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Laboratory" className="drop-a">Laboratory</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Radiology" className="drop-a">Radiology</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/NICU" className="drop-a">NICU</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Dialysis" className="drop-a">Dialysis</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Pharmacy" className="drop-a">Pharmacy</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/IPD" className="drop-a">IPD</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Ambulance" className="drop-a">Ambulance</Link></li>
+                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/GovermentSchemes" className="drop-a">Government Schemes</Link></li>
                                     </ul>
                                 </div>
                             </li>
@@ -203,9 +203,9 @@ export default function Header() {
                                 <Link to="/diamondhospital" className="nav-a">Patient Guide <ChevronDown className="inline drop-icon" /></Link>
                                 <div className="dropdown-div4">
                                     <ul className="p-2">
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/Floorplan" className="drop-a">Floor Plan</Link></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/GeneralGuide" className="drop-a">General Guide</Link></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/diamondhospital/DoAndDonts" className="drop-a">Do's & Don'ts</Link></li>
+                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Floorplan" className="drop-a">Floor Plan</Link></li>
+                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/GeneralGuide" className="drop-a">General Guide</Link></li>
+                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/DoAndDonts" className="drop-a">Do's & Don'ts</Link></li>
                                     </ul>
                                 </div>
                             </li>
@@ -219,7 +219,7 @@ export default function Header() {
                                     </ul>
                                 </div>
                             </li>
-                            <li className="hover:bg-red-600 navbar-link"><Link to="/diamondhospital/Gallery" className="nav-a">Gallery</Link></li>
+                            <li className="hover:bg-red-600 navbar-link"><Link to="/Gallery" className="nav-a">Gallery</Link></li>
                             <li className="hover:bg-red-600 navbar-link"><a href="#" className="nav-a">Career</a></li>
 
                         </ul>
@@ -296,11 +296,11 @@ ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
                     </nav>
 
                     <div className={`text-center w-1/4 pt-4 max-sm:leading-none pl-2 max-sm:pt-3`}>
-                        <Link to="/diamondhospital/Dimond-Hospital" className="max-sm:text-[12px]"><Hospital className="div-center" />About Us</Link>
+                        <Link to="/Dimond-Hospital" className="max-sm:text-[12px]"><Hospital className="div-center" />About Us</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-                        <Link to="/diamondhospital/Hospital-Team" className="max-sm:text-[12px]"><BriefcaseMedical className="div-center" />Team</Link>
+                        <Link to="/Hospital-Team" className="max-sm:text-[12px]"><BriefcaseMedical className="div-center" />Team</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
@@ -309,7 +309,7 @@ ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-                        <Link to='/diamondhospital/Gallery' className="max-sm:text-[12px]"><Images className="div-center" />Gallery</Link>
+                        <Link to='/Gallery' className="max-sm:text-[12px]"><Images className="div-center" />Gallery</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4  max-sm:pt-3">

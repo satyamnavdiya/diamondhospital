@@ -4,7 +4,7 @@ import Carousel from './Carousel'
 
 const slides = [
     {
-        url: "/diamondhospital/hospital.JPG"
+        url: "/hospital.JPG"
     },
     {
         url: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=1920"

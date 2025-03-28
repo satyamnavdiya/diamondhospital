@@ -16,15 +16,14 @@ export default defineConfig({
         theme_color:"#325082",
         background_color: "#fff",
         display: "standalone",
-        start_url: "/diamondhospital",
         icons: [
           {
-            src: "/diamondhospital/icons/icon-192x192.png",
+            src: "/icons/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/diamondhospital/icons/icon-512x512.png",
+            src: "/icons/icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
@@ -43,7 +42,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/diamondhospital',
+  base: '/',
   optimizeDeps: {
     exclude: ['lucide-react', 'framer-motion', ],
   },

@@ -7,11 +7,11 @@ import AboutUsBook from './AboutUsBook';
 import Certifications from './Certifications'
 
 const images = [
-    { id: 1, img: "/diamondhospital/IMG/152.JPG" },
-    { id: 2, img: "/diamondhospital/IMG/29.JPG" },
-    { id: 3, img: "/diamondhospital/IMG/140.JPG" },
-    { id: 4, img: "/diamondhospital/hospital.JPG" },
-    // { id: 5, img: "/diamondhospital/hospital.JPG" },
+    { id: 1, img: "/IMG/152.JPG" },
+    { id: 2, img: "/IMG/29.JPG" },
+    { id: 3, img: "/IMG/140.JPG" },
+    { id: 4, img: "/hospital.JPG" },
+    // { id: 5, img: "/hospital.JPG" },
 ];
 // import Map from './Map' 
 

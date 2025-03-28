@@ -53,14 +53,14 @@ function App() {
       <ScrollToTop />
         <Header />
         <Routes>
-          <Route path="/diamondhospital/" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           {/* About Us */}
-          <Route path="/diamondhospital/Dimond-Hospital" element={<Dimond />} />
-          <Route path="/diamondhospital/Hospital-Team" element={<AboutTeam />} />
+          <Route path="/Dimond-Hospital" element={<Dimond />} />
+          <Route path="/Hospital-Team" element={<AboutTeam />} />
 
           {/* Specialties */}
-          <Route path="/diamondhospital/ObsGyne" element={<ObsGyne />} />
-          <Route path="/diamondhospital/Pediatrics" element={<Pediatrics />} />
+          <Route path="/ObsGyne" element={<ObsGyne />} />
+          <Route path="/Pediatrics" element={<Pediatrics />} />
           <Route path="/diamondhospital/Orthopedics" element={<Orthopedics />} />
           <Route path="/diamondhospital/GeneralSurgery" element={<GeneralSurgery />} />
           <Route path="/diamondhospital/Ophthalmology" element={<Ophthalmology />} />
