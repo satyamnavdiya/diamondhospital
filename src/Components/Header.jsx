@@ -146,7 +146,7 @@ export default function Header() {
                 <div className="container mx-auto px-4">
                     <div className="flex justify-between items-center">
                         {/* Desktop Menu */}
-                        <ul className="hidden md:flex items-center space-x-4 desktop-navbar">
+                        <ul className="hidden md:flex items-center space-x-2 desktop-navbar">
                             <li className="hover:bg-red-600 navbar-link"><Link to="/" className="nav-a">Home</Link></li>
 
                             <li className="hover:bg-red-600 navbar-link dropdown1">
@@ -215,8 +215,8 @@ export default function Header() {
                                     </ul>
                                 </div>
                             </li>
-                            <Link to="/Gallery" className="nav-a"><li className="hover:bg-red-600 navbar-link">Gallery</li></Link>
-                            <Link to="/Career" className="nav-a"><li className="hover:bg-red-600 navbar-link">Career</li></Link>
+                            <li className="hover:bg-red-600 navbar-link"><Link to="/Gallery" className="nav-a">Gallery</Link></li>
+                            <li className="hover:bg-red-600 navbar-link"><Link to="/Career" className="nav-a">Career</Link></li>
 
                         </ul >
                     </div >

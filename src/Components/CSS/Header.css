@@ -312,6 +312,11 @@ iframe.skiptranslate {
         width: 40%;
     }
 
+    .desktop-navbar {
+        margin-left: 0;
+        margin-top: -12px;
+    }
+
 }
 
 @media screen and (max-width: 991px) {

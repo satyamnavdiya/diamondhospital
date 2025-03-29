@@ -148,12 +148,12 @@ function AboutUsBook() {
               </div>
 
               <div className='book-right-page'>
-                <p className=" s dimond-text">
+                <p className="dimond-text">
                   Discover the difference of truly dedicated care at Diamond Hospital Surat—your trusted partner in health.
                 </p>
               </div>
 
-              <PageCover>The End</PageCover>
+              <PageCover className="border-2 border-gray-600"><h1 className="text-center items-center mt-[30%] font-bold text-teal-600 text-[5rem]">Thanks</h1></PageCover>
             </HTMLFlipBook>
 
             <div className="absolute left-0 right-0 bottom-[-20px] flex justify-center gap-8">
