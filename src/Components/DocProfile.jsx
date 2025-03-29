@@ -76,7 +76,7 @@ function DocProfile() {
         </div>
 
         {/* Filters */}
-        <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <div className="relative flex-1 max-w-md">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Search className="h-5 w-5 text-gray-400" />
@@ -108,7 +108,7 @@ function DocProfile() {
             </select>
           </div>
 
-          <div className="relative flex-1 max-w-xs">
+          {/* <div className="relative flex-1 max-w-xs">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Filter className="h-5 w-5 text-gray-400" />
             </div>
@@ -124,7 +124,7 @@ function DocProfile() {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
         </div>
 
         {/* Results count */}
@@ -133,16 +133,19 @@ function DocProfile() {
         </div>
 
         {/* Doctors grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {filteredDoctors.map((doctor) => (
-            <div key={doctor.id} className="bg-white overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
-              <div className="h-48 w-full overflow-hidden">
+            
+            <div key={doctor.id} className="bg-white flex overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
+              
+              <div className="p-2 w-[50%] ">
                 <img
                   src={doctor.imageUrl}
                   alt={doctor.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
+
               <div className="px-4 py-5 sm:p-6">
                 <h3 className="text-lg font-medium text-gray-900">{doctor.name}</h3>
                 <div className="mt-1 flex items-center">
@@ -162,6 +165,7 @@ function DocProfile() {
                 </div>
               </div>
             </div>
+
           ))}
         </div>
 

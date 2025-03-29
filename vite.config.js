@@ -15,7 +15,7 @@ export default defineConfig({
         description: "Hospital Management App",
         theme_color:"#325082",
         background_color: "#fff",
-        display: "standalone",
+        display: "fullscreen",
         icons: [
           {
             src: "/icons/icon-192x192.png",
@@ -32,7 +32,6 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/satyamnavdiya\.github\.io\/Hospital\/.*/,
             handler: "NetworkFirst",
             options: {
               cacheName: "hospital-cache",
@@ -44,6 +43,6 @@ export default defineConfig({
   ],
   base: '/',
   optimizeDeps: {
-    exclude: ['lucide-react', 'framer-motion', ],
+    exclude: ['lucide-react', 'framer-motion', 'VitePWA'],
   },
 })

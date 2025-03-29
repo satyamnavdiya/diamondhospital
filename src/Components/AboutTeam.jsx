@@ -34,7 +34,7 @@ const AboutTeam = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-7"
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4"><span className="Team-heading Team-gradient">Our Medical Team</span></h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4"><span className="Team-heading Team-gradient">Our Trustees</span></h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto dimond-text">
               Meet our team of dedicated healthcare professionals committed to providing
               exceptional patient care.

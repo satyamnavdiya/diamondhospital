@@ -49,7 +49,7 @@ export default function Header() {
     // Mobile Navbar More Menu
     const menuItems = [
         {
-            icon: Stethoscope, label: 'Specialties', to: '/diamondhospital', delay: 0, submenu: [
+            icon: Stethoscope, label: 'Specialties', to: '/', delay: 0, submenu: [
                 { label: 'Obstetric & Gynecology', to: '/ObsGyne', delay: 0 },
                 { label: 'Pediatrics', to: '/Pediatrics', delay: 50 },
                 { label: 'Orthopedics', to: '/Orthopedics', delay: 100 },
@@ -65,7 +65,7 @@ export default function Header() {
         },
         { icon: BriefcaseMedical, label: "Doctor's Profile", to: '/Doctor-Profile', delay: 100 },
         {
-            icon: ClipboardPlus, label: 'Services', to: '/diamondhospital', delay: 150, submenu: [
+            icon: ClipboardPlus, label: 'Services', to: '/', delay: 150, submenu: [
                 { label: 'Laboratory', to: '/Laboratory' },
                 { label: 'Radiology', to: '/Radiology' },
                 { label: 'NICU', to: '/NICU' },
@@ -73,7 +73,7 @@ export default function Header() {
                 { label: 'Pharmacy', to: '/Pharmacy' },
                 { label: 'IPD', to: '/IPD' },
                 { label: 'Ambulance', to: '/Ambulance' },
-                { label: 'Government Schemes', to: '/diamondhospital' },
+                { label: 'Government Schemes', to: '/' },
             ]
         },
         {
@@ -84,12 +84,12 @@ export default function Header() {
             ]
         },
         {
-            icon: HeartPulse, label: 'News & Media', to: '/diamondhospital', delay: 250, submenu: [
-                { label: 'Blog', to: '/diamondhospital' },
-                { label: 'Video', to: '/diamondhospital' },
+            icon: HeartPulse, label: 'News & Media', to: '/', delay: 250, submenu: [
+                { label: 'Blog', to: '/' },
+                { label: 'Video', to: '/' },
             ]
         },
-        { icon: LibraryBig, label: 'Academics', to: '/diamondhospital', delay: 300 },
+        { icon: LibraryBig, label: 'Academics', to: '/', delay: 300 },
     ];
 
 
@@ -147,14 +147,14 @@ export default function Header() {
                     <div className="flex justify-between items-center">
                         {/* Desktop Menu */}
                         <ul className="hidden md:flex items-center space-x-4 desktop-navbar">
-                            <li className="hover:bg-red-600 navbar-link"><Link to="/diamondhospital" className="nav-a">Home</Link></li>
+                            <li className="hover:bg-red-600 navbar-link"><Link to="/" className="nav-a">Home</Link></li>
 
                             <li className="hover:bg-red-600 navbar-link dropdown1">
                                 <a href="#" className="nav-a">About <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div1">
                                     <ul className="p-2">
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Dimond-Hospital" className="drop-a">Dimond Hospital</Link></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Hospital-Team" className="drop-a">Our Team</Link></li>
+                                        <Link to="/Dimond-Hospital" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Dimond Hospital</li></Link>
+                                        <Link to="/Hospital-Team" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Our Trustees</li></Link>
                                     </ul>
                                 </div>
                             </li>
@@ -165,47 +165,43 @@ export default function Header() {
                                 <a href="#" className="nav-a">Specialties <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div2">
                                     <ul className="p-2">
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/ObsGyne" className="drop-a">Obstetric & Gynecology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Pediatrics" className="drop-a">Pediatrics</Link></li>
-                                        {/* <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><a href="/" className="drop-a">General Medicine</a></li> */}
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Orthopedics" className="drop-a">Orthopedics</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/GeneralSurgery" className="drop-a">General Surgery</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Ophthalmology" className="drop-a">Ophthalmology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Pulmonology" className="drop-a">Pulmonology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Urology" className="drop-a">Urology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Neurology" className="drop-a">Neurology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/ENT" className="drop-a">ENT</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/DentalSurgery" className="drop-a">Dental</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/PhysioTherapy" className="drop-a">Physio Therapy</Link></li>
-                                    </ul>
+                                        <Link to="/ObsGyne" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Obstetric & Gynecology</li></Link>
+                                        <Link to="/Pediatrics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pediatrics</li></Link>
+                                        <Link to="/Orthopedics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Orthopedics</li></Link>
+                                        <Link to="/GeneralSurgery" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">General Surgery</li></Link>
+                                        <Link to="/Ophthalmology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ophthalmology</li></Link>
+                                        <Link to="/Pulmonology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pulmonology</li></Link>
+                                        <Link to="/Urology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Urology</li></Link>
+                                        <Link to="/Neurology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Neurology</li ></Link>
+                                        <Link to="/ENT" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">ENT</li ></Link>
+                                        <Link to="/DentalSurgery" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Dental</li ></Link>
+                                        <Link to="/PhysioTherapy" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Physio Therapy</li ></Link>
+                                    </ul >
                                 </div>
-                            </li>
-
-
-
+                            </li >
 
                             <li className="hover:bg-red-600 navbar-link dropdown3">
                                 <a href="#" className="nav-a">Services <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div3">
                                     <ul className="p-2">
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Laboratory" className="drop-a">Laboratory</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Radiology" className="drop-a">Radiology</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/NICU" className="drop-a">NICU</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Dialysis" className="drop-a">Dialysis</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Pharmacy" className="drop-a">Pharmacy</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/IPD" className="drop-a">IPD</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Ambulance" className="drop-a">Ambulance</Link></li>
-                                        <li className="drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/GovermentSchemes" className="drop-a">Government Schemes</Link></li>
+                                    <Link to="/Laboratory" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Laboratory</li></Link>
+                                    <Link to="/Radiology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Radiology</li></Link>
+                                    <Link to="/NICU" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">NICU</li></Link>
+                                    <Link to="/Dialysis" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Dialysis</li></Link>
+                                    <Link to="/Pharmacy" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pharmacy</li></Link>
+                                    <Link to="/IPD" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">IPD</li></Link>
+                                    <Link to="/Ambulance" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ambulance</li></Link>
+                                    <Link to="/GovermentSchemes" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Government Schemes</li></Link>
                                     </ul>
                                 </div>
                             </li>
                             <li className="hover:bg-red-600 navbar-link dropdown4">
-                                <Link to="/diamondhospital" className="nav-a">Patient Guide <ChevronDown className="inline drop-icon" /></Link>
+                                <Link to="/" className="nav-a">Patient Guide <ChevronDown className="inline drop-icon" /></Link>
                                 <div className="dropdown-div4">
                                     <ul className="p-2">
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/Floorplan" className="drop-a">Floor Plan</Link></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/GeneralGuide" className="drop-a">General Guide</Link></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><Link to="/DoAndDonts" className="drop-a">Do's & Don'ts</Link></li>
+                                    <Link to="/Floorplan" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Floor Plan</li></Link>
+                                    <Link to="/GeneralGuide" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">General Guide</li></Link>
+                                    <Link to="/DoAndDonts" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Do's & Don'ts</li></Link>
                                     </ul>
                                 </div>
                             </li>
@@ -214,23 +210,23 @@ export default function Header() {
                                 <a href="#" className="nav-a">News & Media<ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div4">
                                     <ul className="p-2">
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><a href="/" className="drop-a">Blog</a></li>
-                                        <li className=" drop-li mb-1 p-1.5 hover:bg-red-600"><a href="/" className="drop-a">Video</a></li>
+                                        <a href="/" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Blog</li></a>
+                                        <Link to="/Video" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Video</li></Link>
                                     </ul>
                                 </div>
                             </li>
-                            <li className="hover:bg-red-600 navbar-link"><Link to="/Gallery" className="nav-a">Gallery</Link></li>
-                            <li className="hover:bg-red-600 navbar-link"><a href="#" className="nav-a">Career</a></li>
+                            <Link to="/Gallery" className="nav-a"><li className="hover:bg-red-600 navbar-link">Gallery</li></Link>
+                            <Link to="/Career" className="nav-a"><li className="hover:bg-red-600 navbar-link">Career</li></Link>
 
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+                        </ul >
+                    </div >
+                </div >
+            </nav >
 
 
 
             {/* Mobile NavBar */}
-            <div className="mobile-nav">
+            < div className="mobile-nav" >
                 <div className="mobile-menu">
                     {/* Semi-transparent overlay */}
                     <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40
@@ -290,7 +286,7 @@ ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
                             </ul>
 
                             <ul>
-                                <li onClick={closeSidebar} className="mt-5"><X className="bg-red-600 w-8 h-8 p-1 text-white rounded-full div-center" /></li>
+                                <li onClick={closeSidebar} className="div-center mt-5 w-[50%]"><p className="text-center bg-red-700 text-white rounded-l px-1 py-1">Close</p></li>
                             </ul>
                         </div>
                     </nav>
@@ -305,7 +301,7 @@ ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
 
-                        <Link to="/diamondhospital" className="max-sm:text-[12px]"><House className="div-center" />Home</Link>
+                        <Link to="/" className="max-sm:text-[12px]"><House className="div-center" />Home</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
@@ -332,13 +328,13 @@ ${isAnimating ? 'animate-bounce-subtle' : ''}`}
                         <p className="mt-0.5 max-sm:text-[12px] bottombar-name">More</p>
                     </div>
                 </div>
-            </div>
+            </ div>
 
             {/* <div className="bg-red-700 text-white font-[600] p-1.5 text-[1.1rem] max-sm:text-[0.5rem] text-center">
                 <marquee behavior="" direction="">માતૃશ્રી રામુબા  તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા – ડાયમંડ હોસ્પિટલ અને મેડિકલ રિસર્ચ સેન્ટર</marquee>
                 <p>માતૃશ્રી રામુબા  તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા – ડાયમંડ હોસ્પિટલ અને મેડિકલ રિસર્ચ સેન્ટર</p>
             </div> */}
 
-        </header>
+        </header >
     );
 }
