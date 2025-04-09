@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
-import {BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 // Homepage
 import HomePage from './Components/HomePage'
 // About Us
@@ -14,11 +14,11 @@ import Orthopedics from './Components/Specialties/Orthopedics';
 import GeneralSurgery from './Components/Specialties/GeneralSurgery';
 import Ophthalmology from './Components/Specialties/Ophthalmology';
 import Pulmonology from './Components/Specialties/Pulmonology';
-import Urology  from './Components/Specialties/Urology';
-import Neurology  from './Components/Specialties/Neurology';
-import ENT  from './Components/Specialties/ENT';
-import DentalSurgery  from './Components/Specialties/DentalSurgery';
-import PhysioTherapy  from './Components/Specialties/PhysioTherapy';
+import Urology from './Components/Specialties/Urology';
+import Neurology from './Components/Specialties/Neurology';
+import ENT from './Components/Specialties/ENT';
+import DentalSurgery from './Components/Specialties/DentalSurgery';
+import PhysioTherapy from './Components/Specialties/PhysioTherapy';
 
 // Doc Profile
 import DocProfile from './Components/DocProfile'
@@ -49,6 +49,9 @@ import ScrollToTop from './Components/ScrollToTop';
 //Career
 import Career from './Components/Career';
 
+// Privacy Policy
+import PrivacyPolicy from './Components/PrivacyPolicy ';
+
 
 function App() {
 
@@ -56,7 +59,7 @@ function App() {
 
     <div>
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -98,16 +101,17 @@ function App() {
           {/* News & Media */}
           <Route path="/Video" element={<Video />} />
 
-
           {/* Gallery */}
           <Route path="/Gallery" element={<Gallery />} />
-          
+
           {/* Career */}
           <Route path='/Career' element={<Career />} />
 
+          {/* Privacy Policy */}
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

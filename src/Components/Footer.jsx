@@ -1,7 +1,7 @@
-import React from 'react'
-import Logo from './Images/Logo.png'
-import './CSS/Footer.css'
-
+import React from 'react';
+import Logo from './Images/Logo.png';
+import './CSS/Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -69,7 +69,7 @@ function Footer() {
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>About Us</p>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>News & Media</p>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Academics</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Privacy Policy</p>
+                    <Link to="/privacypolicy"><p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Privacy Policy</p></Link>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Terms & Comditions</p>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Contact Us</p>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Statutory Compliances</p>

@@ -8,6 +8,8 @@ Lottie (Padding / HaertBeat Animation)
 
 gh-pages(insatall panding for deployment)
 
+vercel install 
+
 color
 bg-red-700
 bg-teal-500
