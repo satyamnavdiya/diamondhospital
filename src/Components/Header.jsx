@@ -102,14 +102,14 @@ export default function Header() {
                 <img src={Tri} alt="" className="inline tri-img" />
                 <div className="inline">
                     <div className="container mx-auto px-4 flex justify-evenly items-center">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-3">
                             <div className="flex items-center">
-                                <Phone size={12} className="mr-2" />
-                                <span className="text-sm max-sm:text-[8.1px]">Emergency: 0261 2509505</span>
+                                <Phone size={20} className="mr-2" />
+                                <span className="text-md max-sm:text-[8.1px]">Emergency: 0261 2509505</span>
                             </div>
                             <div className="hidden md:flex items-center">
-                                <Clock size={12} className="mr-2" />
-                                <span className="text-sm ">24/7 Care Available</span>
+                                <Clock size={20} className="mr-2" />
+                                <span className="text-md ">24/7 Care Available</span>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ export default function Header() {
 
                 <div className="hospital-Desk-name">
                     <p className="hospital-name">
-                        <span className="bg-blue-700 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-1">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                        <span className="bg-blue-700 text-white px-[0.4rem] py-1.5 text-[1rem] rounded-[10px] mb-1 font-extrabold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
                         <br />
                         SDA DIAMOND HOSPITAL
                         <br />
@@ -207,7 +207,7 @@ export default function Header() {
                             </li>
 
                             <li className="hover:bg-red-600 navbar-link dropdown4">
-                                <a href="#" className="nav-a">News & Media<ChevronDown className="inline drop-icon" /></a>
+                                <a href="#" className="nav-a">Health Information<ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div4">
                                     <ul className="p-2">
                                         <a href="/" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Blog</li></a>

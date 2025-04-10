@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import VideoPlayer from './VideoPlayer';
-import { X } from 'lucide-react';
 import './CSS/Video.css'
 
 const videos = [

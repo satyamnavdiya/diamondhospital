@@ -94,7 +94,7 @@ function AboutUsBook() {
               maxWidth={500}
               minHeight={400}
               maxHeight={1533}
-              maxShadowOpacity={1}
+              maxShadowOpacity={0.5}
               showCover={true}
               mobileScrollSupport={true}
               className="book-content"
@@ -102,11 +102,11 @@ function AboutUsBook() {
             >
 
               <div className='f-page'>
-                <div className="font-bold text-2xl book-cover-logo shadow-2xl">
+                <div className="font-bold text-2xl book-cover-logo">
                   <img src={Logo} alt="Hospital Logo" className='logo-nav' /><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
                 </div>
                 <div>
-                  <span className="bg-teal-800 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                  <span className="bg-teal-500 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
                   <p className='text-white mt-2 text-2xl font-bold'>
                     SDA DIAMOND HOSPITAL
                     <br />
@@ -148,9 +148,13 @@ function AboutUsBook() {
               </div>
 
               <div className='book-right-page'>
-                <p className="dimond-text">
-                  Discover the difference of truly dedicated care at Diamond Hospital Surat—your trusted partner in health.
-                </p>
+                <iframe
+                  className="absolute top-100% left-70% w-[80%] h-[25rem] rounded-2xl"
+                  src={`https://www.youtube.com/embed/UWt8Ah6mArM?&loop=1&autoplay=1&preload=1&rel=0`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
 
               <PageCover className="border-2 border-gray-600"><h1 className="text-center items-center mt-[30%] font-bold text-teal-600 text-[5rem]">Thanks</h1></PageCover>
