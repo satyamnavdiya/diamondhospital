@@ -5,7 +5,7 @@ import Tri from './Images/tri.png'
 import './CSS/Header.css'
 import { House, Hospital, LibraryBig, BriefcaseMedical, Images, ClipboardPlus, Stethoscope, Accessibility, Phone, Clock, HeartPulse, ChevronDown, Ellipsis, X } from 'lucide-react';
 import { Link } from "react-router-dom";
-import GoogleTranslate from "./GoogleTranslate";
+// import GoogleTranslate from "./GoogleTranslate";
 
 
 export default function Header() {
@@ -153,7 +153,7 @@ export default function Header() {
                                 <a href="#" className="nav-a">About <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div1">
                                     <ul className="p-2">
-                                        <Link to="/Dimond-Hospital" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Dimond Hospital</li></Link>
+                                        <Link to="/Dimond-Hospital" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600"> <div className="div-bg1"></div>  Dimond Hospital</li></Link>
                                         <Link to="/Hospital-Team" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Our Trustees</li></Link>
                                     </ul>
                                 </div>
@@ -165,9 +165,9 @@ export default function Header() {
                                 <a href="#" className="nav-a">Specialties <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div2">
                                     <ul className="p-2">
-                                        <Link to="/ObsGyne" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Obstetric & Gynecology</li></Link>
-                                        <Link to="/Pediatrics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pediatrics</li></Link>
-                                        <Link to="/Orthopedics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Orthopedics</li></Link>
+                                        <Link to="/ObsGyne" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600"><div className="div-bg3"></div>Obstetric & Gynecology</li></Link>
+                                        <Link to="/Pediatrics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600"><div className="div-bg4"></div>Pediatrics</li></Link>
+                                        <Link to="/Orthopedics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600"><div className="div-bg5"></div>Orthopedics</li></Link>
                                         <Link to="/GeneralSurgery" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">General Surgery</li></Link>
                                         <Link to="/Ophthalmology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ophthalmology</li></Link>
                                         <Link to="/Pulmonology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pulmonology</li></Link>

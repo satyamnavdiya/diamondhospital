@@ -94,7 +94,7 @@ function AboutUsBook() {
               maxWidth={500}
               minHeight={400}
               maxHeight={1533}
-              maxShadowOpacity={0.5}
+              maxShadowOpacity={1}
               showCover={true}
               mobileScrollSupport={true}
               className="book-content"
@@ -102,11 +102,11 @@ function AboutUsBook() {
             >
 
               <div className='f-page'>
-                <div className="font-bold text-2xl book-cover-logo">
+                <div className="font-bold text-2xl book-cover-logo shadow-2xl">
                   <img src={Logo} alt="Hospital Logo" className='logo-nav' /><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
                 </div>
                 <div>
-                  <span className="bg-teal-500 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                  <span className="bg-teal-800 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
                   <p className='text-white mt-2 text-2xl font-bold'>
                     SDA DIAMOND HOSPITAL
                     <br />

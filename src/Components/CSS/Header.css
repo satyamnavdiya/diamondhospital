@@ -170,7 +170,7 @@
     display: none;
     visibility: hidden;
     position: absolute;
-    width: 15rem;
+    width: 16.5rem;
     border-top: 2px solid blue;
     border-radius: 7px;
     z-index: 99;
@@ -216,6 +216,65 @@
     color: white;
 }
 
+/* Navbar Menus Icons */
+.div-bg1{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/public/IMG/symbols/1.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+}
+.div-bg2{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/public/IMG/symbols/1.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+}
+.div-bg3{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/public/IMG/symbols/4.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.drop-li:hover .div-bg3{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/public/IMG/symbols/32.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.div-bg4{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/public/IMG/symbols/57.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.div-bg5{
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/public/IMG/symbols/5.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 
 
 /* Mobile Bottom Menubar */

@@ -12,7 +12,7 @@ vercel install
 
 color
 bg-red-700
-bg-teal-500
+bg-teal-500  #00bba7
 
 
 youtube video thumbnail formula
