@@ -1,210 +1,292 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import './CSS/Testimonial.css'
-import { ChevronLeft, ChevronRight, MessageSquare, Video } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Play, X, Star } from 'lucide-react';
 
-const reviews = [
+const SAMPLE_REVIEWS = [
     {
-        id: 1,
-        name: "Sarah Johnson",
-        date: "March 15, 2024",
+        id: '1',
+        type: 'text',
+        customerName: 'Sarah Johnson',
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
         rating: 5,
-        content: "The care I received at this hospital was exceptional. The staff was incredibly attentive and professional.",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
-        type: "text"
+        content: 'Absolutely amazing product! The quality exceeded my expectations and the customer service was outstanding.',
+        date: '2024-03-15'
     },
     {
-        id: 2,
-        name: "Michael Chen",
-        date: "March 14, 2024",
-        rating: 5,
-        content: "State-of-the-art facilities and compassionate care. I couldn't have asked for better treatment.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150",
-        type: "text"
-    },
-    {
-        id: 3,
-        name: "Emily Rodriguez",
-        date: "March 13, 2024",
+        id: '2',
+        type: 'text',
+        customerName: 'Michael Chen',
+        avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
         rating: 4,
-        content: "The doctors took time to explain everything thoroughly. Very satisfied with my experience.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150",
-        type: "text"
+        content: 'Very satisfied with my purchase. Would definitely recommend to others looking for a reliable solution.',
+        date: '2024-03-14'
     },
     {
-        id: 4,
-        name: "David Thompson",
-        date: "March 12, 2024",
+        id: '5',
+        type: 'text',
+        customerName: 'Sarah Johnson',
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
         rating: 5,
-        content: "From admission to discharge, everything was handled professionally. Highly recommend!",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150",
-        type: "text"
+        content: 'Absolutely amazing product! The quality exceeded my expectations and the customer service was outstanding.',
+        date: '2024-03-15'
     },
     {
-        id: 5,
-        name: "Lisa Martinez",
-        date: "March 10, 2024",
-        rating: 5,
-        type: "video",
-        content: "Amazing experience with the pediatric department",
-        image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?auto=format&fit=crop&q=80&w=150",
-        videoUrl: "https://example.com/video1.mp4"
+        id: '4',
+        type: 'text',
+        customerName: 'Michael Chen',
+        avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
+        rating: 4,
+        content: 'Very satisfied with my purchase. Would definitely recommend to others looking for a reliable solution.',
+        date: '2024-03-14'
     },
     {
-        id: 6,
-        name: "James Wilson",
-        date: "March 8, 2024",
-        rating: 5,
-        type: "video",
-        content: "Outstanding cardiac care unit",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150",
-        videoUrl: "https://example.com/video2.mp4"
+        id: '3',
+        type: 'video',
+        customerName: 'Emily Rodriguez',
+        avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
+        content: 'Video review of the product features',
+        date: '2024-03-13',
+        videoUrl: 'https://example.com/video1.mp4',
+        thumbnailUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3'
     }
 ];
 
+const Testimonials = () => {
+    const [state, setState] = useState({
+        currentSlide: 0,
+        isVideoModalOpen: false,
+        activeVideoUrl: null,
+        reviewType: 'text'
+    });
 
-function Testimonials() {
+    const sliderRef = useRef(null);
+    const modalRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [activeType, setActiveType] = useState('text');
-    const [isHovered, setIsHovered] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
 
-    const filteredReviews = reviews.filter(review => review.type === activeType);
-    const totalSlides = Math.ceil(filteredReviews.length / 2);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-    const nextSlide = useCallback(() => {
-        setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, [totalSlides]);
+    const filteredReviews = SAMPLE_REVIEWS.filter(review => review.type === state.reviewType);
+    const totalSlides = isMobile ? filteredReviews.length : Math.ceil(filteredReviews.length / 2);
 
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && state.isVideoModalOpen) {
+                closeVideoModal();
+            }
+            if (e.key === 'ArrowLeft') {
+                navigateSlide('prev');
+            }
+            if (e.key === 'ArrowRight') {
+                navigateSlide('next');
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [state.isVideoModalOpen]);
+
+    const navigateSlide = (direction) => {
+        setState(prev => ({
+            ...prev,
+            currentSlide: direction === 'prev'
+                ? Math.max(0, prev.currentSlide - 1)
+                : Math.min(totalSlides - 1, prev.currentSlide + 1)
+        }));
+    };
+
+    const openVideoModal = (videoUrl) => {
+        setState(prev => ({
+            ...prev,
+            isVideoModalOpen: true,
+            activeVideoUrl: videoUrl
+        }));
+    };
+
+    const closeVideoModal = () => {
+        setState(prev => ({
+            ...prev,
+            isVideoModalOpen: false,
+            activeVideoUrl: null
+        }));
     };
 
     const renderStars = (rating) => {
-        return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        return Array.from({ length: 5 }).map((_, index) => (
+            <Star
+                key={index}
+                className={`w-4 h-4 ${index < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+            />
+        ));
     };
 
-    useEffect(() => {
-        let intervalId;
-        if (!isHovered) {
-            intervalId = setInterval(() => {
-                nextSlide();
-            }, 3000); // Change slide every 3 seconds
-        }
-        return () => {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-        };
-    }, [isHovered, nextSlide]);
-
-    return (
-
-        <div>
-            <div className="max-w-6xl mx-auto px-4 py-12">
-                <h1 className='achievement-heading pt-2'><span className="achi-gradient">Patient Reviews</span></h1>
-
-
-                {/* Toggle Buttons */}
-                <div className="flex justify-center gap-4 mb-12">
-                    <button
-                        onClick={() => {
-                            setActiveType('text');
-                            setCurrentSlide(0);
-                        }}
-                        className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-colors
-              ${activeType === 'text'
-                                ? 'bg-teal-600 text-white'
-                                : 'bg-gray-200 text-gray-700 hover:bg-teal-300'}`}
-                    >
-                        <MessageSquare size={20} />
-                        Text Reviews
-                    </button>
-                    <button
-                        onClick={() => {
-                            setActiveType('video');
-                            setCurrentSlide(0);
-                        }}
-                        className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-colors
-              ${activeType === 'video'
-                                ? 'bg-teal-600 text-white'
-                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-                    >
-                        <Video size={20} />
-                        Video Reviews
-                    </button>
-                </div>
-
-                {/* Reviews Slider */}
-                <div className="relative">
-                    <div className="overflow-hidden w-[80%] div-center">
-                        <div
-                            className="flex transition-transform duration-500 ease-in-out"
-                            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                        >
-                            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                                <div key={slideIndex} className="w-full flex-shrink-0 flex gap-8">
-                                    {filteredReviews.slice(slideIndex * 2, slideIndex * 2 + 2).map((review) => (
-                                        <div key={review.id}
-                                            className="flex-1 justify-around bg-white rounded-xl shadow-lg p-6 transform transition-transform hover:scale-105? mb-5 ml-10">
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <img
-                                                    src={review.image}
-                                                    alt={review.name}
-                                                    className="w-12 h-12 rounded-full object-cover"
-                                                />
-                                                <div>
-                                                    <h3 className="font-semibold text-gray-900">{review.name}</h3>
-                                                    <p className="text-sm text-gray-500">{review.date}</p>
-                                                </div>
-                                            </div>
-                                            <div className="text-yellow-400 mb-2">
-                                                {renderStars(review.rating)}
-                                            </div>
-                                            <p className="text-gray-700">{review.content}</p>
-                                            {review.type === 'video' && (
-                                                <div className="mt-4 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
-                                                    <Video className="text-blue-600" />
-                                                    <span className="ml-2 text-blue-600">Watch Video Review</span>
-                                                </div>
-                                            )}
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
+    const renderTextReview = (review) => (
+        <div
+            className="bg-white rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-lg w-full"
+            role="article"
+            aria-label={`Review by ${review.customerName}`}
+        >
+            <div className="flex items-center gap-4 mb-4">
+                <img
+                    src={review.avatarUrl}
+                    alt={review.customerName}
+                    className="w-[60px] h-[60px] rounded-full object-cover"
+                    loading="lazy"
+                />
+                <div>
+                    <h3 className="font-bold text-lg">{review.customerName}</h3>
+                    {review.rating && (
+                        <div className="flex gap-1 mt-1" aria-label={`Rated ${review.rating} out of 5 stars`}>
+                            {renderStars(review.rating)}
                         </div>
-                    </div>
-
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50"
-                    >
-                        <ChevronLeft className="w-6 h-6 text-gray-600" />
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50"
-                    >
-                        <ChevronRight className="w-6 h-6 text-gray-600" />
-                    </button>
-
-                    {/* Dots Navigation */}
-                    <div className="flex justify-center gap-2 mt-8">
-                        {Array.from({ length: totalSlides }).map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setCurrentSlide(index)}
-                                className={`w-2 h-2 rounded-full transition-colors
-                  ${currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'}`}
-                            />
-                        ))}
-                    </div>
+                    )}
                 </div>
             </div>
+            <p className="text-gray-700 line-clamp-3 mb-2">{review.content}</p>
+            <time className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString()}</time>
         </div>
-    )
-}
+    );
 
-export default Testimonials
+    const renderVideoReview = (review) => (
+        <div
+            className="relative aspect-video rounded-lg overflow-hidden cursor-pointer group w-full"
+            onClick={() => review.videoUrl && openVideoModal(review.videoUrl)}
+            role="button"
+            aria-label={`Play video review by ${review.customerName}`}
+            tabIndex={0}
+            onKeyPress={(e) => e.key === 'Enter' && review.videoUrl && openVideoModal(review.videoUrl)}
+        >
+            <img
+                src={review.thumbnailUrl}
+                alt={`${review.customerName}'s video review thumbnail`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-50 transition-all duration-300">
+                <Play className="w-16 h-16 text-white" />
+            </div>
+        </div>
+    );
+
+    const getVisibleReviews = () => {
+        if (isMobile) {
+            return [filteredReviews[state.currentSlide]];
+        }
+        const startIndex = state.currentSlide * 2;
+        return filteredReviews.slice(startIndex, startIndex + 2);
+    };
+
+    return (
+        <section className="review-slider w-full max-w-7xl mx-auto px-4 py-8" aria-label="Customer Reviews">
+            <div className="flex justify-center gap-4 mb-8">
+                <button
+                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${state.reviewType === 'text'
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        }`}
+                    onClick={() => setState(prev => ({ ...prev, reviewType: 'text', currentSlide: 0 }))}
+                    aria-pressed={state.reviewType === 'text'}
+                >
+                    Text Reviews
+                </button>
+                <button
+                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${state.reviewType === 'video'
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        }`}
+                    onClick={() => setState(prev => ({ ...prev, reviewType: 'video', currentSlide: 0 }))}
+                    aria-pressed={state.reviewType === 'video'}
+                >
+                    Video Reviews
+                </button>
+            </div>
+
+            <div className="relative min-h-[250px] md:min-h-[280px] lg:min-h-[300px]">
+                <div
+                    ref={sliderRef}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6 transition-all duration-300"
+                    style={{
+                        transform: `translateX(-${state.currentSlide * (isMobile ? 100 : 50)}%)`,
+                    }}
+                >
+                    {getVisibleReviews().map(review => (
+                        <div key={review.id} className="w-full">
+                            {review.type === 'text' ? renderTextReview(review) : renderVideoReview(review)}
+                        </div>
+                    ))}
+                </div>
+
+                <button
+                    className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow-md transition-all duration-300"
+                    onClick={() => navigateSlide('prev')}
+                    disabled={state.currentSlide === 0}
+                    aria-label="Previous slide"
+                >
+                    <ChevronLeft className="w-6 h-6" />
+                </button>
+
+                <button
+                    className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 p-2 rounded-full shadow-md transition-all duration-300"
+                    onClick={() => navigateSlide('next')}
+                    disabled={state.currentSlide === totalSlides - 1}
+                    aria-label="Next slide"
+                >
+                    <ChevronRight className="w-6 h-6" />
+                </button>
+
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {Array.from({ length: totalSlides }).map((_, index) => (
+                        <button
+                            key={index}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${state.currentSlide === index ? 'bg-blue-600 w-4' : 'bg-gray-300'
+                                }`}
+                            onClick={() => setState(prev => ({ ...prev, currentSlide: index }))}
+                            aria-label={`Go to slide ${index + 1}`}
+                            aria-current={state.currentSlide === index}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            {state.isVideoModalOpen && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="video-modal-title"
+                    ref={modalRef}
+                    onClick={(e) => e.target === modalRef.current && closeVideoModal()}
+                >
+                    <div className="relative w-full max-w-4xl mx-4">
+                        <button
+                            className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors duration-300"
+                            onClick={closeVideoModal}
+                            aria-label="Close video"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <div className="aspect-video">
+                            {state.activeVideoUrl && (
+                                <video
+                                    src={state.activeVideoUrl}
+                                    controls
+                                    className="w-full h-full rounded-lg"
+                                    autoPlay
+                                >
+                                    Your browser does not support the video tag.
+                                </video>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
+        </section>
+    );
+};
+
+export default Testimonials;

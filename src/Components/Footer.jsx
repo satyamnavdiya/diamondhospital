@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 function Footer() {
     return (
         <>
-
             <footer className='bg-[#77baab7d]'>
                 <div className="w-full rounded-lg overflow-hidden sm:mr-10 p-10 pb-0 flex items-end justify-start relative div-map z-10">
                     <iframe
@@ -21,22 +20,22 @@ function Footer() {
                 </div>
 
 
-                <div className='p-2 div1-footer'>
+                <div className='p-2 footer-div div1-footer'>
                     <img src={Logo} alt="RTSV - SDA Dimond hopital" className='footer-logo animate-float' />
                     <h1 className='text-[1.2rem] text-center hospital-name-footer'>RTSV - SDA <br />
                         DIAMOND HOSPITAL <br />
                         AND RESERACH CENTER</h1>
                 </div>
 
-                <div className='p-2 div2-footer'>
-                    <h1 className='text-2xl mb-5 text-[#26362c] font-bold '>Meet Us On</h1>
-                    <p className='text-[#005b41]'>Swati Society, Chikuwadi, <br />  Varachcha Road, Surat</p>
+                <div className='p-2 footer-div  div2-footer'>
+                    <h1 className='text-2xl mb-5 text-[#26362c] font-bold footer-div-heading'>Meet Us On</h1>
+                    <p className='text-[#005b41] footer-text'>Swati Society, Chikuwadi, <br />  Varachcha Road, Surat</p>
                     <br />
-                    <h1 className='text-2xl mb-5 text-[#26362c] font-bold'>Mail Us On</h1>
-                    <p className='text-[#005b41] text-[15px]'>admin@sdahospitalsurat.com</p>
+                    <h1 className='text-2xl mb-5 text-[#26362c] font-bold footer-div-heading'>Mail Us On</h1>
+                    <p className='text-[#005b41] text-[15px] footer-text'>admin@sdahospitalsurat.com</p>
                     <br />
                     <div className="div5-footer max-sm:-mt-10">
-                        <h1 className='text-2xl mb-5 text-[#26362c] font-bold'>For Updates Follow Us On</h1>
+                        <h1 className='text-2xl mb-5 text-[#26362c] font-bold footer-div-heading'>Follow Us On</h1>
                         <div className='flex justify-start div-center max-sm:justify-center'>
                             {/* instagram */}
                             <a href="">
@@ -63,21 +62,19 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className='div3-footer p-2'>
-                    <h1 className='text-2xl mb-5 text-[#26362c] font-bold '>Quick Links</h1>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Kiran-2 Hospital</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>About Us</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>News & Media</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Academics</p>
-                    <Link to="/privacypolicy"><p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Privacy Policy</p></Link>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Terms & Comditions</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Contact Us</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41]'>Statutory Compliances</p>
+                <div className='div3-footer p-2 footer-div '>
+                    <h1 className='text-2xl mb-5 text-[#26362c] font-bold footer-div-heading'>Quick Links</h1>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Kiran-2 Hospital</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>About Us</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>News & Media</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Academics</p>
+                    <Link to="/privacypolicy"><p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Privacy Policy</p></Link>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Terms & Comditions</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Contact Us</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Statutory Compliances</p>
                 </div>
 
-                <div className="div4-footer p-2">
 
-                </div>
             </footer>
 
             <div className='pt-5 pb-5 text-center text-[#154360] div6-footer'>

@@ -1,7 +1,6 @@
 footer {
     width: 90%;
     margin: 0 auto;
-    margin-top: 5rem;
     padding: 1rem;
     border-radius: 24px;
     display: grid;
@@ -128,6 +127,30 @@ footer {
     margin: 0 auto;
     /* animation: heartbeat 1.5s infinite ease-in-out; */
 }
+
+.footer-div{
+    margin-top: 2rem;
+}
+.footer-div-heading{
+    color: rgb(158, 1, 1);
+}
+
+@media screen and (min-width: 1450px) {
+    .footer-div{
+        margin-top: 5rem;
+    }
+    .hospital-name-footer{
+        font-size: 2rem;
+    }
+    .footer-div-heading{
+        font-size: 2rem;
+    }
+    .footer-text{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 991px) {
     .main-map {

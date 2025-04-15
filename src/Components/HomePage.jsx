@@ -17,7 +17,7 @@ const images = [
 
 function HomePage() {
     return (
-        <div className='pt-[8.3rem] max-sm:pt-[6rem]'>
+        <div className='pt-[8.3rem] max-[991px]:pt-[6rem] max-sm:pt-[5.5rem]'>
             <Slider />
 
             {/* About us */}

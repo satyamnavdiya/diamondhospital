@@ -5,27 +5,6 @@ import Nabh from './Images/NABH.png'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './CSS/Book.css'
 
-// const bookPages = [
-//   {
-//     id: 1,
-//     image: "",
-//     description: "Welcome to Diamond Hospital Surat, a premier multi-speciality healthcare facility located in the heart of Surat, Gujarat. We are dedicated to providing comprehensive, patient-focused care around the clock, ensuring that every individual receives timely and personalized treatment. Our state-of-the-art facility is equipped with advanced diagnostic tools, modern surgical suites, and a range of specialized care units to meet the diverse health needs of our community."
-
-//   },
-//   {
-//     id: 2,
-//     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1000",
-//     title: "Coastal Dreams",
-//     description: "Waves crash endlessly upon golden shores, where seabirds dance in the salty breeze. The horizon stretches infinitely, merging sea and sky."
-//   },
-//   {
-//     id: 3,
-//     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
-//     title: "Mountain Majesty",
-//     description: "Towering peaks pierce the clouds, their snow-capped summits glowing in the morning light. The air is crisp and pure at these dizzying heights."
-//   }
-// ];
-
 const PageCover = React.forwardRef((props, ref) => {
   return (
     <div className='page ' ref={ref} data-density="soft">
@@ -35,33 +14,6 @@ const PageCover = React.forwardRef((props, ref) => {
     </div>
   );
 });
-
-// const Page = React.forwardRef((props, ref) => {
-//   return (
-//     <div className="page " ref={ref}>
-//       <div className="relative h-[500px] bg-red-950 shadow-lg flex ">
-//         <div>
-//           <img
-//             src={props.page.image}
-//             alt={props.page.title}
-//             className="w-full h-full object-cover "
-//           />
-//           <div className="absolute inset-0 bg-black/10 " />
-//         </div>
-//         <div className="w-1/2 p-12 flex flex-col justify-between">
-//           <div>
-//             <h2 className="text-4xl font-serif font-bold mb-6 text-gray-800">
-//               {props.page.title}
-//             </h2>
-//             <p className="text-lg text-white leading-relaxed font-serif">
-//               {props.page.description}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// });
 
 function AboutUsBook() {
   const book = useRef();
@@ -83,14 +35,14 @@ function AboutUsBook() {
         <p className='text-2xl inline mr-5'>Open The Book</p>
       </div>
 
-      <div className="flex items-center justify-center p-4">
+      <div className="flex items-center justify-center p-4 max-[991px]:overflow-hidden max-[991px]:h-[75vh]">
         <div className="max-w w-[80%]">
-          <div className="relative">
+          <div className="relative max-sm:-mt-[234px] max-sm:-ml-[35px]">
             <HTMLFlipBook
               width={600}
               height={600}
               size="stretch"
-              minWidth={320}
+              minWidth={300}
               maxWidth={500}
               minHeight={400}
               maxHeight={1533}
@@ -100,14 +52,14 @@ function AboutUsBook() {
               className="book-content"
               ref={book}
             >
-
               <div className='f-page'>
                 <div className="font-bold text-2xl book-cover-logo">
-                  <img src={Logo} alt="Hospital Logo" className='logo-nav' /><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
+                  <img src={Logo} alt="Hospital Logo" className='logo-nav' />
+                  <img src={Nabh} alt="Hospital Logo" className='logo-nav' />
                 </div>
-                <div>
-                  <span className="bg-teal-500 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
-                  <p className='text-white mt-2 text-2xl font-bold'>
+                <div className='book-f-name'>
+                  <span className="bg-teal-500 text-white px-1.5 py-1 text-[0.9rem] rounded-[10px] mb-2 font-bold max-sm:text-[10px]">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                  <p className='text-white mt-2 text-2xl font-bold max-sm:text-[15px]'>
                     SDA DIAMOND HOSPITAL
                     <br />
                     AND MEDICAL RESEARCH CENTER
@@ -147,20 +99,23 @@ function AboutUsBook() {
                 </p>
               </div>
 
-              <div className='book-right-page'>
+              <div className='book-left-page'>
+                <h1 className="text-center items-center mt-[30%] font-bold text-teal-600 text-[5rem]">Thanks</h1>
+              </div>
+
+              <div>
                 <iframe
-                  className="absolute top-100% left-70% w-[80%] h-[25rem] rounded-2xl"
-                  src={`https://www.youtube.com/embed/UWt8Ah6mArM?&loop=1&autoplay=1&preload=1&rel=0`}
+                  className="absolute w-full h-full rounded-2xl"
+                  // src={`https://www.youtube.com/embed/UWt8Ah6mArM?muted=0&loop=1&autoplay=1&preload=1&rel=0&cc_load_policy=0`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
 
-              <PageCover className="border-2 border-gray-600"><h1 className="text-center items-center mt-[30%] font-bold text-teal-600 text-[5rem]">Thanks</h1></PageCover>
             </HTMLFlipBook>
 
-            <div className="absolute left-0 right-0 bottom-[-20px] flex justify-center gap-8">
+            <div className="absolute left-0 right-0 bottom-[-20px] flex justify-center gap-8 max-sm:bottom-[-80px]">
               <button
                 onClick={prevButtonClick}
                 className="p-4 rounded-full bg-white hover:bg-gray-100 transition-colors shadow-md"

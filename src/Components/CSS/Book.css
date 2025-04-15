@@ -87,3 +87,24 @@
     justify-content: space-between;
     align-items: stretch;
 }
+@media screen and (min-width: 1440px) {
+    
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 991px) {
+    .about-div{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .book-f-name{
+        margin-top: -60px;
+    }
+    .book-cover-logo{
+        margin-top: 40px;
+    }
+}
+

@@ -10,11 +10,11 @@ function Certifications() {
                     <h1 className='achievement-heading pt-2'><span className="achi-gradient">Cerrtifications</span></h1>
                 </div>
 
-                <div className='flex justify-between items-center'>
-                    <div className='w-[24%] p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
-                    <div className='w-[24%] p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
-                    <div className='w-[24%] p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
-                    <div className='w-[24%] p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
+                <div className='grid grid-cols-4 max-[991px]:grid-cols-2 items-center '>
+                    <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
+                    <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
+                    <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
+                    <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
                 </div>
             </div>
         </>

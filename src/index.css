@@ -10,7 +10,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
     font-size: 1.1rem;
-    overflow-x: hidden;
+    /* overflow-x: auto; */
 }
 
 body::-webkit-scrollbar-track {

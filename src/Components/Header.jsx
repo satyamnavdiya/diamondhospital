@@ -104,12 +104,12 @@ export default function Header() {
                     <div className="container mx-auto px-4 flex justify-evenly items-center">
                         <div className="flex items-center space-x-3">
                             <div className="flex items-center">
-                                <Phone size={20} className="mr-2" />
-                                <span className="text-md max-sm:text-[8.1px]">Emergency: 0261 2509505</span>
+                                <Phone size={20} className="mr-2 topbar-icon" />
+                                <span className="topbar-text text-md">Emergency: 0261 2509505</span>
                             </div>
                             <div className="hidden md:flex items-center">
-                                <Clock size={20} className="mr-2" />
-                                <span className="text-md ">24/7 Care Available</span>
+                                <Clock size={20} className="mr-2 topbar-icon" />
+                                <span className="topbar-text text-md ">24/7 Care Available</span>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ export default function Header() {
 
                 <div className="hospital-Desk-name">
                     <p className="hospital-name">
-                        <span className="bg-blue-700 text-white px-[0.4rem] py-1.5 text-[1rem] rounded-[10px] mb-1 font-extrabold">માતૃશ્રી રામુબા તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                        <span className="bg-blue-700 text-white px-[0.4rem] py-1.5 text-[1rem] rounded-[10px] mb-1 font-extrabold hostipal-name-span">માતૃશ્રી રામુબા તેજાણી તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
                         <br />
                         SDA DIAMOND HOSPITAL
                         <br />
@@ -143,7 +143,7 @@ export default function Header() {
 
             {/* Desktop Navbar */}
             <nav className="bg-transparen mt-1 desktop-nav ">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto">
                     <div className="flex justify-between items-center">
                         {/* Desktop Menu */}
                         <ul className="hidden md:flex items-center space-x-2 desktop-navbar">
