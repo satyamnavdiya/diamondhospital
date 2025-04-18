@@ -3,14 +3,13 @@ import React from 'react'
 function Certifications() {
     return (
         <>
-
-            <div className='div-center w-[80%] pt-10'>
+            <div className='div-center w-[80%] pt-10 max-[640px]:pt-0'>
                 <div className='text-center'>
                     <span className='bg-teal-500 text-white rounded-xl text-center py-1 px-2'>Our Achievement</span>
                     <h1 className='achievement-heading pt-2'><span className="achi-gradient">Cerrtifications</span></h1>
                 </div>
 
-                <div className='grid grid-cols-4 max-[991px]:grid-cols-2 items-center '>
+                <div className='grid grid-cols-4 max-[991px]:grid-cols-2 max-[640px]:grid-cols-1 items-center '>
                     <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
                     <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>
                     <div className='p-5 hover:shadow-2xl transition-all rounded-2xl hover:border-teal-500 hover:border-2'><img src="/IMG/certifications.jpg" alt="" /></div>

@@ -23,9 +23,11 @@ bug:
 onclick: 
 navbar font color: white
 navbar top sapce on scroll
+Book open And close 
 
 panding work: 
-Book
+Book responsivenes
+Book Last Page
 
 
 

@@ -7,7 +7,7 @@ function Footer() {
     return (
         <>
             <footer className='bg-[#77baab7d]'>
-                <div className="w-full rounded-lg overflow-hidden sm:mr-10 p-10 pb-0 flex items-end justify-start relative div-map z-10">
+                <div className="w-full rounded-lg overflow-hidden sm:mr-10 p-10 pb-0 flex items-end justify-start relative div-map z-10 max-sm:h-[5rem]">
                     <iframe
                         width="100%"
                         height="100%"

@@ -35,9 +35,9 @@ function AboutUsBook() {
         <p className='text-2xl inline mr-5'>Open The Book</p>
       </div>
 
-      <div className="flex items-center justify-center p-4 max-[991px]:overflow-hidden max-[991px]:h-[75vh]">
-        <div className="max-w w-[80%]">
-          <div className="relative max-sm:-mt-[234px] max-sm:-ml-[35px]">
+      <div className="flex items-center justify-center p-4 max-[991px]:overflow-hidden max-[991px]:h-[75vh]  max-[640px]:h-[45vh]">
+        <div className="max-w w-[80%] max-[991px]:flex max-[991px]:items-center max-sm:justify-center max-sm:relative max-sm:w-[100%]">
+          <div className="relative">
             <HTMLFlipBook
               width={600}
               height={600}
@@ -70,7 +70,7 @@ function AboutUsBook() {
               </div>
 
               <div className='book-left-page'>
-                <img src={Logo} alt="Hospital Logo" className='logo-nav w-[20rem] p-10 mt-18 ' />
+                <img src={Logo} alt="Hospital Logo" className='bookpage-logo p-10 mt-18 ' />
               </div>
 
               <div className='book-right-page'>
@@ -80,7 +80,7 @@ function AboutUsBook() {
               </div>
 
               <div className='book-left-page'>
-                <img src={Logo} alt="Hospital Logo" className='logo-nav w-[20rem] p-10 mt-18 ' />
+                <img src={Logo} alt="Hospital Logo" className='bookpage-logo p-10 mt-18 ' />
               </div>
 
               <div className='book-right-page'>
@@ -90,7 +90,7 @@ function AboutUsBook() {
               </div>
 
               <div className='book-left-page'>
-                <img src={Logo} alt="Hospital Logo" className='logo-nav w-[20rem] p-10 mt-18 ' />
+                <img src={Logo} alt="Hospital Logo" className='bookpage-logo p-10 mt-18 ' />
               </div>
 
               <div className='book-right-page'>
@@ -114,21 +114,21 @@ function AboutUsBook() {
               </div>
 
             </HTMLFlipBook>
+          </div>
 
-            <div className="absolute left-0 right-0 bottom-[-20px] flex justify-center gap-8 max-sm:bottom-[-80px]">
-              <button
-                onClick={prevButtonClick}
-                className="p-4 rounded-full bg-white hover:bg-gray-100 transition-colors shadow-md"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={nextButtonClick}
-                className="p-4 rounded-full bg-white hover:bg-gray-100 transition-colors shadow-md"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </div>
+          <div className="absolute left-0 right-0 bottom-[-365px]  flex justify-center gap-8 max-sm:hidden">
+            <button
+              onClick={prevButtonClick}
+              className="p-4 rounded-full bg-white hover:bg-gray-100 transition-colors shadow-md"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={nextButtonClick}
+              className="p-4 rounded-full bg-white hover:bg-gray-100 transition-colors shadow-md"
+            >
+              <ChevronRight size={24} />
+            </button>
           </div>
         </div>
       </div>

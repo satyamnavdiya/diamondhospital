@@ -97,6 +97,11 @@
     .about-div{
         display: none;
     }
+    .bookpage-logo{
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -105,6 +110,11 @@
     }
     .book-cover-logo{
         margin-top: 40px;
+    }
+    .bookpage-logo{
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
     }
 }
 
