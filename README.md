@@ -24,11 +24,19 @@ onclick:
 navbar font color: white
 navbar top sapce on scroll
 Book open And close 
+Bottom Navbar burgur menu
+Achievemnet bug with idea (table vi)
+
 
 panding work: 
 Book responsivenes
-Book Last Page
-
+Book Last pages
+department with doctors recheack
+    - pulomonology
+    - neurology
+    - Ophthalmology
+    - ENT
+    
 
 
 responsive:

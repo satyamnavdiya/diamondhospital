@@ -35,7 +35,7 @@ function AboutUsBook() {
         <p className='text-2xl inline mr-5'>Open The Book</p>
       </div>
 
-      <div className="flex items-center justify-center p-4 max-[991px]:overflow-hidden max-[991px]:h-[75vh]  max-[640px]:h-[45vh]">
+      <div className="flex items-center justify-center p-4 max-[991px]:overflow-hidden max-[991px]:h-[75vh]  max-[640px]:h-[45vh] max-sm:mt-10">
         <div className="max-w w-[80%] max-[991px]:flex max-[991px]:items-center max-sm:justify-center max-sm:relative max-sm:w-[100%]">
           <div className="relative">
             <HTMLFlipBook

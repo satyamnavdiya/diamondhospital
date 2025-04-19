@@ -1,12 +1,42 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Hospital, Baby, Stethoscope, Users, MapPin } from 'lucide-react';
+import { Award, Calendar } from 'lucide-react';
 import "../CSS/Specialities.css"
 import Ophthalmology1 from '../Images/Ophthalmology1.jpg'
 
+const doctors = [
+  {
+    id: 6,
+    name: "Dr. Amisha Jain Gupta",
+    department: "Cardiology",
+    experience: 17,
+    imageUrl: "/IMG/doc/Dr. Amisha Jain.png",
+    bio: "Dr. Amisha Jain Gupta is a highly experienced Ophthalmologist with 17 years of expertise in the field of eye care. Throughout her extensive career, she has been committed to delivering exceptional ophthalmic services, ranging from routine eye exams to advanced surgical procedures. Known for her precision, compassionate care, and deep knowledge of ocular health, Dr. Gupta has earned the trust of countless patients and continues to contribute significantly to the field of ophthalmology.",
+    education: "MBBS, DNB",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    }
+  },
+  {
+    id: 14,
+    name: "Dr. Kamlesh Patel",
+    department: "OPHTHALOMOLOGY",
+    experience: 2,
+    imageUrl: "/IMG/doc/1.png",
+    bio: "Dr. Kamlesh Patel is a passionate and dedicated Ophthalmologist who has recently begun his professional career in the field of eye care. As a fresher, he is eager to provide high-quality ophthalmic services, focusing on diagnosing and treating a variety of eye conditions. Dr. Patel is committed to offering compassionate care and staying updated with the latest advancements in ophthalmology to ensure the best possible outcomes for his patients.",
+    education: "MBBS, MS",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    },
+  }
+]
+
 const Ophthalmology = () => {
-  const [activeSection, setActiveSection] = useState('purpose');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedDoctorData, setSelectedDoctorData] = useState(null);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -14,8 +44,31 @@ const Ophthalmology = () => {
     transition: { duration: 0.6 }
   };
 
+  // Handle opening the modal with doctor data
+  const handleViewProfile = (doctor) => {
+    setSelectedDoctorData(doctor);
+    setModalOpen(true);
+    // Add a class to the body to prevent scrolling when modal is open
+    document.body.classList.add('overflow-hidden');
+  };
+
+  // Handle closing the modal
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedDoctorData(null);
+    // Remove the class from the body to allow scrolling again
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  // Close modal when clicking outside of it
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      handleCloseModal();
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white pt-32 max-sm:pt-[6.5rem]">
+    <div className="min-h-screen bg-white pt-32 max-[991px]:pt-[6rem] max-sm:pt-[6.5rem]">
       {/* Hero Section */}
       <section className="relative h-[80vh] max-sm:h-[50vh] flex items-center justify-center overflow-hidden mix-blend-multiply">
         <div className="absolute inset-0">
@@ -44,24 +97,8 @@ const Ophthalmology = () => {
         </div>
       </section>
 
-      {/* Purpose Section */}
-      <section className="py-10 w-[80%] div-center">
-        <div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto div-center"
-          >
-            <h2 className="font-display text-4xl text-center mb-6"><span className='spec-heading spec-gradient'>Our Purpose</span></h2>
-            <p className="text-lg text-gray-600 leading-relaxed spec-text">
-              At <b>RTSV - SDA Dimond Hospital</b>, our Ophthalmology Department is dedicated to preserving, restoring, and enhancing your vision through a patient-centered approach that combines advanced technology, clinical expertise, and compassionate care. Our multidisciplinary team of ophthalmologists, surgeons, optometrists, and support staff work collaboratively to deliver personalized eye care for patients of all ages and needs.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Expertise and Advanced Technology */}
+      {/* About Opthalmology */}
       <section className="py-10 w-[80%] div-center">
         <div>
           <motion.div
@@ -70,88 +107,136 @@ const Ophthalmology = () => {
             transition={{ duration: 0.5 }}
             className="mx-auto"
           >
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Expertise and Advanced Technology</span></h2>
-              <p className="text-gray-600 spec-text">Our specialists are highly trained in diagnosing and treating a broad spectrum of eye conditions. We utilize the latest diagnostic tools and surgical techniques to ensure accurate evaluations and effective treatments. Our services include:</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Comprehensive Eye Exams",
-                  description: "Thorough assessments using advanced imaging and diagnostic tools.",
-                },
-                {
-                  title: "Cataract Surgery",
-                  description: "Minimally invasive procedures to restore clear vision.",
-                },
-                {
-                  title: "Glaucoma Management",
-                  description: "Early detection and treatment options to manage pressure and protect vision.",
-                },
-                {
-                  title: "Retinal Care",
-                  description: "State-of-the-art treatments for retinal diseases, including diabetic retinopathy and macular degeneration",
-                },
-                {
-                  title: "Corneal Services",
-                  description: "Treatments ranging from laser vision correction to complex corneal surgeries.",
-                },
-                {
-                  title: "Pediatric Eye Care",
-                  description: "Specialized examinations and treatments tailored to the needs of children.",
-                }
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow border-2 border-red-700"
-                >
-                  <div className="items-start space-x-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                      <p className="text-gray-600 spec-text">{service.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Dedicated Team */}
-      <section className="py-10 w-[80%] div-center">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto"
-          >
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Our Dedicated Team</span></h2>
-              <p className="text-gray-600 spec-text">Our ophthalmologists bring decades of combined experience and a passion for advancing eye care. They collaborate closely with other medical experts to ensure a multidisciplinary approach to each patient's needs. With a focus on continuous education and innovation, our team is committed to providing the highest standard of care.</p>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Patient-Centered Approach</span></h2>
-              <p className="text-gray-600 spec-text">At <b>RTSV - SDA Dimond Hospital</b>, we believe that every patient deserves individualized attention. Our team takes the time to explain each diagnosis and treatment option, empowering you to make informed decisions about your eye health. From the initial consultation through post-operative care, we are with you every step of the way, ensuring a seamless and comfortable experience.</p>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Commitment to Community Health</span></h2>
-              <p className="text-gray-600 spec-text">We are dedicated not only to treating eye conditions but also to educating our community about preventive care and the importance of regular eye exams. Our outreach programs and community events are designed to promote eye health awareness and to provide accessible care to those in need.
+            <div>
+              {/* <h2 className="font-display text-4xl mb-4">Urology</h2> */}
+              <p className="text-gray-600 spec-text">
+                At RTSV - SDA Dimond Hospital, our Ophthalmology Department is dedicated to preserving and enhancing your vision through expert eye care services. With a team of skilled ophthalmologists and the latest diagnostic and surgical technology, we provide comprehensive solutions for a wide range of eye conditions.
+                <br /><br />
+                Our services include routine eye check-ups, cataract surgery, glaucoma management, diabetic retinopathy treatment, and correction of vision problems like myopia and hypermetropia. We also offer advanced procedures such as LASIK and other laser treatments, ensuring precise outcomes with minimal discomfort.
+                <br /><br />
+                Whether you need preventive eye care or treatment for a complex condition, our focus is on personalized care, early diagnosis, and long-term vision health. At RTSV - SDA Dimond Hospital, we are committed to helping you see the world more clearly—safely and comfortably.<b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 
-            <div className="mb-12">
-              <p className="text-gray-600 spec-text">Whether you are seeking routine eye care or require specialized treatment, our Ophthalmology Department at <b>RTSV - SDA Hospital</b> is here to help you achieve optimal vision health. Schedule your appointment today and take the first step towards a clearer, brighter future.</p>
-            </div>
           </motion.div>
         </div>
       </section>
+
+      {/* About Doctors */}
+      <div className='w-[80%] max-sm:w-[80%] div-center'>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          {doctors.map((doctor) => (
+
+            <div key={doctor.id} className="bg-white flex overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
+
+              <div className="p-2 w-[50%] ">
+                <img
+                  src={doctor.imageUrl}
+                  alt={doctor.name}
+                  className="w-full h-full object-cover rounded-2xl"
+                  loading='lazy'
+                />
+              </div>
+
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg font-medium text-gray-900">{doctor.name}</h3>
+                <div className="mt-1 flex items-center">
+                  <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                    {doctor.department}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm text-gray-500">{doctor.experience} years experience</p>
+                <div className="mt-4">
+                  <button
+                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    onClick={() => handleViewProfile(doctor)}
+                  >
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          ))}
+        </div>
+
+        {/* Doctor Profile Modal */}
+        {modalOpen && selectedDoctorData && (
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto modal-overlay bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={handleOutsideClick}
+          >
+            <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto max-sm:pt-[19rem]" onClick={e => e.stopPropagation()}>
+              <div className="flex flex-col md:flex-row">
+                {/* Doctor image - left side */}
+                <div className="md:w-1/3 h-64 md:h-auto">
+                  <img
+                    src={selectedDoctorData.imageUrl.replace('w=300', 'w=600')}
+                    alt={selectedDoctorData.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Doctor details - right side */}
+                <div className="md:w-2/3 p-6">
+                  <div className="border-b pb-4 mb-4">
+                    <h2 className="text-2xl font-bold text-gray-900">{selectedDoctorData.name}</h2>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                        {selectedDoctorData.department}
+                      </span>
+                      {/* <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
+                           {selectedDoctorData.specialty}
+                         </span> */}
+                      <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">
+                        {selectedDoctorData.experience} years experience
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Bio */}
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">About</h3>
+                    <p className="text-gray-600">{selectedDoctorData.bio}</p>
+                  </div>
+
+                  {/* Education */}
+                  <div className="mb-6 flex items-start">
+                    <Award className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Education</h3>
+                      <p className="text-gray-600">{selectedDoctorData.education}</p>
+                    </div>
+                  </div>
+
+                  {/* Availability */}
+                  <div className="mb-6 flex items-start">
+                    <Calendar className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Availability</h3>
+                      <p className="text-gray-600">{selectedDoctorData.availability.morning}</p>
+                      <p className="text-gray-600">{selectedDoctorData.availability.evening}</p>
+                    </div>
+                  </div>
+
+                  {/* Book Appointment Button */}
+                  <div className="mt-6">
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                      Book an Appointment
+                    </button>
+                    {/* Close button */}
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 mt-5" onClick={handleCloseModal}>
+                      Close
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
 
     </div>
   );

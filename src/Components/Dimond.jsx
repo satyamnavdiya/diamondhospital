@@ -40,12 +40,12 @@ const Dimond = () => {
                 </div>
             </section>
 
-            <section className="pt-40 w-[80%] div-center">
+            <section className="pt-40 w-[80%] div-center max-sm:pt-8">
                 <div className="min-h-screen">
                     {/* Mission Section */}
-                    <section className="mx-auto mb-16 w-[80%]">
+                    <section className="mx-auto mb-16 w-[100%]">
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        <div className="grid max-sm:grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}

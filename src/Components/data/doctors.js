@@ -157,7 +157,7 @@ const doctors = [
     {
         id: 13,
         name: "Dr. Gaurav Raiyani",
-        department: "Pediatrics",
+        department: "GENERAL MEDICINE",
         experience: 8,
         imageUrl: "/IMG/doc/6.png",
         bio: "Dr. Gaurav Raiyani is a highly experienced General Medicine specialist with 8 years of expertise in patient care. He has worked at renowned institutions such as New Civil Hospital (4.5 years) and Simmer Hospital (3.5 years), where he provided comprehensive medical care for a wide range of acute and chronic conditions. Dr. Raiyani is known for his thorough approach to diagnosis and treatment, along with his commitment to patient well-being and continuous professional development.",

@@ -102,7 +102,7 @@ const Testimonials = () => {
 
 
     return (
-        <div className="space-y-8 px-4 md:px-0 w-[80%] div-center max-sm:pt-[2rem]">
+        <div className="div-center pt-16 space-y-8 px-4 md:px-0 w-[80%]  max-sm:pt-[2rem]">
             <div>
                 <h2 className="testimonial-heading testi-gradient">Customer Reviews</h2>
             </div>

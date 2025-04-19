@@ -3,7 +3,7 @@ import React from 'react'
 function Certifications() {
     return (
         <>
-            <div className='div-center w-[80%] pt-10 max-[640px]:pt-0'>
+            <div className='div-center w-[80%] pt-10 max-[640px]:pt-0 max-sm:pt-8'>
                 <div className='text-center'>
                     <span className='bg-teal-500 text-white rounded-xl text-center py-1 px-2'>Our Achievement</span>
                     <h1 className='achievement-heading pt-2'><span className="achi-gradient">Cerrtifications</span></h1>

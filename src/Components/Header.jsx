@@ -63,7 +63,7 @@ export default function Header() {
                 { label: 'Physio Therapy', to: '/PhysioTherapy', delay: 500 },
             ]
         },
-        { icon: BriefcaseMedical, label: "Doctor's Profile", to: '/Doctor-Profile', delay: 100 },
+        { icon: BriefcaseMedical, label: "Our Trustee", to: '/Hospital-Team', delay: 100 },
         {
             icon: ClipboardPlus, label: 'Services', to: '/', delay: 150, submenu: [
                 { label: 'Laboratory', to: '/Laboratory' },
@@ -101,7 +101,7 @@ export default function Header() {
             <div className='topbar bg-red-600'>
                 <img src={Tri} alt="" className="inline tri-img" />
                 <div className="inline">
-                    <div className="container mx-auto px-4 flex justify-evenly items-center">
+                    <div className="container mx-auto px-6 flex justify-evenly items-center">
                         <div className="flex items-center space-x-3">
                             <div className="flex items-center">
                                 <Phone size={20} className="mr-2 topbar-icon" />
@@ -292,20 +292,20 @@ ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
                     </nav>
 
                     <div className={`text-center w-1/4 pt-4 max-sm:leading-none pl-2 max-sm:pt-3`}>
-                        <Link to="/Dimond-Hospital" className="max-sm:text-[12px]"><Hospital className="div-center" />About Us</Link>
+                        <Link to="/Dimond-Hospital" className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/31.png" alt="Hospital" /> About Us</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-                        <Link to="/Hospital-Team" className="max-sm:text-[12px]"><BriefcaseMedical className="div-center" />Team</Link>
+                        <Link to="/Doctor-Profile" className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/30.png" alt="Hospital" />Team</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
 
-                        <Link to="/" className="max-sm:text-[12px]"><House className="div-center" />Home</Link>
+                        <Link to="/" className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/29.png" alt="Hospital" />Home</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-                        <Link to='/Gallery' className="max-sm:text-[12px]"><Images className="div-center" />Gallery</Link>
+                        <Link to='/Gallery' className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/32.png" alt="Hospital" />Gallery</Link>
                     </div>
 
                     <div className="text-center w-1/4 pt-4  max-sm:pt-3">
