@@ -1,17 +1,87 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { motion } from 'framer-motion';
+import { Award, Calendar } from 'lucide-react';
 import "../CSS/Specialities.css"
 import orthopedic from '../Images/orthopedic.jpg'
 
+const doctors = [
+  {
+    id: 4,
+    name: "Dr. Riddhi Vaghani",
+    department: "GYNECOLOGY",
+    experience: 13,
+    imageUrl: "/IMG/doc/.png",
+    bio: "Dr. Riddhi Vaghani is an experienced and dedicated Gynecologist with a rich clinical background spanning over 13 years. She has served in several reputed institutions, including 5 years at Simmer Hospital, 3 years at Gujarat Adani Institute of Medical Sciences, 1 year at Balaji Hospital, and 4 years at Dimond Hospital. Known for her compassionate care and clinical expertise, Dr. Vaghani has consistently provided high-quality healthcare services to women across all stages of life.",
+    education: "MBBS, MS, OBS & GYN",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    }
+  },
+  {
+    id: 3,
+    name: "Dr. Kalpana Patel",
+    department: "GYNECOLOGY",
+    experience: 7,
+    imageUrl: "/IMG/doc/.png",
+    bio: "Dr. Kalpana Patel is a skilled and compassionate Gynecologist with 7 years of experience in women's healthcare. Throughout her career, she has been dedicated to providing comprehensive gynecological services, focusing on patient comfort, education, and evidence-based care. Dr. Patel is committed to empowering women through all stages of reproductive health with professionalism and empathy.",
+    education: "MBBS, DGO",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    }
+  },
+  {
+    id: 1,
+    name: "Dr. Bhavesh Parmar",
+    department: "GYNECOLOGY",
+    experience: 9,
+    imageUrl: "/IMG/doc/.png",
+    bio: "Dr. Bhavesh Parmar has been serving in the field of Gynecology since 2015, bringing nearly a decade of dedicated experience in women’s healthcare. With a strong commitment to patient well-being and clinical excellence, Dr. Parmar has continually contributed to advancements in gynecological care through both practice and ongoing medical engagement.",
+    education: "MBBS, DNB",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    }
+  },
+]
+
+
 const Orthopedics = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedDoctorData, setSelectedDoctorData] = useState(null);
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 }
   };
 
+  // Handle opening the modal with doctor data
+  const handleViewProfile = (doctor) => {
+    setSelectedDoctorData(doctor);
+    setModalOpen(true);
+    // Add a class to the body to prevent scrolling when modal is open
+    document.body.classList.add('overflow-hidden');
+  };
+
+  // Handle closing the modal
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedDoctorData(null);
+    // Remove the class from the body to allow scrolling again
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  // Close modal when clicking outside of it
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      handleCloseModal();
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white pt-32 max-sm:pt-[6.5rem]" >
+    <div className="min-h-screen bg-white pt-32 max-[991px]:pt-[6rem] max-sm:pt-[6.5rem]" >
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden mix-blend-multiply max-sm:h-[50vh]">
         <div className="absolute inset-0">
@@ -35,107 +105,13 @@ const Orthopedics = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className='spec-hero-heading'>Advanced Care for Bones, Joints & Mobility</span>
+            <span className='spec-sub-heading'>Advanced Care for Bones, Joints & Mobility</span>
           </motion.p>
         </div>
       </section>
 
-      {/* Purpose Section */}
-      <section className="py-10 div-center w-[80%]">
-        <div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto div-center"
-          >
-            <h2 className="font-display text-4xl mb-6 text-center"><span className='spec-heading spec-gradient'>Our Purpose</span></h2>
-            <p className="text-lg text-gray-600 leading-relaxed spec-text">
-              <b>RTSV - SDA Diamond Hospital</b> provides exceptional and comprehensive orthopedic care, helping patients improve their mobility and quality of life. Our specialized team treats a wide range of orthopedic conditions, including fractures, sprains, arthritis, sports injuries, spine disorders, bone and joint issues, and advanced orthopedic surgeries.
-              <br /><br />
-              We offer expert care for both <b>adult and pediatric orthopedic conditions</b>, delivering personalized treatment plans tailored to each patient’s needs. From diagnosis and non-surgical treatments to advanced orthopedic surgery and rehabilitation, we ensure a seamless recovery journey. Whether managing chronic joint pain or addressing sports-related trauma, <b>RTSV - SDA Diamond Hospital</b> is dedicated to keeping patients active and pain-free across <b>South Gujarat</b>.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Common Orthopedic Surgeries and Procedures We Offer */}
-      <section className="py-10 div-center w-[80%]">
-        <div className="w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto"
-          >
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Common Orthopedic Surgeries <br /> and Procedures We Offer</span></h2>
-              <p className="text-gray-600 spec-text">
-                At <b>RTSV - SDA Diamond Hospital</b>, we specialize in a wide range of <b>advanced orthopedic surgeries and procedures </b> to restore mobility, relieve pain, and improve quality of life. Our expert orthopedic surgeons use the latest techniques, including <b>minimally invasive and robotic-assisted surgeries</b>, for faster recovery and better outcomes.
-
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Joint Replacement Surgery",
-                  description: "Total and partial knee, hip, and shoulder replacements.",
-                },
-                {
-                  title: "Arthroscopy (Minimally Invasive Surgery)",
-                  description: "Diagnosis and treatment of joint conditions in the knee, shoulder, hip, and ankle.",
-                },
-                {
-                  title: "Spinal Surgeries",
-                  description: "Treatment for herniated discs, spinal stenosis, scoliosis, and other spine disorders.",
-                },
-                {
-                  title: "Fracture & Trauma Surgery",
-                  description: "Surgical repair of complex fractures and bone injuries.",
-                },
-                {
-                  title: "Ligament Reconstruction (ACL/PCL Repair)",
-                  description: "Restoring stability and function after ligament tears.",
-                },
-                {
-                  title: "Rotator Cuff & Shoulder Surgery",
-                  description: "Treatment for shoulder impingement, dislocation, and tendon tears.",
-                },
-                {
-                  title: "Carpal Tunnel & Hand Surgery",
-                  description: "Relief from nerve compression and hand deformities.",
-                },
-                {
-                  title: "Pediatric Orthopedic Surgery",
-                  description: "Correction of congenital and developmental bone disorders in children.",
-                },
-                {
-                  title: "Sports Injury Surgery",
-                  description: "Surgical treatment for sports-related injuries, including meniscus repair and tendon reconstruction.",
-                },
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow border-red-700 border-2"
-                >
-                  <div className="items-start space-x-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2 text-center">{service.title}</h3>
-                      <p className="text-gray-600 spec-text">{service.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/*Joint Replacement*/}
-      <section className="py-10 div-center w-[80%]">
+      {/* About Obstetric */}
+      <section className="py-10 w-[80%] div-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -143,135 +119,136 @@ const Orthopedics = () => {
             transition={{ duration: 0.5 }}
             className="mx-auto"
           >
-            <div className="mb-5">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Joint Replacement</span></h2>
+            <div>
+              {/* <h2 className="font-display text-4xl mb-4">Urology</h2> */}
               <p className="text-gray-600 spec-text">
-                <b>RTSV - SDA Diamond Hospital</b> specializes in <b>advanced knee replacement surgeries</b>, offering both <b>conventional</b> and <b>computer-assisted techniques</b> to ensure precision, faster recovery, and long-term joint function.
+                At RTSV - SDA Dimond Hospital, our Orthopedic Specialty Center is committed to delivering expert care for bone, joint, and muscle conditions. Our team of highly skilled orthopedic surgeons and specialists provides advanced diagnosis, treatment, and rehabilitation for patients of all ages—helping them regain mobility and live pain-free lives.
+                <br /><br />
+                We offer a wide range of orthopedic services including fracture management, joint replacement (knee, hip, shoulder), arthroscopy, sports injury treatment, spine care, and physiotherapy support. Using the latest technology and minimally invasive surgical techniques, we ensure faster recovery, less discomfort, and better outcomes for our patients.
+                <br /><br />
+                With a patient-focused approach and state-of-the-art facilities, our Orthopedic Center ensures that every patient receives personalized care tailored to their needs. Whether it's a minor injury or a complex orthopedic issue, RTSV - SDA Dimond Hospital is here to help you move better, feel stronger, and get back to the life you love.<b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 
-            <div className='mb-5'>
-              <h1 className='text-3xl spec-sub-heading'>Conventional Method of Knee Replacement</h1>
-              <p className='mt-3 text-gray-600 spec-text'>
-                The <b>traditional knee replacement</b> involves removing the damaged portion of the knee joint and replacing it with an artificial implant. Surgeons use manual instruments to align the prosthetic components based on preoperative planning and intraoperative assessment. While this method has been successful for decades, its accuracy depends on the surgeon’s skill and experience.
-              </p>
-            </div>
-
-            <div className="mb-5">
-              <h1 className='text-3xl spec-sub-heading'>What is Computer-Assisted Knee Replacement?</h1>
-              <p className='mt-1 text-gray-600 sepc-text'>
-                <b>Computer-assisted knee replacement (CAS)</b> is an advanced technique that enhances surgical precision using real-time imaging and navigation technology. The system provides <b>3D visualization</b> of the knee joint, helping surgeons <b>align the implant with greater accuracy, ensuring optimal fit, stability, and longevity</b>. This method reduces human error and improves surgical outcomes.
-              </p>
-            </div>
-
-            {/* Technical Parameters */}
-            <h1 className='text-3xl mb-5 spec-sub-heading'>Technical Parameters</h1>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Preoperative Planning",
-                  description: "Digital imaging and computer modeling to determine the best surgical approach.",
-                },
-                {
-                  title: "Precise Alignment",
-                  description: "Ensures the implant is placed at the correct angle, reducing post-surgery complications.",
-                },
-                {
-                  title: "Soft Tissue Balance",
-                  description: "Assesses ligament tension for better joint stability",
-                },
-                {
-                  title: "Minimal Bone Cutting",
-                  description: "Preserves healthy bone, reducing the risk of complications.",
-                },
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow border-2 border-red-700"
-                >
-                  <div className="items-start space-x-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                      <p className="text-gray-600 spec-text">{service.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Navigation During the Surgery and Verification */}
-            <h1 className='text-3xl mb-5 mt-20 spec-sub-heading'>Navigation During the Surgery and Verification</h1>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Real-Time Guidance",
-                  description: "The computer navigation system continuously tracks the position of surgical instruments.",
-                },
-                {
-                  title: "Dynamic Adjustments",
-                  description: "Surgeons can make adjustments based on live feedback for optimal implant positioning.",
-                },
-                {
-                  title: "Verification",
-                  description: "After placing the implant, the system verifies alignment and stability, ensuring perfect joint function before closing the incision.",
-                }
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow border-2 border-red-700"
-                >
-                  <div className="items-start space-x-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                      <p className="text-gray-600 spec-text">{service.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Advantages of Computer-Assisted Knee Replacement */}
-            <h1 className='text-3xl mb-5 mt-20 spec-sub-heading'>Advantages of Computer-Assisted Knee Replacement</h1>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Real-Time Guidance",
-                  description: "The computer navigation system continuously tracks the position of surgical instruments.",
-                },
-                {
-                  title: "Dynamic Adjustments",
-                  description: "Surgeons can make adjustments based on live feedback for optimal implant positioning.",
-                },
-                {
-                  title: "Verification",
-                  description: "After placing the implant, the system verifies alignment and stability, ensuring perfect joint function before closing the incision.",
-                }
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow border-2 border-red-700"
-                >
-                  <div className="items-start space-x-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                      <p className="text-gray-600 spec-text">{service.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
+
+      {/* About Doctors */}
+      <div className='w-[80%] max-sm:w-[80%] div-center'>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          {doctors.map((doctor) => (
+
+            <div key={doctor.id} className="bg-white flex overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
+
+              <div className="p-2 w-[50%] ">
+                <img
+                  src={doctor.imageUrl}
+                  alt={doctor.name}
+                  className="w-full h-full object-cover rounded-2xl"
+                  loading='lazy'
+                />
+              </div>
+
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg font-medium text-gray-900">{doctor.name}</h3>
+                <div className="mt-1 flex items-center">
+                  <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                    {doctor.department}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm text-gray-500">{doctor.experience} years experience</p>
+                <div className="mt-4">
+                  <button
+                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    onClick={() => handleViewProfile(doctor)}
+                  >
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          ))}
+        </div>
+
+        {/* Doctor Profile Modal */}
+        {modalOpen && selectedDoctorData && (
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto modal-overlay bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={handleOutsideClick}
+          >
+            <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto max-sm:pt-[19rem]" onClick={e => e.stopPropagation()}>
+              <div className="flex flex-col md:flex-row">
+                {/* Doctor image - left side */}
+                <div className="md:w-1/3 h-64 md:h-auto">
+                  <img
+                    src={selectedDoctorData.imageUrl.replace('w=300', 'w=600')}
+                    alt={selectedDoctorData.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Doctor details - right side */}
+                <div className="md:w-2/3 p-6">
+                  <div className="border-b pb-4 mb-4">
+                    <h2 className="text-2xl font-bold text-gray-900">{selectedDoctorData.name}</h2>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                        {selectedDoctorData.department}
+                      </span>
+                      {/* <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
+                      {selectedDoctorData.specialty}
+                    </span> */}
+                      <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">
+                        {selectedDoctorData.experience} years experience
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Bio */}
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">About</h3>
+                    <p className="text-gray-600">{selectedDoctorData.bio}</p>
+                  </div>
+
+                  {/* Education */}
+                  <div className="mb-6 flex items-start">
+                    <Award className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Education</h3>
+                      <p className="text-gray-600">{selectedDoctorData.education}</p>
+                    </div>
+                  </div>
+
+                  {/* Availability */}
+                  <div className="mb-6 flex items-start">
+                    <Calendar className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Availability</h3>
+                      <p className="text-gray-600">{selectedDoctorData.availability.morning}</p>
+                      <p className="text-gray-600">{selectedDoctorData.availability.evening}</p>
+                    </div>
+                  </div>
+
+                  {/* Book Appointment Button */}
+                  <div className="mt-6">
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                      Book an Appointment
+                    </button>
+                    {/* Close button */}
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 mt-5" onClick={handleCloseModal}>
+                      Close
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
     </div>
   );
 };

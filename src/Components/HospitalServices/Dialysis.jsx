@@ -40,7 +40,7 @@ const Dialysis = () => {
         </div>
       </section>
 
-      {/* About Urology */}
+      {/* About Privacy Policy */}
       <section className="py-10 div-center w-[80%]">
         <div className="w-full">
           <motion.div

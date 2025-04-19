@@ -2,132 +2,185 @@
 const doctors = [
     {
         id: 1,
-        name: "Dr. Chirag Parmar",
-        department: "Physiotherapy",
-        specialty: "Interventional Cardiology",
-        experience: 12,
-        imageUrl: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. Sarah Johnson is a board-certified cardiologist specializing in interventional procedures. With over 12 years of experience, she has performed more than 1,000 cardiac catheterizations and stent placements.",
-        education: "MD from Johns Hopkins University",
-        contact: {
-            email: "sarah.johnson@medcenter.com",
-            phone: "(555) 123-4567",
-            office: "Medical Center, Building A, Room 305"
-        },
-        availability: "Mon, Wed, Fri: 9AM-5PM"
+        name: "Dr. Bhavesh Parmar",
+        department: "GYNECOLOGY",
+        experience: 9,
+        imageUrl: "/IMG/doc/.png",
+        bio: "Dr. Bhavesh Parmar has been serving in the field of Gynecology since 2015, bringing nearly a decade of dedicated experience in women’s healthcare. With a strong commitment to patient well-being and clinical excellence, Dr. Parmar has continually contributed to advancements in gynecological care through both practice and ongoing medical engagement.",
+        education: "MBBS, DNB",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
     },
     {
         id: 2,
-        name: "Dr. Michael Chen",
-        department: "Neurology",
-        specialty: "Neurological Surgery",
-        experience: 15,
-        imageUrl: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. Michael Chen is a renowned neurosurgeon with expertise in complex brain and spine surgeries. He has pioneered several minimally invasive techniques that have improved patient outcomes.",
-        education: "MD from Stanford University, Neurosurgery Residency at Mayo Clinic",
-        contact: {
-            email: "michael.chen@medcenter.com",
-            phone: "(555) 234-5678",
-            office: "Neuroscience Center, Floor 4, Suite 412"
-        },
-        availability: "Tue, Thu: 8AM-4PM"
+        name: "Dr. Pratik R. Tailor",
+        department: "RADIOLOGY",
+        experience: 4,
+        imageUrl: "/IMG/doc/2.png",
+        bio: "Dr. Pratik Tailor is a dedicated medical professional specializing in Radiology, with a total of 4 years of clinical experience. He has served 3 years at Simmer Hospital and 1 year at Kiran Hospital, where he honed his diagnostic skills and contributed to accurate and timely patient care through advanced imaging techniques. Dr. Tailor is known for his precision, commitment, and patient-centric approach in the field of radiology.",
+        education: "MBBS, MO(RADIOLOGY)",
+        availability: {
+            morning: "Morning - Mon to Sun: 9 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 4 PM - 8 PM"
+        }
     },
     {
         id: 3,
-        name: "Dr. Emily Rodriguez",
-        department: "Pediatrics",
-        specialty: "Pediatric Oncology",
-        experience: 8,
-        imageUrl: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. Emily Rodriguez specializes in pediatric cancer treatment with a compassionate approach to care. She is actively involved in clinical research to develop new therapies for childhood cancers.",
-        education: "MD from University of California, San Francisco",
-        contact: {
-            email: "emily.rodriguez@medcenter.com",
-            phone: "(555) 345-6789",
-            office: "Children's Hospital, Wing B, Room 210"
-        },
-        availability: "Mon-Fri: 10AM-3PM"
+        name: "Dr. Kalpana Patel",
+        department: "GYNECOLOGY",
+        experience: 7,
+        imageUrl: "/IMG/doc/.png",
+        bio: "Dr. Kalpana Patel is a skilled and compassionate Gynecologist with 7 years of experience in women's healthcare. Throughout her career, she has been dedicated to providing comprehensive gynecological services, focusing on patient comfort, education, and evidence-based care. Dr. Patel is committed to empowering women through all stages of reproductive health with professionalism and empathy.",
+        education: "MBBS, DGO",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
     },
     {
         id: 4,
-        name: "Dr. James Wilson",
-        department: "Orthopedics",
-        specialty: "Sports Medicine",
-        experience: 10,
-        imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. James Wilson is an orthopedic surgeon specializing in sports-related injuries. He has served as a team physician for several professional sports teams and has treated many elite athletes.",
-        education: "MD from Duke University, Fellowship in Sports Medicine",
-        contact: {
-            email: "james.wilson@medcenter.com",
-            phone: "(555) 456-7890",
-            office: "Sports Medicine Center, Suite 150"
-        },
-        availability: "Mon, Wed, Fri: 7AM-3PM"
+        name: "Dr. Riddhi Vaghani",
+        department: "GYNECOLOGY",
+        experience: 13,
+        imageUrl: "/IMG/doc/.png",
+        bio: "Dr. Riddhi Vaghani is an experienced and dedicated Gynecologist with a rich clinical background spanning over 13 years. She has served in several reputed institutions, including 5 years at Simmer Hospital, 3 years at Gujarat Adani Institute of Medical Sciences, 1 year at Balaji Hospital, and 4 years at Dimond Hospital. Known for her compassionate care and clinical expertise, Dr. Vaghani has consistently provided high-quality healthcare services to women across all stages of life.",
+        education: "MBBS, MS, OBS & GYN",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
     },
     {
         id: 5,
-        name: "Dr. Lisa Patel",
-        department: "Dermatology",
-        specialty: "Cosmetic Dermatology",
-        experience: 7,
-        imageUrl: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. Lisa Patel is a dermatologist with expertise in both medical and cosmetic procedures. She is known for her artistic approach to facial rejuvenation and skin care treatments.",
-        education: "MD from University of Pennsylvania, Dermatology Residency at NYU",
-        contact: {
-            email: "lisa.patel@medcenter.com",
-            phone: "(555) 567-8901",
-            office: "Dermatology Clinic, Floor 2, Room 215"
-        },
-        availability: "Tue, Thu: 9AM-6PM, Sat: 9AM-12PM"
+        name: "Dr. Akash G. Sanghani",
+        department: "OPHTHALOMOLOGY",
+        experience: 2,
+        imageUrl: "/IMG/doc/5.png",
+        bio: "Dr. Akash Sanghani is a dedicated Ophthalmologist with 2 years of experience in private practice. He specializes in diagnosing and treating a wide range of eye conditions, with a focus on personalized patient care and the latest advancements in eye health. Dr. Sanghani is committed to preserving and enhancing vision through expert clinical services and a patient-first approach.",
+        education: "MBBS, MS",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
     },
     {
         id: 6,
-        name: "Dr. Robert Kim",
+        name: "Dr. Amisha Jain Gupta",
         department: "Cardiology",
-        specialty: "Electrophysiology",
-        experience: 14,
-        imageUrl: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. Robert Kim is a cardiac electrophysiologist who specializes in heart rhythm disorders. He has performed over 2,000 ablation procedures and pacemaker implantations.",
-        education: "MD from Columbia University, Cardiology Fellowship at Cleveland Clinic",
-        contact: {
-            email: "robert.kim@medcenter.com",
-            phone: "(555) 678-9012",
-            office: "Heart Center, Floor 3, Suite 320"
-        },
-        availability: "Mon, Tue, Thu: 8AM-5PM"
+        experience: 17,
+        imageUrl: "/IMG/doc/Dr. Amisha Jain.png",
+        bio: "Dr. Amisha Jain Gupta is a highly experienced Ophthalmologist with 17 years of expertise in the field of eye care. Throughout her extensive career, she has been committed to delivering exceptional ophthalmic services, ranging from routine eye exams to advanced surgical procedures. Known for her precision, compassionate care, and deep knowledge of ocular health, Dr. Gupta has earned the trust of countless patients and continues to contribute significantly to the field of ophthalmology.",
+        education: "MBBS, DNB",
+        availability:{
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
     },
     {
         id: 7,
-        name: "Dr. Amanda Taylor",
-        department: "Neurology",
-        specialty: "Stroke Medicine",
-        experience: 9,
-        imageUrl: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. Amanda Taylor is a neurologist specializing in stroke prevention and treatment. She leads the hospital's stroke response team and has implemented protocols that have significantly improved patient outcomes.",
-        education: "MD from Yale University, Neurology Residency at Massachusetts General Hospital",
-        contact: {
-            email: "amanda.taylor@medcenter.com",
-            phone: "(555) 789-0123",
-            office: "Neuroscience Center, Floor 3, Suite 310"
-        },
-        availability: "Wed, Thu, Fri: 9AM-5PM"
+        name: "Dr.Dhara Ranpariya",
+        department: "DENTAL",
+        experience: 5,
+        imageUrl: "/IMG/doc/Dr. Dental.png",
+        bio: "Dr. Dhara Ranpariya is a committed and skilled Dental Surgeon with over 5 years of clinical experience in the field of dentistry. She has worked at several reputable healthcare centers, including Puna Shaurashtra Dental Clinic (1 year), Dwarkesh Surgery and Trauma Center (1 year), Prayosa Dental Clinic (2 years), and has recently completed 1 year at Recent Hospital. Known for her gentle approach and attention to detail, Dr. Ranpariya provides quality dental care with a strong focus on patient comfort and long-term oral health.",
+        education: "BDS",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
     },
     {
         id: 8,
-        name: "Dr. David Martinez",
-        department: "Pediatrics",
-        specialty: "Neonatology",
-        experience: 11,
-        imageUrl: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-        bio: "Dr. David Martinez is a neonatologist who specializes in the care of premature and critically ill newborns. He has developed innovative care protocols that have reduced complications in high-risk infants.",
-        education: "MD from University of Chicago, Fellowship in Neonatology at Boston Children's Hospital",
-        contact: {
-            email: "david.martinez@medcenter.com",
-            phone: "(555) 890-1234",
-            office: "Children's Hospital, NICU, Floor 2"
-        },
-        availability: "Mon-Fri: 7AM-7PM (On-call rotations)"
+        name: "Dr. Nirali Panseriya",
+        department: "DENTAL",
+        experience: 9,
+        imageUrl: "/IMG/doc/Dr. Dental 2.png",
+        bio: "Dr. Nirali Panseriya is an accomplished Dental Surgeon with over 9 years of experience in the field of dentistry. Her professional journey includes 1 year at Pradhyuman Dental Clinic, 3 years of running her own clinic, 2 years at Goti Dental Hospital, and 3 years at Diamond Hospital. With a deep commitment to patient care and clinical excellence, Dr. Panseriya is known for her expertise in a wide range of dental procedures, along with her patient-friendly approach and focus on long-term oral health.",
+        education: "BDS",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
+    },
+    {
+        id: 9,
+        name: "Dr. Khushi Mavani",
+        department: "PHYSIOTHERAPY",
+        experience: 2,
+        imageUrl: "/IMG/doc/.png",
+        bio: "Dr. Khushi Mavani is a passionate and dedicated Physiotherapist who has recently started her professional journey in the field of physical therapy. As a fresher, she is committed to helping patients improve their mobility, reduce pain, and regain strength through tailored therapeutic treatments. Dr. Mavani brings a fresh perspective to physiotherapy with a focus on holistic care and patient well-being.",
+        education: "Bachelor of Physiotherapy",
+        availability: {
+            evening: "Evening - Mon to Sun: 1 PM - 7 PM"
+        }
+    }, 
+    {
+        id: 10,
+        name: "Dr. Mittal Vaddoriya",
+        department: "PHYSIOTHERAPY",
+        experience: 2,
+        imageUrl: "/IMG/doc/.png",
+        bio: "Dr. Mittal Vaddoriya is a skilled Physiotherapist with extensive experience working at Metas Adventist Hospital. With a strong commitment to improving patient mobility and quality of life, Dr. Vaddoriya utilizes a combination of evidence-based therapeutic techniques to treat various musculoskeletal and neurological conditions. Her patient-centered approach ensures that each individual receives personalized care tailored to their specific needs.",
+        education: "Bachelor of Physiotherapy",
+        availability: {
+            evening: "Evening - Mon to Sun: 1 PM - 7 PM"
+        }
+    }, 
+    {
+        id: 11,
+        name: "Dr. Karina Ribadiya",
+        department: "PHYSIOTHERAPY",
+        experience: 3,
+        imageUrl: "/IMG/doc/.png",
+        bio: "Dr. Karina Ribadiya is a dedicated Physiotherapist with 2 years of experience at P P Savani Hospital. She specializes in helping patients recover from injuries, manage chronic pain, and improve mobility through personalized physiotherapy treatments. Dr. Ribadiya is committed to providing compassionate care and evidence-based interventions to support patients on their journey to better physical health.",
+        education: "Bachelor of Physiotherapy",
+        availability: {
+            morning: "Morning - Mon to Sun: 9 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 4 PM - 8 PM"
+        }
+    }, 
+    {
+        id: 12,
+        name: "Dr. Chirag Parmar",
+        department: "PHYSIOTHERAPY",
+        experience: 2,
+        imageUrl: "/IMG/doc/7.png",
+        bio: "Dr. Chirag Parmar is an enthusiastic and dedicated Physiotherapist who has recently embarked on his professional career in the field of physiotherapy. As a fresher, he is passionate about helping patients recover from injuries, alleviate pain, and improve their overall mobility through personalized treatment plans. Dr. Parmar is committed to providing high-quality care with a focus on patient well-being and rehabilitation.",
+        education: "Bachelor of Physiotherapy",
+        availability: {
+            morning: "Morning - Mon to Sun: 9 AM - 12 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
+    }, 
+    {
+        id: 13,
+        name: "Dr. Gaurav Raiyani",
+        department: "GENERAL MEDICINE",
+        experience: 8,
+        imageUrl: "/IMG/doc/6.png",
+        bio: "Dr. Gaurav Raiyani is a highly experienced General Medicine specialist with 8 years of expertise in patient care. He has worked at renowned institutions such as New Civil Hospital (4.5 years) and Simmer Hospital (3.5 years), where he provided comprehensive medical care for a wide range of acute and chronic conditions. Dr. Raiyani is known for his thorough approach to diagnosis and treatment, along with his commitment to patient well-being and continuous professional development.",
+        education: "MBBS, MD(GENRAL MEDICINE), FELLOWSHIP IN 2D ECHO, FELLOWSHIP IN DIABETES MANAGEMENT, FELLOWSHIP THYROID DESEASE MANAGEMENT",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }, 
+    },
+    {
+        id: 14,
+        name: "Dr. Kamlesh Patel",
+        department: "OPHTHALOMOLOGY",
+        experience: 2,
+        imageUrl: "/IMG/doc/1.png",
+        bio: "Dr. Kamlesh Patel is a passionate and dedicated Ophthalmologist who has recently begun his professional career in the field of eye care. As a fresher, he is eager to provide high-quality ophthalmic services, focusing on diagnosing and treating a variety of eye conditions. Dr. Patel is committed to offering compassionate care and staying updated with the latest advancements in ophthalmology to ensure the best possible outcomes for his patients.",
+        education: "MBBS, MS",
+        availability: {
+            morning: "Morning - Mon to Sun: 10 AM - 1 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }, 
     }
+
 ];
 
 export default doctors;

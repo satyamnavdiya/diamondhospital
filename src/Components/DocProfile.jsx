@@ -76,7 +76,7 @@ function DocProfile() {
         </div>
 
         {/* Filters */}
-        <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <div className="relative flex-1 max-w-md">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Search className="h-5 w-5 text-gray-400" />
@@ -107,24 +107,6 @@ function DocProfile() {
               ))}
             </select>
           </div>
-
-          <div className="relative flex-1 max-w-xs">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Filter className="h-5 w-5 text-gray-400" />
-            </div>
-            <select
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              value={selectedDoctor}
-              onChange={(e) => setSelectedDoctor(e.target.value)}
-            >
-              <option value="">All Doctors</option>
-              {doctorNames.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
 
         {/* Results count */}
@@ -133,16 +115,20 @@ function DocProfile() {
         </div>
 
         {/* Doctors grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {filteredDoctors.map((doctor) => (
-            <div key={doctor.id} className="bg-white overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
-              <div className="h-48 w-full overflow-hidden">
+
+            <div key={doctor.id} className="bg-white flex overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
+
+              <div className="p-2 w-[50%] ">
                 <img
                   src={doctor.imageUrl}
                   alt={doctor.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
+                  loading='lazy'
                 />
               </div>
+
               <div className="px-4 py-5 sm:p-6">
                 <h3 className="text-lg font-medium text-gray-900">{doctor.name}</h3>
                 <div className="mt-1 flex items-center">
@@ -150,7 +136,7 @@ function DocProfile() {
                     {doctor.department}
                   </span>
                 </div>
-                <p className="mt-3 text-sm text-gray-500">{doctor.specialty}</p>
+                {/* <p className="mt-3 text-sm text-gray-500">{doctor.specialty}</p> */}
                 <p className="mt-1 text-sm text-gray-500">{doctor.experience} years experience</p>
                 <div className="mt-4">
                   <button
@@ -162,6 +148,7 @@ function DocProfile() {
                 </div>
               </div>
             </div>
+
           ))}
         </div>
 
@@ -208,9 +195,9 @@ function DocProfile() {
                     <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
                       {selectedDoctorData.department}
                     </span>
-                    <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
+                    {/* <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
                       {selectedDoctorData.specialty}
-                    </span>
+                    </span> */}
                     <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">
                       {selectedDoctorData.experience} years experience
                     </span>
@@ -237,7 +224,8 @@ function DocProfile() {
                   <Calendar className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Availability</h3>
-                    <p className="text-gray-600">{selectedDoctorData.availability}</p>
+                    <p className="text-gray-600">{selectedDoctorData.availability.morning}</p>
+                    <p className="text-gray-600">{selectedDoctorData.availability.evening}</p>
                   </div>
                 </div>
 

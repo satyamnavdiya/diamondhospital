@@ -1,12 +1,12 @@
 footer {
     width: 90%;
     margin: 0 auto;
-    margin-top: 5rem;
     padding: 1rem;
     border-radius: 24px;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     padding-bottom: 0px;
+    margin-top: 3rem;
 }
 
 .footer-logo {
@@ -32,10 +32,12 @@ footer {
 }
 
 @keyframes heartbeat {
+
     0%,
     100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.01);
     }
@@ -129,6 +131,45 @@ footer {
     /* animation: heartbeat 1.5s infinite ease-in-out; */
 }
 
+.footer-div {
+    margin-top: 2rem;
+}
+
+.footer-div-heading {
+    color: rgb(158, 1, 1);
+}
+
+@media screen and (max-width: 1450px) {
+    .footer-div {
+        margin-top: 0rem;
+    }
+
+    .hospital-name-footer {
+        font-size: 1.5rem;
+    }
+
+    .footer-div-heading {
+        font-size: 1.5rem;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hospital-name-footer{
+        font-size: 1rem;
+    }
+    .footer-div-heading {
+        font-size: 1rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
+
 @media screen and (max-width: 991px) {
     .main-map {
         width: 100%;
@@ -143,11 +184,13 @@ footer {
 
     .footer-logo {
         width: 10rem;
+        margin-top: -2.5rem;
     }
 
     .hospital-name-footer {
         font-size: 1.2rem;
         text-align: left;
+        text-align: center;
     }
 
     .div2-footer>h1,
@@ -165,14 +208,21 @@ footer {
     }
 
     .div3-footer,
-    .div4-footer {
+    .div4-footer,
+    .div2-footer {
         margin-top: 2.5rem;
     }
 
     .div6-footer {
         padding-bottom: 7rem;
     }
+    .footer-text{
+        font-size: 12px;
+    }
 
+    .div1-footer{
+        margin-top: 3.5rem;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -187,6 +237,7 @@ footer {
     footer {
         display: block;
         margin-top: 2rem;
+        padding-top: 2rem;
     }
 
     .div4-footer {
@@ -199,6 +250,17 @@ footer {
 
     .div6-footer {
         padding-bottom: 4rem;
+        font-size: 12px;
+    }
+
+    .hospital-name-footer {
+        text-align: center;
+        font-size: 1rem;
+    }
+    .footer-div {
+        margin-top: 1.5rem;
+    }
+    .footer-text{
         font-size: 12px;
     }
 }
