@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
-import {BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 // Homepage
 import HomePage from './Components/HomePage'
 // About Us
@@ -14,11 +14,11 @@ import Orthopedics from './Components/Specialties/Orthopedics';
 import GeneralSurgery from './Components/Specialties/GeneralSurgery';
 import Ophthalmology from './Components/Specialties/Ophthalmology';
 import Pulmonology from './Components/Specialties/Pulmonology';
-import Urology  from './Components/Specialties/Urology';
-import Neurology  from './Components/Specialties/Neurology';
-import ENT  from './Components/Specialties/ENT';
-import DentalSurgery  from './Components/Specialties/DentalSurgery';
-import PhysioTherapy  from './Components/Specialties/PhysioTherapy';
+import Urology from './Components/Specialties/Urology';
+import Neurology from './Components/Specialties/Neurology';
+import ENT from './Components/Specialties/ENT';
+import DentalSurgery from './Components/Specialties/DentalSurgery';
+import PhysioTherapy from './Components/Specialties/PhysioTherapy';
 
 // Doc Profile
 import DocProfile from './Components/DocProfile'
@@ -39,63 +39,79 @@ import FloorPlan from './Components/PatientGuide/FloorPlan';
 import DoAndDonts from './Components/PatientGuide/DoAndDonts';
 import GeneralGuide from './Components/PatientGuide/GeneralGuide';
 
+//News And Media
+import Video from './Components/Video';
+
 //Gallery
 import Gallery from './Components/Gallery';
 import ScrollToTop from './Components/ScrollToTop';
+
+//Career
+import Career from './Components/Career';
+
+// Privacy Policy
+import PrivacyPolicy from './Components/PrivacyPolicy ';
+
 
 function App() {
 
   return (
 
-
     <div>
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Header />
         <Routes>
-          <Route path="/diamondhospital/" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           {/* About Us */}
-          <Route path="/diamondhospital/Dimond-Hospital" element={<Dimond />} />
-          <Route path="/diamondhospital/Hospital-Team" element={<AboutTeam />} />
+          <Route path="/Dimond-Hospital" element={<Dimond />} />
+          <Route path="/Hospital-Team" element={<AboutTeam />} />
 
           {/* Specialties */}
-          <Route path="/diamondhospital/ObsGyne" element={<ObsGyne />} />
-          <Route path="/diamondhospital/Pediatrics" element={<Pediatrics />} />
-          <Route path="/diamondhospital/Orthopedics" element={<Orthopedics />} />
-          <Route path="/diamondhospital/GeneralSurgery" element={<GeneralSurgery />} />
-          <Route path="/diamondhospital/Ophthalmology" element={<Ophthalmology />} />
-          <Route path="/diamondhospital/Pulmonology" element={<Pulmonology />} />
-          <Route path="/diamondhospital/Urology" element={<Urology />} />
-          <Route path="/diamondhospital/Neurology" element={<Neurology />} />
-          <Route path="/diamondhospital/ENT" element={<ENT />} />
-          <Route path="/diamondhospital/DentalSurgery" element={<DentalSurgery />} />
-          <Route path="/diamondhospital/PhysioTherapy" element={<PhysioTherapy />} />
+          <Route path="/ObsGyne" element={<ObsGyne />} />
+          <Route path="/Pediatrics" element={<Pediatrics />} />
+          <Route path="/Orthopedics" element={<Orthopedics />} />
+          <Route path="/GeneralSurgery" element={<GeneralSurgery />} />
+          <Route path="/Ophthalmology" element={<Ophthalmology />} />
+          <Route path="/Pulmonology" element={<Pulmonology />} />
+          <Route path="/Urology" element={<Urology />} />
+          <Route path="/Neurology" element={<Neurology />} />
+          <Route path="/ENT" element={<ENT />} />
+          <Route path="/DentalSurgery" element={<DentalSurgery />} />
+          <Route path="/PhysioTherapy" element={<PhysioTherapy />} />
 
           {/* Doctotr Profile */}
-          <Route path="/diamondhospital/Doctor-Profile" element={<DocProfile />} />
+          <Route path="/Doctor-Profile" element={<DocProfile />} />
 
           {/* Services */}
-          <Route path="/diamondhospital/Pharmacy" element={<Pharmacy />} />
-          <Route path="/diamondhospital/Ambulance" element={<Ambulance />} />
-          <Route path="/diamondhospital/Dialysis" element={<Dialysis />} />
-          <Route path="/diamondhospital/GovernmentSchemes" element={<GovernmentSchemes />} />
-          <Route path="/diamondhospital/IPD" element={<IPD />} />
-          <Route path="/diamondhospital/Laboratory" element={<Laboratory />} />
-          <Route path="/diamondhospital/NICU" element={<NICU />} />
-          <Route path="/diamondhospital/Radiology" element={<Radiology />} />
+          <Route path="/Pharmacy" element={<Pharmacy />} />
+          <Route path="/Ambulance" element={<Ambulance />} />
+          <Route path="/Dialysis" element={<Dialysis />} />
+          <Route path="/GovernmentSchemes" element={<GovernmentSchemes />} />
+          <Route path="/IPD" element={<IPD />} />
+          <Route path="/Laboratory" element={<Laboratory />} />
+          <Route path="/NICU" element={<NICU />} />
+          <Route path="/Radiology" element={<Radiology />} />
 
           {/* Patient Guide */}
-          <Route path="/diamondhospital/GeneralGuide" element={<GeneralGuide />} />
-          <Route path="/diamondhospital/DoAndDonts" element={<DoAndDonts />} />
-          <Route path="/diamondhospital/Floorplan" element={<FloorPlan />} />
+          <Route path="/GeneralGuide" element={<GeneralGuide />} />
+          <Route path="/DoAndDonts" element={<DoAndDonts />} />
+          <Route path="/Floorplan" element={<FloorPlan />} />
+
+          {/* News & Media */}
+          <Route path="/Video" element={<Video />} />
 
           {/* Gallery */}
-          <Route path="/diamondhospital/Gallery" element={<Gallery />} />
-          
+          <Route path="/Gallery" element={<Gallery />} />
 
+          {/* Career */}
+          <Route path='/Career' element={<Career />} />
+
+          {/* Privacy Policy */}
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

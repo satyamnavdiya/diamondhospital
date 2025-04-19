@@ -32,16 +32,18 @@
     width: 4rem;
     z-index: 20;
 }
+
 .desktop-nav {
     font-size: 1rem;
     height: auto;
     font-weight: 500;
     padding-bottom: 7px;
     width: 100%;
+    margin-left: -4.5rem;
 }
 
 .hospital-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 800;
     line-height: 1.5;
 }
@@ -51,8 +53,8 @@
     animation: float 3s ease-in-out infinite;
 }
 
-.tri-img{
-    width: 43px;
+.tri-img {
+    width: 50px;
     position: absolute;
     margin-top: -11px;
     margin-left: -1px;
@@ -73,7 +75,7 @@
 .topbar {
     color: white;
     padding: 10px 0;
-    width: 35%;
+    width: 40%;
     float: right;
     right: 0;
     top: 0;
@@ -82,7 +84,7 @@
 
 .desktop-navbar {
     margin-left: 11.5rem;
-    margin-top: -5px;
+    margin-top: -8px;
 }
 
 .navbar-link {
@@ -97,6 +99,7 @@
 
 }
 
+
 .navbar-link:hover .nav-a {
     color: white;
 }
@@ -107,6 +110,7 @@
 
 
 .nav-a {
+    color: black;
     padding-bottom: 1rem;
 }
 
@@ -169,7 +173,7 @@
     display: none;
     visibility: hidden;
     position: absolute;
-    width: 15rem;
+    width: 16.5rem;
     border-top: 2px solid blue;
     border-radius: 7px;
     z-index: 99;
@@ -211,10 +215,74 @@
     border-radius: 7px;
 }
 
-.drop-li:hover .drop-a {
+.drop-li:hover {
     color: white;
 }
 
+/* Navbar Menus Icons */
+.div-bg1 {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/IMG/symbols/1.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.div-bg2 {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/IMG/symbols/1.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.div-bg3 {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/IMG/symbols/4.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.drop-li:hover .div-bg3 {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/IMG/symbols/32.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.div-bg4 {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/IMG/symbols/57.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.div-bg5 {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(/IMG/symbols/5.png);
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 
 
 /* Mobile Bottom Menubar */
@@ -232,21 +300,61 @@
     box-shadow: -10px 0px 10px 1px grey;
 }
 
-@media screen and (min-width: 1440px) {
+/* google transter style */
+/* Custom Style for Language div */
+/* .div-translate{
+    border: 1px solid red;
+    width: 7rem;
+    padding: 0;
+    position: relative;
+    margin: 0 auto;
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+} */
+
+/* Hide the Google Translate top bar */
+/* .goog-te-banner-frame {
+    display: none !important;
+} */
+
+/* Prevent page from shifting when Google Translate bar appears */
+/* body {
+    top: 0px !important;
+} */
+
+/* Hide the extra Google Translate dropdown */
+/* .goog-te-gadget {
+    display: none !important;
+} */
+
+/* Hide Google Translate iframe */
+/* iframe.skiptranslate {
+    display: none !important;
+} */
+
+@media screen and (max-width: 1430px) {
+    .topbar {
+        width: 25%;
+    }
+
     .logo-name-div {
         margin-left: 4.8%;
         margin-top: -45px;
     }
-    .desktop-nav{
+
+    .desktop-nav {
         margin-top: -1.9rem;
+        margin-left: -24rem;
     }
+
     .desktop-navbar {
-        margin-left: 5rem;
+        margin-left: 6.2rem;
         margin-top: 30px;
     }
 }
+
 @media screen and (max-width: 1024px) {
-   
     .hospital-Desk-name {
         font-size: 1.2rem;
         margin-top: 2px;
@@ -262,6 +370,7 @@
         width: 100%;
         margin: 0 auto;
         margin-top: 0.8rem;
+        margin-left: 7rem;
     }
 
     .navbar-link,
@@ -273,9 +382,29 @@
         width: 40%;
     }
 
+    .topbar-text {
+        font-size: 12px;
+    }
+
+    .topbar-icon {
+        size: 10px;
+    }
+
+    .desktop-navbar {
+        margin-left: 17px;
+        margin-top: -19px;
+    }
+
+    .logo-name-div {
+        margin-left: 2rem;
+    }
 }
 
 @media screen and (max-width: 991px) {
+    .hospital-Desk-name {
+        margin-left: 1rem;
+    }
+
     .desktop-nav {
         display: none;
     }
@@ -298,33 +427,70 @@
     }
 
     .hospital-name {
-        font-size: 1.3rem;
+        font-size: 14px;
         font-weight: bolder;
         line-height: normal;
         margin-left: -20px;
     }
 
-    .logo-name-div {
-        width: 34rem;
-        margin-left: 2rem;
+    .hostipal-name-span {
+        font-size: 10px;
+        padding: 2px 5px;
+        padding-bottom: 2px;
+        border-radius: 6px;
     }
 
+    .logo-name-div {
+        width: 34rem;
+        margin-left: 0rem;
+        margin-top: -55px;
+    }
 
+    .nabh-div {
+        margin-left: 2px;
+        padding: 0;
+        width: 5rem;
+    }
+
+    .topbar-text {
+        font-size: 10px;
+    }
+
+    .topbar-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .nav-header {
+        height: 6.3rem;
+    }
 }
 
 @media screen and (max-width: 640px) {
     .topbar {
-        width: 52%;
+        width: 54%;
         margin-right: 0%;
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 10px;
-        border-top-left-radius: 10px;
-        margin-top: 2px;
+        padding: 3.5px;
+    }
+
+    .tri-img {
+        width: 37px;
+        margin-top: -10px;
+        margin-left: -10px;
+    }
+
+    .topbar-text {
+        font-size: 8px;
+    }
+    
+    .topbar-icon{
+        width: 10px;
+        height: 10px;
     }
 
     .logo-div {
-        width: 4.8rem;
-        height: 4.8rem;
+        width: 5rem;
+        height: 5rem;
         margin-left: -9px;
     }
 
@@ -332,17 +498,27 @@
         padding: 5px;
     }
 
+    .nabh-div {
+        display: none;
+    }
+
     .hospital-name {
-        font-size: 12.5px;
+        font-size: 10px;
         font-weight: bold;
         line-height: normal;
         margin-left: -24px;
+        padding-left: 10px;
+    }
+
+    .hostipal-name-span {
+        font-size: 7px;
+        border-radius: 4px;
     }
 
     .logo-name-div {
         width: 18rem;
         margin-left: 1rem;
-        margin-top: -28px;
+        margin-top: -36px;
     }
 
     .nav-header {
@@ -360,7 +536,8 @@
         position: relative;
         display: inline;
     }
-    .bottombar-name{
+
+    .bottombar-name {
         margin-top: -1px;
     }
 }

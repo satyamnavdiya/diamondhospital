@@ -1,12 +1,29 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Hospital, Baby, Stethoscope, Users, MapPin } from 'lucide-react';
+import { Award, Calendar } from 'lucide-react';
 import "../CSS/Specialities.css"
 import pulmonology from '../Images/pulmonology.jpg'
 
+const doctors = [
+  {
+    id: 13,
+    name: "Dr. Gaurav Raiyani",
+    department: "GENERAL MEDICINE",
+    experience: 8,
+    imageUrl: "/IMG/doc/6.png",
+    bio: "Dr. Gaurav Raiyani is a highly experienced General Medicine specialist with 8 years of expertise in patient care. He has worked at renowned institutions such as New Civil Hospital (4.5 years) and Simmer Hospital (3.5 years), where he provided comprehensive medical care for a wide range of acute and chronic conditions. Dr. Raiyani is known for his thorough approach to diagnosis and treatment, along with his commitment to patient well-being and continuous professional development.",
+    education: "MBBS, MD(GENRAL MEDICINE), FELLOWSHIP IN 2D ECHO, FELLOWSHIP IN DIABETES MANAGEMENT, FELLOWSHIP THYROID DESEASE MANAGEMENT",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    },
+  },
+]
+
 const Pulmonology = () => {
-  const [activeSection, setActiveSection] = useState('purpose');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedDoctorData, setSelectedDoctorData] = useState(null);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -14,8 +31,33 @@ const Pulmonology = () => {
     transition: { duration: 0.6 }
   };
 
+
+  // Handle opening the modal with doctor data
+  const handleViewProfile = (doctor) => {
+    setSelectedDoctorData(doctor);
+    setModalOpen(true);
+    // Add a class to the body to prevent scrolling when modal is open
+    document.body.classList.add('overflow-hidden');
+  };
+
+  // Handle closing the modal
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedDoctorData(null);
+    // Remove the class from the body to allow scrolling again
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  // Close modal when clicking outside of it
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      handleCloseModal();
+    }
+  };
+
+
   return (
-    <div className="min-h-screen bg-white pt-32 max-sm:pt-[6.5rem]">
+    <div className="min-h-screen bg-white pt-32 max-[991px]:pt-[6rem] max-sm:pt-[6.5rem]">
       {/* Hero Section */}
       <section className="relative h-[80vh] max-sm:h-[50vh] flex items-center justify-center overflow-hidden mix-blend-multiply">
         <div className="absolute inset-0">
@@ -44,114 +86,146 @@ const Pulmonology = () => {
         </div>
       </section>
 
-      {/* Purpose Section */}
-      <section className="py-10 div-center w-[80%]">
-        <div >
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto div-center"
-          >
-            <h2 className="font-display text-4xl mb-6 text-center"><span className='spec-heading spec-gradient'>Our Purpose</span></h2>
-            <p className="text-lg text-gray-600 leading-relaxed spec-text">
-              At <b>RTSV - SDA Dimond Hospital</b>, our Ophthalmology Department is dedicated to preserving, restoring, and enhancing your vision through a patient-centered approach that combines advanced technology, clinical expertise, and compassionate care. Our multidisciplinary team of ophthalmologists, surgeons, optometrists, and support staff work collaboratively to deliver personalized eye care for patients of all ages and needs.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Expertise and Advanced Technology */}
+      {/* About Obstetric */}
       <section className="py-10 w-[80%] div-center">
-        <div >
+        <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="mx-auto"
           >
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center"><span className='spec-heading spec-gradient'>Expertise and Advanced Technology</span></h2>
-              <p className="text-gray-600">Our specialists are highly trained in diagnosing and treating a broad spectrum of eye conditions. We utilize the latest diagnostic tools and surgical techniques to ensure accurate evaluations and effective treatments. Our services include:</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Comprehensive Eye Exams",
-                  description: "Thorough assessments using advanced imaging and diagnostic tools.",
-                },
-                {
-                  title: "Cataract Surgery",
-                  description: "Minimally invasive procedures to restore clear vision.",
-                },
-                {
-                  title: "Glaucoma Management",
-                  description: "Early detection and treatment options to manage pressure and protect vision.",
-                },
-                {
-                  title: "Retinal Care",
-                  description: "State-of-the-art treatments for retinal diseases, including diabetic retinopathy and macular degeneration",
-                },
-                {
-                  title: "Corneal Services",
-                  description: "Treatments ranging from laser vision correction to complex corneal surgeries.",
-                },
-                {
-                  title: "Pediatric Eye Care",
-                  description: "Specialized examinations and treatments tailored to the needs of children.",
-                }
-              ].map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow border-2 border-red-700"
-                >
-                  <div className="items-start space-x-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                      <p className="text-gray-600 spec-text">{service.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Dedicated Team */}
-      <section className="py-10 w-[80%] div-center">
-        <div >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto"
-          >
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center leading-none"><span className='spec-heading spec-gradient'>Our Dedicated Team</span></h2>
-              <p className="text-gray-600 spec-text">Our ophthalmologists bring decades of combined experience and a passion for advancing eye care. They collaborate closely with other medical experts to ensure a multidisciplinary approach to each patient's needs. With a focus on continuous education and innovation, our team is committed to providing the highest standard of care.</p>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center leading-none"><span className='spec-heading spec-gradient'>Patient-Centered Approach</span></h2>
-              <p className="text-gray-600 spec-text">At <b>RTSV - SDA Dimond Hospital</b>, we believe that every patient deserves individualized attention. Our team takes the time to explain each diagnosis and treatment option, empowering you to make informed decisions about your eye health. From the initial consultation through post-operative care, we are with you every step of the way, ensuring a seamless and comfortable experience.</p>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="font-display text-4xl mb-4 text-center leading-none"><span className='spec-heading spec-gradient'>Commitment to Community Health</span></h2>
-              <p className="text-gray-600 spec-text">We are dedicated not only to treating eye conditions but also to educating our community about preventive care and the importance of regular eye exams. Our outreach programs and community events are designed to promote eye health awareness and to provide accessible care to those in need.
+            <div>
+              {/* <h2 className="font-display text-4xl mb-4">Urology</h2> */}
+              <p className="text-gray-600 spec-text">
+                At RTSV - SDA Dimond Hospital, our Pulmonology Department specializes in the diagnosis, treatment, and management of respiratory and lung-related conditions. With a team of experienced pulmonologists and advanced diagnostic tools, we provide personalized care to help patients breathe easier and live healthier.
+                <br /><br />
+                Our services cover a wide range of conditions including asthma, COPD, pneumonia, tuberculosis, lung infections, sleep apnea, and interstitial lung diseases. We offer pulmonary function tests (PFTs), bronchoscopy, allergy testing, and long-term respiratory care tailored to each patient's needs.
+                <br /><br />
+                Focused on both acute and chronic lung care, our goal is to improve lung function, manage symptoms effectively, and enhance your quality of life. At RTSV - SDA Dimond Hospital, we are committed to supporting every breath you take with compassion, precision, and expertise.<b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 
-            <div className="mb-12">
-              <p className="text-gray-600 spec-text">Whether you are seeking routine eye care or require specialized treatment, our Ophthalmology Department at <b>RTSV - SDA Hospital</b> is here to help you achieve optimal vision health. Schedule your appointment today and take the first step towards a clearer, brighter future.</p>
-            </div>
           </motion.div>
         </div>
       </section>
+
+      {/* About Doctors */}
+      <div className='w-[80%] max-sm:w-[80%] div-center'>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          {doctors.map((doctor) => (
+
+            <div key={doctor.id} className="bg-white flex overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
+
+              <div className="p-2 w-[50%] ">
+                <img
+                  src={doctor.imageUrl}
+                  alt={doctor.name}
+                  className="w-full h-full object-cover rounded-2xl"
+                  loading='lazy'
+                />
+              </div>
+
+              <div className="px-4 py-5 sm:p-6">
+                <h3 className="text-lg font-medium text-gray-900">{doctor.name}</h3>
+                <div className="mt-1 flex items-center">
+                  <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                    {doctor.department}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm text-gray-500">{doctor.experience} years experience</p>
+                <div className="mt-4">
+                  <button
+                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    onClick={() => handleViewProfile(doctor)}
+                  >
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          ))}
+        </div>
+
+        {/* Doctor Profile Modal */}
+        {modalOpen && selectedDoctorData && (
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto modal-overlay bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={handleOutsideClick}
+          >
+            <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto max-sm:pt-[19rem]" onClick={e => e.stopPropagation()}>
+              <div className="flex flex-col md:flex-row">
+                {/* Doctor image - left side */}
+                <div className="md:w-1/3 h-64 md:h-auto">
+                  <img
+                    src={selectedDoctorData.imageUrl.replace('w=300', 'w=600')}
+                    alt={selectedDoctorData.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Doctor details - right side */}
+                <div className="md:w-2/3 p-6">
+                  <div className="border-b pb-4 mb-4">
+                    <h2 className="text-2xl font-bold text-gray-900">{selectedDoctorData.name}</h2>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                        {selectedDoctorData.department}
+                      </span>
+                      {/* <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
+                      {selectedDoctorData.specialty}
+                    </span> */}
+                      <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">
+                        {selectedDoctorData.experience} years experience
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Bio */}
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">About</h3>
+                    <p className="text-gray-600">{selectedDoctorData.bio}</p>
+                  </div>
+
+                  {/* Education */}
+                  <div className="mb-6 flex items-start">
+                    <Award className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Education</h3>
+                      <p className="text-gray-600">{selectedDoctorData.education}</p>
+                    </div>
+                  </div>
+
+                  {/* Availability */}
+                  <div className="mb-6 flex items-start">
+                    <Calendar className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">Availability</h3>
+                      <p className="text-gray-600">{selectedDoctorData.availability.morning}</p>
+                      <p className="text-gray-600">{selectedDoctorData.availability.evening}</p>
+                    </div>
+                  </div>
+
+                  {/* Book Appointment Button */}
+                  <div className="mt-6">
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                      Book an Appointment
+                    </button>
+                    {/* Close button */}
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 mt-5" onClick={handleCloseModal}>
+                      Close
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
 
     </div>
   );

@@ -1,7 +1,7 @@
 {
     "name": "Hospital",
     "short_name": "RTSV",
-    "start_url": "https://github.com/satyamnavdiya/diamondhospital/",
+    "start_url": "https://github.com/satyamnavdiya/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",

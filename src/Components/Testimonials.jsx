@@ -1,200 +1,197 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import { textReviews, videoReviews } from "./data/reviews.js";
+import { FileText, Video, ChevronLeft, ChevronRight } from "lucide-react";
+import ReviewCard from "./TestimonialCard";
 import './CSS/Testimonial.css'
-import TestimonialCard from './TestimonialCard';
 
-const testimonials = [
-    {
-        name: "Sarah Johnson",
-        role: "Parent of Alex, Grade 5",
-        content: "The dedicated teachers and innovative curriculum have made such a positive impact on my child's education. The school's commitment to excellence is evident in everything they do.",
-        imageUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200"
-    },
-    {
-        name: "Michael Chen",
-        role: "Parent of Emily, Grade 3",
-        content: "We couldn't be happier with the supportive learning environment. Our daughter has flourished here, developing both academically and socially in ways that exceed our expectations.",
-        imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
-    },
-    {
-        name: "Lisa Rodriguez",
-        role: "Parent of twins Tom & Ana, Grade 6",
-        content: "The individual attention each student receives is remarkable. The teachers truly understand and nurture each child's unique talents and learning style.",
-        imageUrl: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?auto=format&fit=crop&q=80&w=200&h=200"
-    }
-];
+const Testimonials = () => {
+    const [showVideo, setShowVideo] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+    const slideContainerRef = useRef(null);
+    const autoplayTimerRef = useRef(null);
 
+    const reviews = showVideo ? videoReviews : textReviews;
 
-function Testimonials() {
-
+    // Check if mobile
     useEffect(() => {
-        const container = document.querySelector('.testimonials-container');
-
-        const handleMouseEnter = () => {
-            if (container) container.style.animationPlayState = 'paused';
+        const checkIfMobile = () => {
+            setIsMobile(window.innerWidth < 768);
         };
 
-        const handleMouseLeave = () => {
-            if (container) container.style.animationPlayState = 'running';
-        };
-
-        container?.addEventListener('mouseenter', handleMouseEnter);
-        container?.addEventListener('mouseleave', handleMouseLeave);
+        checkIfMobile();
+        window.addEventListener("resize", checkIfMobile);
 
         return () => {
-            container?.removeEventListener('mouseenter', handleMouseEnter);
-            container?.removeEventListener('mouseleave', handleMouseLeave);
+            window.removeEventListener("resize", checkIfMobile);
         };
     }, []);
 
+    // Items per slide based on screen size
+    const itemsPerSlide = isMobile ? 1 : 2;
+
+    // Calculate number of slides needed
+    const totalSlides = Math.ceil(reviews.length / itemsPerSlide);
+
+    // Prepare slides with correct number of items
+    const prepareSlides = () => {
+        const results = [];
+
+        for (let i = 0; i < reviews.length; i += itemsPerSlide) {
+            results.push(reviews.slice(i, i + itemsPerSlide));
+        }
+
+        return results;
+    };
+
+    const slides = prepareSlides();
+
+    // Handle navigation
+    const goToSlide = (index) => {
+        // Handle wrap-around
+        if (index < 0) {
+            setCurrentIndex(totalSlides - 1);
+        } else if (index >= totalSlides) {
+            setCurrentIndex(0);
+        } else {
+            setCurrentIndex(index);
+        }
+
+        // Reset autoplay timer on manual navigation
+        resetAutoplayTimer();
+    };
+
+    const goToNext = () => goToSlide(currentIndex + 1);
+    const goToPrev = () => goToSlide(currentIndex - 1);
+
+    // Autoplay functionality
+    const startAutoplayTimer = () => {
+        autoplayTimerRef.current = setTimeout(() => {
+            goToNext();
+        }, 5000);
+    };
+
+    const resetAutoplayTimer = () => {
+        if (autoplayTimerRef.current) {
+            clearTimeout(autoplayTimerRef.current);
+            startAutoplayTimer();
+        }
+    };
+
+    // Reset to first slide when review type or screen size changes
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, [showVideo, isMobile]);
+
+    // Setup autoplay
+    useEffect(() => {
+        resetAutoplayTimer();
+        return () => {
+            clearTimeout(autoplayTimerRef.current);
+        };
+    }, [currentIndex, showVideo, isMobile]);
+
+    useEffect(() => {
+        if (!isMobile) {
+            resetAutoplayTimer();
+        }
+        return () => {
+            clearTimeout(autoplayTimerRef.current);
+        };
+    }, [currentIndex, showVideo, isMobile]);
+
 
     return (
-        <section className='mt-20 mb-20'>
-            <h1 className='testimonial-heading'>What Patients Say About <span className="testi-gradient">Our Hospital</span></h1>
-
-            <div className='div-center grid grid-cols-2 w-[12%] text-center'>
-                <div className='review-btn'>Reviews</div>
-                <div className='review-btn'>Video</div>
+        <div className="div-center pt-16 space-y-8 px-4 md:px-0 w-[80%]  max-sm:pt-[2rem]">
+            <div>
+                <h2 className="testimonial-heading testi-gradient">Customer Reviews</h2>
             </div>
-            <div className="testimonials-wrapper">
-                <div className="testimonials-container">
-                    {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={`testimonial-${index}`} {...testimonial} />
-                    ))}
-                    {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={`testimonial-duplicate-${index}`} {...testimonial} />
-                    ))}
+            <div className="flex justify-center gap-2">
+                    <button
+                        onClick={() => setShowVideo(false)}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-md ${!showVideo
+                            ? "bg-teal-600 text-white"
+                            : "bg-white text-gray-700 border border-gray-300"
+                            }`}
+                    >
+                        <FileText className="h-4 w-4" />
+                        <span className={isMobile ? "sr-only" : ""}>Text Reviews</span>
+                    </button>
+                    <button
+                        onClick={() => setShowVideo(true)}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-md ${showVideo
+                            ? "bg-teal-500 text-white"
+                            : "bg-white text-gray-700 border border-gray-300"
+                            }`}
+                    >
+                        <Video className="h-4 w-4" />
+                        <span className={isMobile ? "sr-only" : ""}>Video Reviews</span>
+                    </button>
                 </div>
-            </div>
 
-
-            <section className="tw-text-gray-600 tw-body-font">
-                <div className="tw-container tw-mx-auto tw-flex tw-px-5 tw-py-24 md:tw-flex-row tw-flex-col tw-items-center">
-                    {/* <div className="lg:tw-max-w-lg lg:tw-w-full md:tw-w-1/2 tw-w-5/6 tw-mb-10 md:tw-mb-0">
-                    <img className="tw-object-cover tw-object-left tw-rounded max-sm:tw-min-w-full custom-img" alt="hero" src={img3} />
-                </div> */}
-                    <div id="carouselExampleAutoplaying" className="carousel slide tw-w-full" data-bs-ride="carousel">
-                        <div className="carousel-inner tw-overflow-hidden tw-w-full">
-                            <div className="carousel-item active">
-                                <section className="tw-text-gray-600 tw-body-font">
-                                    <div className="tw-container tw-px-5 tw-py-24 tw-mx-auto">
-                                        <div className="tw-flex tw-flex-wrap -tw-m-4">
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-mb-6 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/302x302" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">HOLDEN CAULFIELD</h2>
-                                                    <p className="tw-text-gray-500">Senior Product Designer</p>
-                                                </div>
-                                            </div>
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-mb-6 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/300x300" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">ALPER KAMU</h2>
-                                                    <p className="tw-text-gray-500">UI Developer</p>
-                                                </div>
-                                            </div>
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/305x305" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">HENRY LETHAM</h2>
-                                                    <p className="tw-text-gray-500">CTO</p>
-                                                </div>
-                                            </div>
+            <div className="relative">
+                {/* Carousel container */}
+                <div
+                    ref={slideContainerRef}
+                    className="overflow-hidden"
+                    onMouseEnter={() => clearTimeout(autoplayTimerRef.current)}
+                    onMouseLeave={startAutoplayTimer}
+                >
+                    <div
+                        className="flex transition-transform duration-300 ease-in-out"
+                        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                    >
+                        {slides.map((slide, slideIndex) => (
+                            <div
+                                key={slideIndex}
+                                className="w-full flex-shrink-0 px-2"
+                                style={{ minWidth: '100%' }}
+                            >
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+                                    {slide.map((review) => (
+                                        <div key={review.id} className="h-full">
+                                            <ReviewCard review={review} showVideo={showVideo} />
                                         </div>
-                                    </div>
-                                </section>
+                                    ))}
+                                </div>
                             </div>
-
-                            <div className="carousel-item">
-                                <section className="tw-text-gray-600 tw-body-font">
-                                    <div className="tw-container tw-px-5 tw-py-24 tw-mx-auto">
-                                        <div className="tw-flex tw-flex-wrap -tw-m-4">
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-mb-6 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/302x302" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">HOLDEN CAULFIELD</h2>
-                                                    <p className="tw-text-gray-500">Senior Product Designer</p>
-                                                </div>
-                                            </div>
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-mb-6 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/300x300" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">ALPER KAMU</h2>
-                                                    <p className="tw-text-gray-500">UI Developer</p>
-                                                </div>
-                                            </div>
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/305x305" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">HENRY LETHAM</h2>
-                                                    <p className="tw-text-gray-500">CTO</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-
-                            <div className="carousel-item">
-                                <section className="tw-text-gray-600 tw-body-font">
-                                    <div className="tw-container tw-px-5 tw-py-24 tw-mx-auto">
-                                        <div className="tw-flex tw-flex-wrap -tw-m-4">
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-mb-6 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/302x302" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">HOLDEN CAULFIELD</h2>
-                                                    <p className="tw-text-gray-500">Senior Product Designer</p>
-                                                </div>
-                                            </div>
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-mb-6 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/300x300" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">ALPER KAMU</h2>
-                                                    <p className="tw-text-gray-500">UI Developer</p>
-                                                </div>
-                                            </div>
-                                            <div className="lg:tw-w-1/3 lg:tw-mb-0 tw-p-4">
-                                                <div className="tw-h-full tw-text-center">
-                                                    <img alt="testimonial" className="tw-w-20 tw-h-20 tw-mb-8 tw-object-cover tw-object-center tw-rounded-full tw-inline-block tw-border-2 tw-border-gray-200 tw-bg-gray-100" src="https://dummyimage.com/305x305" />
-                                                    <p className="tw-leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                                    <span className="tw-inline-block tw-h-1 tw-w-10 tw-rounded tw-bg-indigo-500 tw-mt-6 tw-mb-4"></span>
-                                                    <h2 className="tw-text-gray-900 tw-font-medium tw-title-font tw-tracking-wider tw-text-sm">HENRY LETHAM</h2>
-                                                    <p className="tw-text-gray-500">CTO</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Previous</span>
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Next</span>
-                        </button>
+                        ))}
                     </div>
                 </div>
-            </section>
-        </section>
-    )
-}
 
-export default Testimonials
+                {/* Navigation buttons */}
+                <div className="flex justify-center gap-4 mt-8">
+                    <button
+                        onClick={goToPrev}
+                        className="h-10 w-10 rounded-full bg-primary hover:bg-primary/80 border-none shadow-md flex items-center justify-center"
+                        aria-label="Previous slide"
+                    >
+                        <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                        onClick={goToNext}
+                        className="h-10 w-10 rounded-full bg-primary  hover:bg-primary/80 border-none shadow-md flex items-center justify-center"
+                        aria-label="Next slide"
+                    >
+                        <ChevronRight className="h-5 w-5" />
+                    </button>
+                </div>
+
+                {/* Dots indicator */}
+                <div className="flex justify-center gap-2 mt-4">
+                    {Array.from({ length: totalSlides }).map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => goToSlide(index)}
+                            className={`h-2 w-2 rounded-full transition-colors ${currentIndex === index ? 'bg-black' : 'bg-gray-300'
+                                }`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Testimonials;
