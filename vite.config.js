@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import { VitePWA } from "vite-plugin-pwa";
+// import { VitePWA } from "vite-plugin-pwa";
 import tailwindcss from '@tailwindcss/vite'
 
 
@@ -9,6 +9,6 @@ export default defineConfig({
   plugins: [tailwindcss(), react(),],
   base: '/',
   optimizeDeps: {
-    exclude: ['lucide-react', 'ogl'],
+    exclude: ['lucide-react', 'ogl', 'framer-motion'],
   },
 })
