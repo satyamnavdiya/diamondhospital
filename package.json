@@ -9,11 +9,13 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
     "framer-motion": "^12.5.0",
+    "gh-pages": "^6.3.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.482.0",
     "react": "^19.0.0",

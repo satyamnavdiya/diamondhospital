@@ -97,6 +97,8 @@ const Dimond = () => {
                 </div>
 
             </section>
+
+            
         </section>
     );
 };
