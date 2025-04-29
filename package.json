@@ -13,9 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@barba/core": "^2.10.3",
     "@tailwindcss/vite": "^4.0.14",
-    "framer-motion": "^12.5.0",
+    "barba.js": "^1.0.0",
+    "framer-motion": "^12.7.4",
     "gh-pages": "^6.3.0",
+    "gsap": "^3.12.7",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.482.0",
     "react": "^19.0.0",

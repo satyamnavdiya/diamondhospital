@@ -1,49 +1,3 @@
-footer {
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem;
-    border-radius: 24px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    padding-bottom: 0px;
-    margin-top: 3rem;
-}
-
-.footer-logo {
-    width: 12rem;
-    z-index: 10;
-    position: relative;
-    margin: 0 auto;
-}
-
-.hospital-name-footer {
-    color: rgb(0, 0, 128);
-    font-weight: bolder;
-}
-
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-.main-map {
-    width: 70%;
-    margin: 0 auto;
-}
-
-@keyframes heartbeat {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.01);
-    }
-}
-
-
 @keyframes float {
 
     0%,
@@ -56,211 +10,545 @@ footer {
     }
 }
 
-
-
-
-
-.footer-social {
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    width: 20%;
-}
-
-.social-icon {
-    color: #fc0019;
-    border: 1px solid navy;
-    font-size: 3rem;
-    padding: 10px;
-    border-radius: 100%;
-    margin: 0 auto;
-    transition: all 1s;
-}
-
-.social-icon:hover {
-    color: white;
-    background-color: #fc0019;
-    border: 1px solid transparent;
-}
-
-/* heading font style */
-.footer-heading {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.social-heading {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.footer-gradient {
-    background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-}
-
-.footer-heading {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #2d3748;
-}
-
-.elementor-shape-fill {
-    fill: white;
-    transform-origin: center;
-    transform: rotateY(0deg);
-}
-
-.div-map {
-    height: 50vh;
-    margin: 0 auto;
-    /* animation: heartbeat 1.5s infinite ease-in-out; */
-}
-
-.footer-div {
-    margin-top: 2rem;
-}
-
-.footer-div-heading {
-    color: rgb(158, 1, 1);
-}
-
-@media screen and (max-width: 1450px) {
-    .footer-div {
-        margin-top: 0rem;
-    }
-
-    .hospital-name-footer {
-        font-size: 1.5rem;
-    }
-
-    .footer-div-heading {
-        font-size: 1.5rem;
-    }
-
-    .footer-text {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .hospital-name-footer{
-        font-size: 1rem;
-    }
-    .footer-div-heading {
-        font-size: 1rem;
-    }
-
-    .footer-text {
-        font-size: 0.8rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .main-map {
-        width: 100%;
-    }
-
+@media (max-width: 375px) {
     footer {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 1rem;
-        width: 80%;
+        width: 100%;
+        height: auto;
+        margin-top: 5rem;
+        padding: 2rem 1rem;
+    }
+
+    .div-map {
+        display: none;
+    }
+
+    .footer-div {
+        padding: 10px 5px;
     }
 
     .footer-logo {
         width: 10rem;
-        margin-top: -2.5rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
     }
 
     .hospital-name-footer {
-        font-size: 1.2rem;
-        text-align: left;
-        text-align: center;
-    }
-
-    .div2-footer>h1,
-    .div3-footer>h1,
-    .div4-footer>h1,
-    .div5-footer>h1 {
-        font-size: 1.2rem;
-    }
-
-    .div2-footer>p,
-    .div3-footer>p,
-    .div4-footer>p,
-    .div5-footer>p {
-        font-size: 12px;
-    }
-
-    .div3-footer,
-    .div4-footer,
-    .div2-footer {
-        margin-top: 2.5rem;
-    }
-
-    .div6-footer {
-        padding-bottom: 7rem;
-    }
-    .footer-text{
-        font-size: 12px;
-    }
-
-    .div1-footer{
-        margin-top: 3.5rem;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .footer-heading {
+        font-weight: bolder;
         font-size: 1.5rem;
     }
 
-    .div-map {
-        width: 80%;
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
     footer {
-        display: block;
-        margin-top: 2rem;
-        padding-top: 2rem;
+        width: 100%;
+        height: auto;
+        margin-top: 5rem;
+        padding: 2rem 1rem;
     }
 
-    .div4-footer {
-        margin-top: 1rem;
+    .div-map {
+        display: none;
     }
 
-    .div3-footer {
-        margin-top: 1rem;
+    .footer-div {
+        padding: 10px 5px;
     }
 
-    .div6-footer {
-        padding-bottom: 4rem;
-        font-size: 12px;
+    .footer-logo {
+        width: 10rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
     }
 
     .hospital-name-footer {
-        text-align: center;
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
         font-size: 1rem;
     }
-    .footer-div {
-        margin-top: 1.5rem;
+
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 2rem 1rem;
+        border-radius: 16px;
     }
-    .footer-text{
-        font-size: 12px;
+
+    .div-map {
+        display: none;
+    }
+
+    .footer-div {
+        padding: 10px 5px;
+    }
+
+    .footer-logo {
+        width: 16rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1.3rem;
+    }
+
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 2rem 1rem;
+        border-radius: 16px;
+    }
+
+    .div-map {
+        display: none;
+    }
+
+    .footer-div {
+        padding: 10px 5px;
+    }
+
+    .footer-logo {
+        width: 16rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 2rem 2rem;
+        border-radius: 16px;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .div-map {
+        display: block;
+        width: 100%;
+        height: 25rem;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .footer-div {
+        padding: 10px 15px;
+    }
+
+    .footer-logo {
+        width: 15rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 1.2rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 2rem 2rem;
+        border-radius: 16px;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .div-map {
+        display: block;
+        width: 100%;
+        height: 25rem;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .footer-div {
+        padding: 10px 15px;
+    }
+
+    .footer-logo {
+        width: 15rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 1rem 1rem;
+        border-radius: 16px;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .div-map {
+        display: block;
+        width: 100%;
+        height: 20.5rem;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .footer-div {
+        padding: 10px ;
+    }
+
+    .footer-logo {
+        width: 10rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 1.2rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 1rem 1rem;
+        border-radius: 16px;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .div-map {
+        display: block;
+        width: 100%;
+        height: 25rem;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .footer-div {
+        padding: 10px ;
+    }
+
+    .footer-logo {
+        width: 15rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1921px) {
+    footer {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 5rem;
+        padding: 1rem 1rem;
+        border-radius: 16px;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .div-map {
+        display: block;
+        width: 100%;
+        height: 30rem;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .footer-div {
+        padding: 10px ;
+    }
+
+    .footer-logo {
+        width: 17rem;
+        margin: 0 auto;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .hospital-name-footer {
+        font-weight: bolder;
+        font-size: 1.7rem;
+    }
+
+    .footer-div-heading {
+        color: rgb(0, 0, 41);
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .footer-div-heading::after {
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background-color: rgb(1, 61, 61);
+        border-radius: 50%;
+        content: '';
+    }
+
+    .footer-text {
+        font-size: 1.3rem;
     }
 }

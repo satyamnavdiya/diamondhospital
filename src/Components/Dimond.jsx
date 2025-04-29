@@ -10,10 +10,10 @@ const Dimond = () => {
     };
 
     return (
-        <section className="pt-32 max-sm:pt-[6.5rem]">
+        <section className="aboutus-dimond">
 
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden mix-blend-multiply max-sm:h-[50vh]">
+            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden mix-blend-multiply hero-section">
                 <div className="absolute inset-0">
                     <img
                         src='./IMG/hospital.JPG'

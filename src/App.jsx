@@ -3,7 +3,7 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import { BrowserRouter, Routes, Route } from "react-router";
 // Homepage
-import HomePage from './Components/HomePage'
+import HomePage from './Components/Homepage/HomePage'
 // About Us
 import Dimond from './Components/Dimond';
 import AboutTeam from './Components/AboutTeam';

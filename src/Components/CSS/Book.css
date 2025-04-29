@@ -87,34 +87,23 @@
     justify-content: space-between;
     align-items: stretch;
 }
-@media screen and (min-width: 1440px) {
+
+@media (max-width: 375px) {
     
 }
 
-@media screen and (max-width: 1024px) {}
+@media (min-width: 376px) and (max-width: 480px) {}
 
-@media screen and (max-width: 991px) {
-    .about-div{
-        display: none;
-    }
-    .bookpage-logo{
-        text-align: center;
-        width: 100%;
-        margin: 0 auto;
-    }
-}
+@media (min-width: 481px) and (max-width: 640px) {}
 
-@media screen and (max-width: 640px) {
-    .book-f-name{
-        margin-top: -60px;
-    }
-    .book-cover-logo{
-        margin-top: 40px;
-    }
-    .bookpage-logo{
-        text-align: center;
-        width: 80%;
-        margin: 0 auto;
-    }
-}
+@media (min-width: 641px) and (max-width: 767px) {}
 
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+@media (min-width: 1281px) and (max-width: 1440px) {}
+
+@media (min-width: 1441px) and (max-width: 1920px) {}
+
+@media (min-width: 1921px) {}

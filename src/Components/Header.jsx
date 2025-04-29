@@ -102,14 +102,14 @@ export default function Header() {
                 <img src={Tri} alt="" className="inline tri-img" />
                 <div className="inline">
                     <div className="container mx-auto px-6 flex justify-evenly items-center">
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center top-custom-space">
                             <div className="flex items-center">
-                                <Phone size={20} className="mr-2 topbar-icon" />
-                                <span className="topbar-text text-md">Emergency: 0261 2509505</span>
+                                <Phone className="mr-2 topbar-icon" />
+                                <span className="topbar-text ">Emergency: 0261 2509505</span>
                             </div>
-                            <div className="hidden md:flex items-center">
-                                <Clock size={20} className="mr-2 topbar-icon" />
-                                <span className="topbar-text text-md ">24/7 Care Available</span>
+                            <div className="second-icon md:flex items-center">
+                                <Clock className="mr-2 topbar-icon" />
+                                <span className="topbar-text  ">24/7 Care Available</span>
                             </div>
                         </div>
                     </div>
@@ -118,35 +118,35 @@ export default function Header() {
 
             {/* Main Navigation */}
             {/* logo And Name */}
-            <div className="flex items-center logo-name-div">
-                <div className="font-bold text-2xl logo-div"><img src={Logo} alt="Hospital Logo" className='logo-nav' />
-                </div>
+            <div>
+                <div className="flex items-center logo-name-div">
+                    <div className="font-bold text-2xl logo-div"><img src={Logo} alt="Hospital Logo" className='logo-nav' />
+                    </div>
 
-                <div className="hospital-Desk-name">
-                    <p className="hospital-name">
-                        <span className="bg-blue-700 text-white px-[0.4rem] py-1.5 text-[1rem] rounded-[10px] mb-1 font-extrabold hostipal-name-span">માતૃશ્રી રામુબા તેજાણી તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
-                        <br />
-                        SDA DIAMOND HOSPITAL
-                        <br />
-                        AND MEDICAL RESEARCH CENTER
-                    </p>
-                </div>
+                    <div className="hospital-Desk-name">
+                        <p className="hospital-name">
+                            <span className="bg-blue-700 text-white px-[0.4rem] py-1.5 text-[1rem] rounded-[10px] mb-1 font-extrabold hostipal-name-span">માતૃશ્રી રામુબા તેજાણી તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
+                            <br />
+                            SDA DIAMOND HOSPITAL
+                            <br />
+                            AND MEDICAL RESEARCH CENTER
+                        </p>
+                    </div>
 
-                <div className="font-bold text-2xl nabh-div ml-5"><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
+                    <div className="font-bold text-2xl nabh-div ml-5"><img src={Nabh} alt="Hospital Logo" className='logo-nav' />
+                    </div>
+                </div>
+                <div className="mobile-logo">
+                    <img src="/icons/mobile-logo.png" alt="" />
                 </div>
             </div>
 
-            {/* Google Translate */}
-            {/* <div className="div-translate">
-                <GoogleTranslate />
-            </div> */}
-
             {/* Desktop Navbar */}
             <nav className="bg-transparen mt-1 desktop-nav ">
-                <div className="container mx-auto">
+                <div>
                     <div className="flex justify-between items-center">
                         {/* Desktop Menu */}
-                        <ul className="hidden md:flex items-center space-x-2 desktop-navbar">
+                        <ul className="hidden md:flex items-center nav-custom-space">
                             <li className="hover:bg-red-600 navbar-link"><Link to="/" className="nav-a">Home</Link></li>
 
                             <li className="hover:bg-red-600 navbar-link dropdown1">
@@ -184,14 +184,14 @@ export default function Header() {
                                 <a href="#" className="nav-a">Services <ChevronDown className="inline drop-icon" /></a>
                                 <div className="dropdown-div3">
                                     <ul className="p-2">
-                                    <Link to="/Laboratory" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Laboratory</li></Link>
-                                    <Link to="/Radiology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Radiology</li></Link>
-                                    <Link to="/NICU" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">NICU</li></Link>
-                                    <Link to="/Dialysis" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Dialysis</li></Link>
-                                    <Link to="/Pharmacy" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pharmacy</li></Link>
-                                    <Link to="/IPD" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">IPD</li></Link>
-                                    <Link to="/Ambulance" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ambulance</li></Link>
-                                    <Link to="/GovermentSchemes" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Government Schemes</li></Link>
+                                        <Link to="/Laboratory" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Laboratory</li></Link>
+                                        <Link to="/Radiology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Radiology</li></Link>
+                                        <Link to="/NICU" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">NICU</li></Link>
+                                        <Link to="/Dialysis" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Dialysis</li></Link>
+                                        <Link to="/Pharmacy" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pharmacy</li></Link>
+                                        <Link to="/IPD" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">IPD</li></Link>
+                                        <Link to="/Ambulance" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ambulance</li></Link>
+                                        <Link to="/GovermentSchemes" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Government Schemes</li></Link>
                                     </ul>
                                 </div>
                             </li>
@@ -199,9 +199,9 @@ export default function Header() {
                                 <Link to="/" className="nav-a">Patient Guide <ChevronDown className="inline drop-icon" /></Link>
                                 <div className="dropdown-div4">
                                     <ul className="p-2">
-                                    <Link to="/Floorplan" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Floor Plan</li></Link>
-                                    <Link to="/GeneralGuide" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">General Guide</li></Link>
-                                    <Link to="/DoAndDonts" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Do's & Don'ts</li></Link>
+                                        <Link to="/Floorplan" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Floor Plan</li></Link>
+                                        <Link to="/GeneralGuide" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">General Guide</li></Link>
+                                        <Link to="/DoAndDonts" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Do's & Don'ts</li></Link>
                                     </ul>
                                 </div>
                             </li>
@@ -222,118 +222,6 @@ export default function Header() {
                     </div >
                 </div >
             </nav >
-
-
-
-            {/* Mobile NavBar */}
-            < div className="mobile-nav" >
-                <div className="mobile-menu">
-                    {/* Semi-transparent overlay */}
-                    <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40
-${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                        aria-hidden="true"
-                    />
-
-                    {/* Navigation menu */}
-                    <nav id="mobile-menu"
-                        className={`fixed top-0 right-0 h-full w-[280px] bg-white shadow-2xl transform transition-transform duration-300 ease-out z-50
-${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
-                        aria-label="Mobile navigation"
-                        aria-hidden={!isOpen}
-                    >
-                        <div className="p-6">
-                            <ul className="space-y-6">
-                                {menuItems.map(({ icon: Icon, label, to, delay, submenu }, index) => (
-                                    <li
-                                        key={label}
-                                        style={{
-                                            transitionDelay: isOpen ? `${delay}ms` : '0ms'
-                                        }}
-                                        className={`relative transform transition-all duration-300 ease-out
-${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
-                                    >
-                                        {submenu ? (
-                                            <>
-                                                <button
-                                                    onClick={() => toggleDropdown(index)}
-                                                    className="flex items-center w-full p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
-                                                >
-                                                    <Icon className="w-5 h-5 mr-3" />
-                                                    <span>{label}</span>
-                                                    <ChevronDown className={`ml-auto transform transition-transform duration-200 ${openDropdown === index ? 'rotate-180' : ''}`} />
-                                                </button>
-                                                {/* Dropdown Items */}
-                                                <ul className={`pl-10 space-y-2 overflow-hidden transition-all duration-300 ${openDropdown === index ? 'max-h-130 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                                    {submenu.map(({ label, to }) => (
-                                                        <li key={label}>
-                                                            <Link to={to} onClick={closeSidebar} className="block p-1 text-gray-600 hover:bg-gray-100 rounded-md">{label}</Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </>
-                                        ) : (
-                                            <Link
-                                                to={to} // Use Link to navigate to the correct route
-                                                onClick={() => setIsOpen(false)}  // Close the menu after clicking
-                                                className="flex items-center w-full p-3 rounded-lg text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
-                                            >
-                                                <Icon className="w-5 h-5 mr-3" />
-                                                <span>{label}</span>
-                                            </Link>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <ul>
-                                <li onClick={closeSidebar} className="div-center mt-5 w-[50%]"><p className="text-center bg-red-700 text-white rounded-l px-1 py-1">Close</p></li>
-                            </ul>
-                        </div>
-                    </nav>
-
-                    <div className={`text-center w-1/4 pt-4 max-sm:leading-none pl-2 max-sm:pt-3`}>
-                        <Link to="/Dimond-Hospital" className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/31.png" alt="Hospital" /> About Us</Link>
-                    </div>
-
-                    <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-                        <Link to="/Doctor-Profile" className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/30.png" alt="Hospital" />Team</Link>
-                    </div>
-
-                    <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-
-                        <Link to="/" className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/29.png" alt="Hospital" />Home</Link>
-                    </div>
-
-                    <div className="text-center w-1/4 pt-4 max-sm:leading-none max-sm:pt-3">
-                        <Link to='/Gallery' className="max-sm:text-[12px]"><img className="w-[36px] div-center" src="/IMG/navbar icon/32.png" alt="Hospital" />Gallery</Link>
-                    </div>
-
-                    <div className="text-center w-1/4 pt-4  max-sm:pt-3">
-                        <button
-                            id="hamburger-button"
-                            onClick={toggleMenu}
-                            aria-expanded={isOpen}
-                            aria-controls="mobile-menu"
-                            aria-label="Toggle navigation menu"
-                            className={`w-6 h-6 max-sm:w-3 max-sm:h-3 hover:scale-105 mr-4 active:scale-95 transition-all duration-200
-${isAnimating ? 'animate-bounce-subtle' : ''}`}
-
-                        >
-                            <div className="relative w-8 h-8 -mt-4">
-                                {/* Hamburger icon lines */}
-                                <Ellipsis className="div-center w-8 h-8 bottombar-menu" />
-                            </div>
-                        </button>
-                        <br />
-                        <p className="mt-0.5 max-sm:text-[12px] bottombar-name">More</p>
-                    </div>
-                </div>
-            </ div>
-
-            {/* <div className="bg-red-700 text-white font-[600] p-1.5 text-[1.1rem] max-sm:text-[0.5rem] text-center">
-                <marquee behavior="" direction="">માતૃશ્રી રામુબા  તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા – ડાયમંડ હોસ્પિટલ અને મેડિકલ રિસર્ચ સેન્ટર</marquee>
-                <p>માતૃશ્રી રામુબા  તેજાની તથા માતૃશ્રી શાન્તાબા વિડિયા – ડાયમંડ હોસ્પિટલ અને મેડિકલ રિસર્ચ સેન્ટર</p>
-            </div> */}
 
         </header >
     );
