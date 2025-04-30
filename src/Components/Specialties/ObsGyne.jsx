@@ -80,7 +80,7 @@ const ObsGyne = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white pt-32 max-[991px]:pt-[6rem] max-sm:pt-[6.5rem] ">
+        <div className="spec-hero">
             {/* Hero Section */}
             <section className="relative h-[80vh] max-sm:h-[50vh] flex items-center justify-center overflow-hidden mix-blend-multiply">
                 <div className="absolute inset-0">
