@@ -5,6 +5,7 @@ Tailwind
 VitePWA
 framer-motion
 Lottie (Padding / HaertBeat Animation)
+npm i flowbite-react
 
 gh-pages(insatall panding for deployment)
 
@@ -26,6 +27,7 @@ navbar top sapce on scroll
 Book open And close 
 Bottom Navbar burgur menu
 Achievemnet bug with idea (table vi)
+on doctors profile back side is scroll too - stop scrolling in background
 
 
 panding work: 

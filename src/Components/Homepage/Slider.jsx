@@ -8,7 +8,7 @@ const slides = [
         url: "/IMG/cover1.png"
     },
     {
-        url: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&w=1920"
+        url: "/IMG/cover2.png"
     },
     {
         url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&w=1920"

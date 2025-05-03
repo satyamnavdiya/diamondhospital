@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Logo from './Images/Logo.png'
 import Nabh from './Images/NABH.png'
 import Tri from './Images/tri.png'
 import './CSS/Header.css'
-import { House, Hospital, LibraryBig, BriefcaseMedical, Images, ClipboardPlus, Stethoscope, Accessibility, Phone, Clock, HeartPulse, ChevronDown, Ellipsis, X } from 'lucide-react';
+import { House, Hospital, LibraryBig, BriefcaseMedical, ClipboardPlus, Stethoscope, Accessibility, Phone, Clock, HeartPulse, ChevronDown, AlignJustify, Images } from 'lucide-react';
 import { Link } from "react-router-dom";
 // import GoogleTranslate from "./GoogleTranslate";
 
@@ -14,6 +15,8 @@ export default function Header() {
     const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
 
     const toggleDropdown = (index) => {
+        // This will close the current dropdown if it's already open,
+        // or close any other open dropdown and open this one
         setOpenDropdown(openDropdown === index ? null : index);
     };
 
@@ -28,8 +31,8 @@ export default function Header() {
             }
         };
 
-        document.addEventListener('onclick', handleClickOutside);
-        return () => document.removeEventListener('onclick', handleClickOutside);
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
     }, [isOpen]);
 
     // Handle menu toggle with animation states
@@ -41,15 +44,22 @@ export default function Header() {
     };
 
 
-    // Function to close the sidebar
-    const closeSidebar = () => {
-        setIsOpen(false);
-    };
+
 
     // Mobile Navbar More Menu
     const menuItems = [
         {
-            icon: Stethoscope, label: 'Specialties', to: '/', delay: 0, submenu: [
+            icon: House, label: 'Home', to: '/', deplay: 0
+        },
+        {
+            icon: Hospital, label: 'About Us', deplay: 100, submenu: [
+                { label: 'Diamond Hospital', to: '/Dimond-Hospital', delay: 0 },
+                { label: 'Our Trustees', to: '/Hospital-Team', delay: 0 },
+            ]
+        },
+        { icon: BriefcaseMedical, label: "Doctor's prfile", to: '/Doctor-Profile', delay: 200 },
+        {
+            icon: Stethoscope, label: 'Specialties', delay: 300, submenu: [
                 { label: 'Obstetric & Gynecology', to: '/ObsGyne', delay: 0 },
                 { label: 'Pediatrics', to: '/Pediatrics', delay: 50 },
                 { label: 'Orthopedics', to: '/Orthopedics', delay: 100 },
@@ -63,9 +73,8 @@ export default function Header() {
                 { label: 'Physio Therapy', to: '/PhysioTherapy', delay: 500 },
             ]
         },
-        { icon: BriefcaseMedical, label: "Our Trustee", to: '/Hospital-Team', delay: 100 },
         {
-            icon: ClipboardPlus, label: 'Services', to: '/', delay: 150, submenu: [
+            icon: ClipboardPlus, label: 'Services', to: '/', delay: 400, submenu: [
                 { label: 'Laboratory', to: '/Laboratory' },
                 { label: 'Radiology', to: '/Radiology' },
                 { label: 'NICU', to: '/NICU' },
@@ -77,21 +86,38 @@ export default function Header() {
             ]
         },
         {
-            icon: Accessibility, label: 'Patient Guide', to: '/Patient-Guide', delay: 200, submenu: [
+            icon: Accessibility, label: 'Patient Guide', to: '/Patient-Guide', delay: 500, submenu: [
                 { label: 'Floor Plan', to: '/Floorplan' },
                 { label: 'General Guide', to: '/GeneralGuide' },
                 { label: "Do's & Don'ts", to: '/DoAndDonts' },
             ]
         },
         {
-            icon: HeartPulse, label: 'News & Media', to: '/', delay: 250, submenu: [
+            icon: HeartPulse, label: 'Health Information', to: '/', delay: 600, submenu: [
                 { label: 'Blog', to: '/' },
-                { label: 'Video', to: '/' },
+                { label: 'Video', to: '/Video' },
             ]
         },
-        { icon: LibraryBig, label: 'Academics', to: '/', delay: 300 },
+        { icon: Images, label: 'Gallery', to: '/Gallery', delay: 700 },
+        { icon: LibraryBig, label: 'Career', to: '/Career', delay: 800 },
     ];
 
+    const handleCloseModal = () => {
+        setIsOpen(false);
+    }
+
+    // Close Navbar when clicking outside of it
+    const handleOutsideClick = (e) => {
+        console.log('click')
+        if (e.target.classList.contains('mobile-menu')) {
+            handleCloseModal();
+        }
+    }
+
+    // Function to close the sidebar
+    const closeSidebar = () => {
+        setIsOpen(false);
+    };
 
 
     return (
@@ -222,6 +248,112 @@ export default function Header() {
                     </div >
                 </div >
             </nav >
+
+
+            {/* Mobile Navbar */}
+            < div className="mobile-nav" >
+                <div className="mobile-menu" onClick={handleOutsideClick}>
+                    {/* Semi-transparent overlay */}
+                    <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40
+${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                        aria-hidden="true"
+                    />
+
+                    {/* Navigation menu */}
+                    <nav id="mobile-menu"
+                        className={`fixed top-0 right-0 h-full w-[280px] bg-white shadow-2xl transform transition-transform duration-300 ease-out z-50
+${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                        aria-label="Mobile navigation"
+                        aria-hidden={!isOpen}
+                    >
+                        <div className="p-6">
+                            <ul className="space-y-6">
+                                {menuItems.map(({ icon: Icon, label, to, delay, submenu }, index) => (
+                                    <li
+                                        key={label}
+                                        style={{
+                                            transitionDelay: isOpen ? `${delay}ms` : '0ms'
+                                        }}
+                                        className={`relative transform transition-all duration-300 ease-out
+${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+                                    >
+                                        {submenu ? (
+                                            <>
+                                                <button
+                                                    onClick={() => toggleDropdown(index)}
+                                                    className="flex items-center w-full p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+                                                >
+                                                    <Icon className="w-5 h-5 mr-3" />
+                                                    <span>{label}</span>
+                                                    <ChevronDown className={`ml-auto transform transition-transform duration-200 ${openDropdown === index ? 'rotate-180' : ''}`} />
+                                                </button>
+                                                {/* Dropdown Items */}
+                                                <ul className={`pl-10 space-y-2 overflow-hidden transition-all duration-300 ${openDropdown === index ? 'max-h-130 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                                    {submenu.map(({ label, to }) => (
+                                                        <li key={label}>
+                                                            <Link to={to} onClick={closeSidebar} className="block p-1 text-gray-600 hover:bg-gray-100 rounded-md">{label}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </>
+                                        ) : (
+                                            <Link
+                                                to={to} // Use Link to navigate to the correct route
+                                                onClick={() => setIsOpen(false)}  // Close the menu after clicking
+                                                className="flex items-center w-full p-3 rounded-lg text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                                            >
+                                                <Icon className="w-5 h-5 mr-3" />
+                                                <span>{label}</span>
+                                            </Link>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <button id="hamburger-button"
+                        onClick={toggleMenu}
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-menu"
+                        aria-label="Toggle navigation menu"
+                        className={`hamburger-button ${isAnimating ? 'animate-bounce-subtle' : ''}`}>
+                        <motion.div
+                            whileHover={{
+                                scale: 1.05,
+                                boxShadow: "0 0 15px rgba(79, 157, 166, 0.6)",
+                            }}
+                            whileTap={{
+                                scale: 0.97,
+                            }}
+                            animate={{
+                                y: [0, -6, 0],
+                                boxShadow: [
+                                    "0 4px 8px rgba(0, 0, 0, 0.1)",
+                                    "0 8px 16px rgba(79, 157, 166, 0.3)",
+                                    "0 4px 8px rgba(0, 0, 0, 0.1)"
+                                ],
+                                transition: {
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    repeatType: "reverse",
+                                    ease: "easeInOut",
+                                },
+                            }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 120,
+                                damping: 15
+                            }}
+                            className="bg-teal-600 text-white rounded-lg w-10 h-10 flex items-center justify-center cursor-pointer shadow-lg backdrop-blur-sm"
+                        >
+                            <AlignJustify className="w-6 h-6" />
+                        </motion.div>
+
+                    </button>
+
+                </div>
+            </ div>
 
         </header >
     );

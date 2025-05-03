@@ -69,9 +69,9 @@ const DentalSurgery = () => {
 
 
   return (
-    <div className="min-h-screen bg-white pt-32 max-[991px]:pt-[6rem] max-sm:pt-[6.5rem]">
+    <div className="spec-hero">
       {/* Hero Section */}
-      <section className="relative h-[80vh] max-sm:h-[50vh] flex items-center justify-center overflow-hidden mix-blend-multiply">
+      <section className="hero-sec-img relative flex items-center justify-center overflow-hidden mix-blend-multiply">
         <div className="absolute inset-0">
           <img
             src={dental}
@@ -165,10 +165,10 @@ const DentalSurgery = () => {
             className="fixed inset-0 z-50 overflow-y-auto modal-overlay bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={handleOutsideClick}
           >
-            <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto max-sm:pt-[19rem]" onClick={e => e.stopPropagation()}>
+            <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto " onClick={e => e.stopPropagation()}>
               <div className="flex flex-col md:flex-row">
                 {/* Doctor image - left side */}
-                <div className="md:w-1/3 h-64 md:h-auto">
+                <div className="doc-image">
                   <img
                     src={selectedDoctorData.imageUrl.replace('w=300', 'w=600')}
                     alt={selectedDoctorData.name}

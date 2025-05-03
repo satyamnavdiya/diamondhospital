@@ -3,11 +3,11 @@ import "../CSS/Specialities.css"
 
 function GeneralGuide() {
     return (
-        <div className='w-3/4 pt-48 div-center pb-10 max-sm:pt-[7.5rem]'>
+        <div className='patient-guide'>
             <h1 className='text-5xl text-center font-bold'><span className='doc-heading doc-gradient'>Patient Guide</span></h1>
 
-            <div className='text-xl mt-10 max-sm:mt-5'>
-                <h2 className='spec-sub-heading'>Welcome to RTSV - SDA Dimond Hopital and Reserach Center! We are committed to providing high-quality healthcare with compassion and professionalism. This guide will help you navigate your visit and understand our services. </h2>
+            <div>
+                <h2 className='patient-para'>Welcome to RTSV - SDA Dimond Hopital and Reserach Center! We are committed to providing high-quality healthcare with compassion and professionalism. This guide will help you navigate your visit and understand our services. </h2>
 
                 <br /><br />
                 <div className='spec-text'>

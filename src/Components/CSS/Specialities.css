@@ -15,27 +15,547 @@
     background-size: 400%;
     background-position: 0%;
 }
+
 .pedi-bg-div {
     background-image: linear-gradient(to right, rgb(244 162 97 / 0.9), rgb(42 157 143 / 0.9));
 }
+
+/* Floor Plan */
+.floor-div {
+    display: flex;
+    justify-content: center;
+}
+
+
 @media (max-width: 375px) {
-    .spec-hero{
-        padding-top: 15rem;
+    .spec-hero {
+        padding-top: 5rem;
+    }
+
+    .hero-sec-img {
+        height: 30vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 85vh;
+        margin-top: 5rem;
+    }
+
+    .doc-image {
+        height: 20rem;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 6rem;
+    }
+
+    .patient-para {
+        font-size: 1rem;
+        padding-top: 1rem;
     }
 }
 
-@media (min-width: 376px) and (max-width: 480px) {}
+@media (min-width: 376px) and (max-width: 480px) {
+    .spec-hero {
+        padding-top: 5rem;
+    }
 
-@media (min-width: 481px) and (max-width: 640px) {}
+    .hero-sec-img {
+        height: 30vh;
+    }
 
-@media (min-width: 641px) and (max-width: 767px) {}
+    .spec-hero-heading {
+        font-size: 3rem;
+        line-height: 1;
+    }
 
-@media (min-width: 768px) and (max-width: 1024px) {}
+    .spec-sub-heading {
+        font-size: 1rem;
+        line-height: 0;
+    }
 
-@media (min-width: 1025px) and (max-width: 1280px) {}
+    .spec-text {
+        font-size: 1.5rem;
+    }
 
-@media (min-width: 1281px) and (max-width: 1440px) {}
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 85vh;
+        margin-top: 5rem;
+    }
 
-@media (min-width: 1441px) and (max-width: 1920px) {}
+    .doc-image {
+        height: 25rem;
+    }
 
-@media (min-width: 1921px) {}
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 6.5rem;
+    }
+
+    .patient-para {
+        font-size: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+    .spec-hero {
+        padding-top: 5rem;
+    }
+
+    .hero-sec-img {
+        height: 30vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.5rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 90vh;
+        margin-top: 5rem;
+    }
+
+    .doc-image {
+        height: 28rem;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 6.5rem;
+    }
+
+    .patient-para {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+    .spec-hero {
+        padding-top: 5rem;
+    }
+
+    .hero-sec-img {
+        height: 30vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1.5rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.6rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 90vh;
+        margin-top: 5rem;
+        border-radius: 24px;
+    }
+
+    .doc-image {
+        height: 28rem;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 6.5rem;
+    }
+
+    .patient-para {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .spec-hero {
+        padding-top: 5rem;
+    }
+
+    .hero-sec-img {
+        height: 50vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1.7rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.8rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 80vh;
+        margin-top: 5rem;
+        border-radius: 24px;
+        padding: 0 1.5rem;
+    }
+
+    .doc-image {
+        height: 28rem;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 8rem;
+    }
+
+    .patient-para {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .spec-hero {
+        padding-top: 5rem;
+    }
+
+    .hero-sec-img {
+        height: 50vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1.7rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.8rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 80vh;
+        margin-top: 5rem;
+        border-radius: 24px;
+        padding: 1.5rem;
+    }
+
+    .doc-image {
+        height: auto;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 9rem;
+    }
+
+    .patient-para {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+    .spec-hero {
+        padding-top: 5rem;
+    }
+
+    .hero-sec-img {
+        height: 50vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1.7rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.8rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 75vh;
+        margin-top: 7rem;
+        border-radius: 24px;
+        padding: 1.5rem;
+    }
+
+    .doc-image {
+        height: auto;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 12px;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 9.5rem;
+    }
+
+    .patient-para {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+    .spec-hero {
+        padding-top: 8.5rem;
+    }
+
+    .hero-sec-img {
+        height: 60vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 5.5rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1.7rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.8rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 80vh;
+        margin-top: 8rem;
+        border-radius: 24px;
+        padding: 1.5rem;
+    }
+
+    .doc-image {
+        height: auto;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 1rem;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 10rem;
+    }
+
+    .patient-para {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (min-width: 1921px) {
+    .spec-hero {
+        padding-top: 12rem;
+    }
+
+    .hero-sec-img {
+        height: 80vh;
+    }
+
+    .spec-hero-heading {
+        font-size: 6rem;
+        line-height: 1;
+    }
+
+    .spec-sub-heading {
+        font-size: 1.7rem;
+        line-height: 0;
+    }
+
+    .spec-text {
+        font-size: 1.8rem;
+    }
+
+    /* doctors */
+    .doc-profile {
+        width: 80%;
+        height: 75vh;
+        margin-top: 12rem;
+        border-radius: 24px;
+        padding: 1.5rem;
+    }
+
+    .doc-image {
+        height: auto;
+        width: 30%;
+        margin: 0 auto;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .doc-heading {
+        font-size: 1.5rem;
+    }
+
+    .doc-text {
+        font-size: 1rem;
+    }
+
+    /* Patient Guide */
+    .patient-guide {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 16rem;
+    }
+
+    .patient-para {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+}

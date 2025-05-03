@@ -11,9 +11,9 @@ const Pharmacy = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white pt-32 max-sm:pt-[6.5rem]">
+        <div className="spec-hero">
             {/* Hero Section */}
-            <section className="relative h-[80vh] max-sm:h-[50vh] flex items-center justify-center overflow-hidden mix-blend-multiply">
+            <section className="hero-sec-img relative flex items-center justify-center overflow-hidden mix-blend-multiply">
                 <div className="absolute inset-0">
                     <img
                         src={pharmacy}

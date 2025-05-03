@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import "../CSS/Specialities.css"
 import laboratory from '../Images/laboratory.jpg'
+import InfiniteSlider from './InfiniteSlider';
+import { laboratoryPackages } from '../../data/packages';
+
+
 
 const Laboratory = () => {
+
     const fadeInUp = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -11,9 +16,9 @@ const Laboratory = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white pt-32 max-sm:pt-[6.5rem]">
+        <div className="spec-hero">
             {/* Hero Section */}
-            <section className="relative h-[80vh] max-sm:h-[50vh] flex items-center justify-center overflow-hidden mix-blend-multiply">
+            <section className="hero-sec-img relative flex items-center justify-center overflow-hidden mix-blend-multiply">
                 <div className="absolute inset-0">
                     <img
                         src={laboratory}
@@ -64,7 +69,7 @@ const Laboratory = () => {
                 </div>
             </section>
 
-
+            <InfiniteSlider packages={laboratoryPackages} speed={40} />
 
         </div >
     );

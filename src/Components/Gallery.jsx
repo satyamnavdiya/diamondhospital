@@ -1,140 +1,62 @@
-import React, { useMemo, useState } from 'react'
-import { FilterBar } from './FilterBar';
-import { GalleryGrid } from './GalleryGrid';
-import CircularGallery from './CircularGallery'
-
-const sampleData = [
-    {
-        id: '1',
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba',
-        thumbnail: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=500&q=80',
-        title: 'Mountain Landscape',
-        caption: 'Beautiful mountain range at sunset',
-        date: '2024-03-10',
-        category: 'nature',
-        tags: ['nature', 'landscape']
-    },
-    {
-        id: '2',
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1682686581854-5e71f58e7e3f',
-        thumbnail: 'https://images.unsplash.com/photo-1682686581854-5e71f58e7e3f?w=500&q=80',
-        title: 'Urban Architecture',
-        caption: 'Modern city buildings',
-        date: '2024-03-09',
-        category: 'architecture',
-        tags: ['architecture', 'urban']
-    },
-    {
-        id: '3',
-        type: 'image',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/AaravDey.jpg/1200px-AaravDey.jpg',
-        thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/AaravDey.jpg/1200px-AaravDey.jpg',
-        title: 'Urban Architecture',
-        caption: 'Modern city buildings',
-        date: '2024-03-09',
-        category: 'architecture',
-        tags: ['architecture', 'urban']
-    },
-    {
-        id: '4',
-        type: 'image',
-        url: 'https://www.youtube.com/watch?v=VsN-_DpsBFI',
-        thumbnail: 'https://www.youtube.com/watch?v=VsN-_DpsBFI',
-        title: 'Urban Architecture',
-        caption: 'Modern city buildings',
-        date: '2024-03-09',
-        category: 'architecture',
-        tags: ['architecture', 'urban']
-    },
-
-];
-
-const initialFilters = {
-    mediaType: 'all',
-    dateRange: {
-        start: '',
-        end: '',
-    },
-    categories: [],
-    tags: [],
-};
+import React, { useState } from 'react';
+import { images } from '../data/images';
+import FilterBar from './FilterBar';
+import MasonryGallery from './MasonryGallery';
+import ImageModal from './ImageModal';
+import { filterImages } from '../utils/filterImages';
+import './CSS/gallery.css'
 
 function Gallery() {
+    const [filters, setFilters] = useState({
+        tags: [],
+        startDate: null,
+        endDate: null
+    });
 
-    const [filters, setFilters] = useState(initialFilters);
-    const [selectedItem, setSelectedItem] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedImage, setSelectedImage] = useState(null);
 
-    const filteredItems = useMemo(() => {
-        return sampleData.filter((item) => {
-            // Media type filter
-            if (filters.mediaType !== 'all' && item.type !== filters.mediaType) {
-                return false;
-            }
+    const filteredImages = filterImages(images, filters);
 
-            // Date range filter
-            if (filters.dateRange.start && item.date < filters.dateRange.start) {
-                return false;
-            }
-            if (filters.dateRange.end && item.date > filters.dateRange.end) {
-                return false;
-            }
-
-            // Tags filter
-            if (
-                filters.tags.length > 0 &&
-                !filters.tags.some((tag) => item.tags.includes(tag))
-            ) {
-                return false;
-            }
-
-            return true;
-        });
-    }, [filters]);
-
-    const handleItemClick = (item) => {
-        const index = filteredItems.findIndex((i) => i.id === item.id);
-        setCurrentIndex(index);
-        setSelectedItem(item);
+    const handleFilterChange = (newFilters) => {
+        setFilters(newFilters);
     };
 
-    const handlePrevious = () => {
-        const newIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
-        setCurrentIndex(newIndex);
-        setSelectedItem(filteredItems[newIndex]);
+    const openImage = (image) => {
+        setSelectedImage(image);
     };
 
-    const handleNext = () => {
-        const newIndex = (currentIndex + 1) % filteredItems.length;
-        setCurrentIndex(newIndex);
-        setSelectedItem(filteredItems[newIndex]);
+    const closeModal = () => {
+        setSelectedImage(null);
     };
 
     return (
-        <div className="min-h-screen pt-36 max-sm:pt-[6.5rem]">
-            <div className="max-w-7xl mx-auto py-8">
-                <FilterBar filters={filters} onFilterChange={setFilters} />
-
-                {filteredItems.length === 0 ? (
-                    <div className="text-center py-12">
-                        <p className="text-gray-500">No items match your filters</p>
+        <div className="gallery">
+            {/* Header */}
+            <header>
+                <div className="container mx-auto px-4 py-4">
+                    <div>
+                        <div>
+                            <h1 className="gallery-gradient gallery-heading">Gallery</h1>
+                        </div>
+                        <div className="text-sm text-gray-500">
+                            Showing {filteredImages.length} of {images.length} images
+                        </div>
                     </div>
-                ) : (
-                    <GalleryGrid items={filteredItems} onItemClick={handleItemClick} />
-                )}
+                </div>
+            </header>
 
-                <CircularGallery
-                    item={selectedItem}
-                    onClose={() => setSelectedItem(null)}
-                    onPrevious={handlePrevious}
-                    onNext={handleNext}
-                />
+            {/* Filter Bar */}
+            <FilterBar filters={filters} onFilterChange={handleFilterChange} />
+
+            {/* Gallery */}
+            <div className="container mx-auto pb-12">
+                <MasonryGallery images={filteredImages} openImage={openImage} />
             </div>
-        </div>
 
-    )
+            {/* Image Modal */}
+            <ImageModal image={selectedImage} onClose={closeModal} />
+        </div>
+    );
 }
 
-export default Gallery
+export default Gallery;

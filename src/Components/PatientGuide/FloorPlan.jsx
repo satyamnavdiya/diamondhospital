@@ -5,7 +5,7 @@ import { ChevronsRight } from 'lucide-react'
 
 function FloorPlan() {
     return (
-        <div className='min-h-screen bg-white pt-36 max-sm:pt-[6.5rem] w-[80%] div-center'>
+        <div className='spec-hero'>
             <h1 className='doc-heading doc-gradient'>Floor Plan</h1>
 
             <div className='floor-div'>

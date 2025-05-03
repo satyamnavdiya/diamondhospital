@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, X, Phone, Mail, MapPin, Award, Calendar } from 'lucide-react';
-import doctors from '../Components/data/doctors';
+import doctors from '../data/doctors';
 import './CSS/DocProfile.css'
+import './CSS/Specialities.css'
 
 function DocProfile() {
 
@@ -64,13 +65,13 @@ function DocProfile() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8 pt-48 w-[80%] div-center max-sm:pt-[7.5rem] ">
+    <div className="doctor-div">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             <span className='doc-heading doc-gradient'>Our Medical Specialists</span>
           </h1>
-          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+          <p className="mt-3 mx-auto doc-subheading">
             Meet our team of experienced and dedicated healthcare professionals
           </p>
         </div>
@@ -176,10 +177,10 @@ function DocProfile() {
           className="fixed inset-0 z-50 overflow-y-auto modal-overlay bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={handleOutsideClick}
         >
-          <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto max-sm:pt-[19rem]" onClick={e => e.stopPropagation()}>
+          <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto" onClick={e => e.stopPropagation()}>
             <div className="flex flex-col md:flex-row">
               {/* Doctor image - left side */}
-              <div className="md:w-1/3 h-64 md:h-auto">
+              <div className="doc-image">
                 <img
                   src={selectedDoctorData.imageUrl.replace('w=300', 'w=600')}
                   alt={selectedDoctorData.name}

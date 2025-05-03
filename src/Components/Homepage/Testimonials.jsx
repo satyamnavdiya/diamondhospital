@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { textReviews, videoReviews } from "../data/reviews.js";
+import { textReviews, videoReviews } from "../../data/reviews.js";
 import { FileText, Video, ChevronLeft, ChevronRight } from "lucide-react";
 import ReviewCard from "./TestimonialCard.jsx";
 import '../CSS/Testimonial.css'
