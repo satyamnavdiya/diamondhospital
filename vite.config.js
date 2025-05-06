@@ -11,4 +11,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react', 'ogl', 'framer-motion'],
   },
+  server: {
+    host: true, // or use your IP directly like '192.168.1.10'
+    port: 5173, // or any other open port
+  },
 })

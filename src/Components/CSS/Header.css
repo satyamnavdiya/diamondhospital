@@ -1,3 +1,7 @@
+.hostipal-name-span {
+    font-family: "Noto Serif Gujarati", serif;
+}
+
 @media (max-width: 375px) {
     .nav-header {
         position: fixed;
@@ -374,6 +378,7 @@
     }
 
     .hostipal-name-span {
+        font-family: "Noto Serif Gujarati", serif;
         padding: 3px 8px;
         font-size: 10px;
     }
@@ -475,6 +480,7 @@
     }
 
     .hostipal-name-span {
+        font-family: "Noto Serif Gujarati", serif;
         padding: 3px 8px;
         font-size: 12px;
     }
@@ -634,6 +640,7 @@
     }
 
     .hostipal-name-span {
+        font-family: "Noto Serif Gujarati", serif;
         padding: 3px 8px;
         font-size: 12px;
     }
@@ -733,7 +740,7 @@
 
     .topbar {
         position: fixed;
-        width: 30%;
+        width: 35%;
         padding: 10px 0;
         right: 0;
         top: 0;
@@ -789,12 +796,13 @@
     .hospital-name {
         font-size: 1rem;
         font-weight: 800;
-        line-height: 1.5;
+        line-height: 1.3;
         padding: 0 10px;
     }
 
     .hostipal-name-span {
-        padding: 5px 10px;
+        font-family: "Noto Serif Gujarati", serif;
+        padding: 2px 4px;
         font-size: 14px;
     }
 
@@ -816,7 +824,7 @@
     }
 
     .nav-custom-space>*+* {
-        margin-left: 1.5rem
+        margin-left: 1.2rem
     }
 
     .navbar-link {
@@ -952,6 +960,7 @@
     }
 
     .hostipal-name-span {
+        font-family: "Noto Serif Gujarati", serif;
         padding: 5px 10px;
     }
 

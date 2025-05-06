@@ -10,6 +10,10 @@
     }
 }
 
+.div-map{
+    display: none;
+}
+
 @media (max-width: 375px) {
     footer {
         width: 100%;
@@ -434,21 +438,29 @@
         padding: 1rem 1rem;
         border-radius: 16px;
         display: grid;
-        display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .div-map {
         display: block;
-        width: 100%;
         height: 25rem;
         position: relative;
+        align-items: center;
+        margin: 0 auto;
         border-radius: 16px;
         overflow: hidden;
     }
 
     .footer-div {
         padding: 10px ;
+        width: 100%;
+    }
+
+    .div1-footer{
+        margin-left: 2rem;
+    }
+    .div2-footer{
+        margin-left: 3rem;
     }
 
     .footer-logo {
@@ -462,7 +474,7 @@
 
     .hospital-name-footer {
         font-weight: bolder;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .footer-div-heading {
@@ -487,6 +499,7 @@
     .footer-text {
         font-size: 1.2rem;
     }
+
 }
 
 @media (min-width: 1921px) {
@@ -504,7 +517,6 @@
 
     .div-map {
         display: block;
-        width: 100%;
         height: 30rem;
         position: relative;
         border-radius: 16px;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
+import '../CSS/Testimonial.css'
 
 const TestimonialCard = ({ review, showVideo = false }) => {
     const renderStars = (rating) => {
@@ -20,7 +21,7 @@ const TestimonialCard = ({ review, showVideo = false }) => {
             return (
                 <div className="flex flex-col h-full max-sm:h-[5rem]">
                     <div className="mb-4 flex flex-row gap-1">{renderStars(review.rating)}</div>
-                    <blockquote className="text-gray-700 italic mb-1 flex-grow text-lg max-sm:text-[12px]">
+                    <blockquote className="text-gray-700 italic mb-1 flex-grow text-[20px] max-sm:text-[12px] content-text">
                         "{textReview.content}"
                     </blockquote>
                     <div className="text-sm text-gray-500 max-sm:text-[12px]">

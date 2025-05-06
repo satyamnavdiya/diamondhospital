@@ -151,8 +151,7 @@ export default function Header() {
 
                     <div className="hospital-Desk-name">
                         <p className="hospital-name">
-                            <span className="bg-blue-700 text-white px-[0.4rem] py-1.5 text-[1rem] rounded-[10px] mb-1 font-extrabold hostipal-name-span">માતૃશ્રી રામુબા તેજાણી તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
-                            <br />
+                            <span className="block  bg-[#003066] text-white  text-[1rem]  mb-2 font-extrabold hostipal-name-span">માતૃશ્રી રામુબા તેજાણી તથા માતૃશ્રી શાન્તાબા વિડિયા</span>
                             SDA DIAMOND HOSPITAL
                             <br />
                             AND MEDICAL RESEARCH CENTER

@@ -3,16 +3,16 @@ import { X, Check } from 'lucide-react';
 
 const BookingModal = ({ pack, onClose }) => {
     return (
-        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-xl p-6  w-full mx-0 relative max-h-[90vh] overflow-y-auto">
+        <div className="w-[60%] h-[60vh] border-2 border-red-800 mx-auto my-0 relative">
+            <div className="w-[100%] h-[60vh] overflow-auto">
                 <button
                     onClick={onClose}
                     className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
                 >
                     <X size={24} />
                 </button>
-
-                <div className="mb-6">
+                <img src={pack.imageUrl} alt="" />
+                {/* <div className="mb-6">
                     <h2 className="text-2xl font-bold text-gray-800 mb-2">{pack.name}</h2>
                     <p className="text-gray-600">{pack.description}</p>
                 </div>
@@ -44,7 +44,8 @@ const BookingModal = ({ pack, onClose }) => {
                     >
                         Confirm Booking
                     </button>
-                </div>
+                </div> */}
+
             </div>
         </div>
     );

@@ -2,22 +2,22 @@ export const textReviews  = [
     {
         id: '1',
         type: 'text',
-        author: 'Sarah Johnson',
+        author: ' શ્રી વિકાસભાઈ ખૂંટી',
         avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
         rating: 5,
-        date: '2023-10-15',
-        content: 'This product exceeded all my expectations. The quality is outstanding and customer service was exceptional. I highly recommend this to anyone looking for a reliable solution.',
-        position: 'Marketing Director'
+        date: '2025-04-25',
+        content: 'મારી પુત્રી નો જન્મ સિવિલ હોસ્પિટલ માં થયો હતો, પુત્રીની શારીરિક સ્થિતિ સારી ન હોવાને કારણે ડાયમંડ હોસ્પિટલના NICUમાં દાખલ કરવામાં આવી હતી. અહીં ખૂબ સારી સારવાર મળતા મારી દિકરીને નવજીવન મળ્યું છે. હું ડાયમંડ હોસ્પિટલ અને સમગ્ર ટીમનો આભાર માનું છું.',
+        position: 'દર્દીના સગા'
     },
     {
         id: '2',
         type: 'text',
-        author: 'Michael Chen',
+        author: 'શ્રીમતી ભારતીબેન જગદીશભાઈ માલવિયા',
         avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-        rating: 4,
+        rating: 5,
         date: '2023-09-22',
-        content: 'Very satisfied with my purchase. The features are intuitive and it has made a significant improvement in my daily workflow. The only thing I would change is adding more color options.',
-        position: 'Software Engineer'
+        content: 'હું મોટાવરાછાથી ડાયમંડ હોસ્પિટલમાં સારવાર લેવા માટે આવી હતી. મને અહી કુલ 13 દિવસ માટે દાખલ કરવામાં આવી હતી. અહીંના તબીબો અને અન્ય સ્ટાફ દ્વારા મળેલી સારવારને કારણે મારામાં ઝડપી રીકવરી આવી છે.અહીંના તબીબો પોઝીટીવ રહેવાનું શીખવાડે છે, જેને કારણે અડધી બિમારી તો આપમેળે ઓછી થઇ જાય છે',
+        position: 'દર્દી'
     },
     {
         id: '3',

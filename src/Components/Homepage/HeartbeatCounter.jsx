@@ -60,15 +60,15 @@ const HeartbeatCounter = ({ targetNumber, label, description }) => {
         >
             <div className="inline-block mb-4 relative">
                 <Heart
-                    size={48}
+                    size={50}
                     className={`text-pink-500 ${countStarted ? "animate-heartbeat" : ""}`}
-                    fill={countStarted ? "#f472b6" : "none"}
+                    fill={countStarted ? "#ff0000" : "none"}
                 />
                 <div className="absolute -top-1 -right-1 h-3 w-3 bg-pink-300 rounded-full animate-ping"></div>
             </div>
 
             <div className="text-4xl font-bold text-blue-900 mb-2">
-                {count.toLocaleString()}
+                {count.toLocaleString()} +
             </div>
 
             <h3 className="text-xl font-semibold text-blue-800 mb-1">{label}</h3>

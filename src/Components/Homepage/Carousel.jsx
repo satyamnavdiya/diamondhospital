@@ -80,7 +80,7 @@ const Carousel = ({ slides }) => {
                     className="absolute w-full h-full  "
                 >
                     <div
-                        className="w-full h-full bg-size-[100%] bg-center object-cover bg-no-repeat"
+                        className="w-full h-full bg-center bg-size-[100%] bg-no-repeat"
                         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                     />
                 </motion.div>

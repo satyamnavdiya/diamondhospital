@@ -1,3 +1,7 @@
+.content-text{
+    font-family: "Noto Serif Gujarati", serif;
+}
+
 .testimonial-heading {
     font-size: 3rem;
     font-weight: 700;
@@ -14,6 +18,8 @@
     background-size: 400%;
     background-position: 0%;
 }
+
+
 
 @media (max-width: 375px) {
     .testimonial-heading {
@@ -59,7 +65,7 @@
 
 @media (min-width: 1441px) and (max-width: 1920px) {
     .testimonial-heading {
-        font-size: 4rem;
+        font-size: 3.2rem;
     }
 }
 

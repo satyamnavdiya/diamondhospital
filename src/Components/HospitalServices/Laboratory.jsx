@@ -45,7 +45,7 @@ const Laboratory = () => {
                 </div>
             </section>
 
-            {/* About Urology */}
+            {/* About Laboratory */}
             <section className="py-10 w-[80%] div-center">
                 <div>
                     <motion.div
