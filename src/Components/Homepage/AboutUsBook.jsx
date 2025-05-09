@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import Logo from '../Images/Logo.png'
-import Nabh from '../Images/NABH.png'
-import page2 from '../../../public/IMG/page2.jpg'
-import page3 from '../../../public/IMG/page3.jpg'
-import page5 from '../../../public/IMG/page5.jpg'
-import page4 from '../../../public/IMG/page4.jpg'
-import page7 from '../../../public/IMG/page7.jpg'
+import page2 from '../Images/page2.jpg'
+import page3 from '../Images/page3.jpg'
+import page4 from '../Images/page4.jpg'
+import page5 from '../Images/page5.jpg'
+import page7 from '../Images/page7.jpg'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../CSS/Book.css'
 

@@ -80,6 +80,17 @@
         font-size: 1rem;
         padding-top: 1rem;
     }
+
+    /* Packages */
+    .pack-details {
+        margin-top: 5rem;
+    }
+
+    .pack-contect {
+        flex-direction: row;
+        gap: 6px;
+    }
+
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
@@ -135,6 +146,17 @@
         font-size: 1rem;
         padding-top: 1rem;
     }
+
+    /* Packages */
+    .pack-details {
+        margin-top: 5rem;
+    }
+
+    .pack-contect {
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 640px) {
@@ -189,6 +211,13 @@
     .patient-para {
         font-size: 1.5rem;
         padding-top: 1rem;
+    }
+
+    /* packages */
+    .pack-contect {
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
     }
 
 }
@@ -252,6 +281,13 @@
         font-size: 1.5rem;
         padding-top: 1rem;
     }
+
+    /* packages */
+    .pack-contect {
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -314,6 +350,13 @@
         font-size: 1.5rem;
         padding-top: 1rem;
     }
+
+    /* packages */
+    .pack-contect {
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -374,6 +417,13 @@
     .patient-para {
         font-size: 1.5rem;
         padding-top: 1rem;
+    }
+
+    /* packages */
+    .pack-contect {
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
     }
 }
 
@@ -436,6 +486,12 @@
         font-size: 2rem;
         padding-top: 1rem;
     }
+
+    /* packages */
+    .pack-contect {
+        justify-content: center;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 1441px) and (max-width: 1920px) {
@@ -497,6 +553,11 @@
         font-size: 2rem;
         padding-top: 1rem;
     }
+
+    /* Packages */
+    .pack-details {
+        margin-top: 8.5rem;
+    }
 }
 
 @media (min-width: 1921px) {
@@ -557,5 +618,10 @@
     .patient-para {
         font-size: 2rem;
         padding-top: 1rem;
+    }
+
+    /* Packages */
+    .pack-details {
+        margin-top: 12rem;
     }
 }

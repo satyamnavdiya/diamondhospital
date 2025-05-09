@@ -56,6 +56,9 @@ body::-webkit-scrollbar-thumb:hover {
     margin: 0 auto;
 }
 
+.font-guj {
+    font-family: "Noto Serif Gujarati", serif !important;
+}
 
 /* temp Style */
 .div-border {
