@@ -265,8 +265,8 @@ ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                         aria-label="Mobile navigation"
                         aria-hidden={!isOpen}
                     >
-                        <div className="p-6">
-                            <ul className="space-y-6">
+                        <div className="p-4">
+                            <ul className="space-y-4">
                                 {menuItems.map(({ icon: Icon, label, to, delay, submenu }, index) => (
                                     <li
                                         key={label}
