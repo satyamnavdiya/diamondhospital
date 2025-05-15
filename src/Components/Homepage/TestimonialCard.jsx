@@ -24,13 +24,6 @@ const TestimonialCard = ({ review, showVideo = false }) => {
                     <blockquote className="text-gray-700 italic mb-1 flex-grow text-[20px] max-sm:text-[12px] content-text">
                         "{textReview.content}"
                     </blockquote>
-                    <div className="text-sm text-gray-500 max-sm:text-[12px]">
-                        {new Date(textReview.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                        })}
-                    </div>
                 </div>
             );
         } else {
@@ -47,13 +40,6 @@ const TestimonialCard = ({ review, showVideo = false }) => {
                             allowFullScreen
                         ></iframe>
                     </div>
-                    <div className="text-sm text-gray-500 mt-2">
-                        {new Date(videoReview.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                        })}
-                    </div>
                 </div>
             );
         }
@@ -65,11 +51,6 @@ const TestimonialCard = ({ review, showVideo = false }) => {
                 {renderContent()}
             </div>
             <div className="flex items-center gap-4 p-6 max-sm:pt-0 max-sm:pb-15 max-sm:mt-15 h-[50%] max-[991px]:mt-5 max-[991px]:pb-0 mt-5">
-                <img
-                    src={review.avatar}
-                    alt={review.author}
-                    className="w-12 h-12 rounded-full object-cover shadow-sm"
-                />
                 <div>
                     <h4 className="font-medium text-primary max-sm:text-[12px]">{review.author}</h4>
                     {review.type === "text" && review.position && (

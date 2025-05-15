@@ -84,7 +84,7 @@ const PhysioTherapy = () => {
   return (
     <div className="spec-hero">
       {/* Hero Section */}
-      <section className="hero-spec-img relative  flex items-center justify-center overflow-hidden mix-blend-multiply">
+      <section className="hero-sec-img relative  flex items-center justify-center overflow-hidden mix-blend-multiply">
         <div className="absolute inset-0">
           <img
             src={physiotheraphy}

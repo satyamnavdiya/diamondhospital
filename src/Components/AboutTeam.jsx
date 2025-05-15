@@ -1,27 +1,22 @@
 
 import { motion } from "framer-motion";
 import './CSS/About.css'
-const teamMembers = [
-  {
-    name: "Dr. Sarah Johnson",
-    role: "Chief Medical Officer",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1000&q=80",
-    description: "With over 15 years of experience in internal medicine and healthcare management.",
-  },
-  {
-    name: "Dr. Michael Chen",
-    role: "Head of Surgery",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80",
-    description: "Board-certified surgeon specializing in minimally invasive procedures.",
-  },
-  {
-    name: "Dr. Emily Williams",
-    role: "Head of Pediatrics",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=1000&q=80",
-    description: "Dedicated to providing compassionate care for our youngest patients.",
-  },
-  // Add more team members as needed
-];
+import trust from './Images/trust.jpg'
+// const teamMembers = [
+//   {
+//     name: "Dr. Sarah Johnson",
+//     image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1000&q=80",
+//   },
+//   {
+//     name: "Dr. Michael Chen",
+//     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80",
+//   },
+//   {
+//     name: "Dr. Emily Williams",
+//     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=1000&q=80",
+//   },
+//   // Add more team members as needed
+// ];
 
 const AboutTeam = () => {
   const fadeInUp = {
@@ -48,7 +43,7 @@ const AboutTeam = () => {
             className="font-display text-5xl md:text-6xl mb-4 font-bold"
             {...fadeInUp}
           >
-            <span className='spec-hero-heading'>The RTSV - Diamond Hosital <br /> and Reserach Center</span>
+            <span className='spec-hero-heading'>The RTSV - Diamond Hospital <br />  and Research Center </span>
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl max-w-2xl mx-auto"
@@ -56,13 +51,14 @@ const AboutTeam = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className='spec-sub-heading div-border'>Write Somthing about Hospital</span>
+            <span className='spec-sub-heading'>Healing Hands for Every Home.</span>
+
           </motion.p>
         </div>
       </section>
 
 
-      <div>
+      {/* <div>
         <div className="w-[80%] mx-auto div-info">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,10 +67,7 @@ const AboutTeam = () => {
             className="text-center mb-7"
           >
             <h1 className="text-4xl font-bold text-gray-900 mb-4"><span className="Team-heading Team-gradient">Our Trustees</span></h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto dimond-text">
-              Meet our team of dedicated healthcare professionals committed to providing
-              exceptional patient care.
-            </p>
+            
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -95,14 +88,17 @@ const AboutTeam = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-teal-600 mb-4 dimond-text">{member.role}</p>
-                  <p className="text-gray-600 dimond-text">{member.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+
+  <div className="w-[80%] h-auto div-center overflow-hidden div-info">
+  <img src={trust} alt="" className="w-full h-full object-cover" />
+
+  </div>
     </section>
   );
 };

@@ -10,7 +10,7 @@ const doctors = [
         name: "Dr. Riddhi Vaghani",
         department: "GYNECOLOGY",
         experience: 13,
-        imageUrl: "../IMG/doc/2.png",
+        imageUrl: "../IMG/doc/9.png",
         bio: "Dr. Riddhi Vaghani is an experienced and dedicated Gynecologist with a rich clinical background spanning over 13 years. She has served in several reputed institutions, including 5 years at Simmer Hospital, 3 years at Gujarat Adani Institute of Medical Sciences, 1 year at Balaji Hospital, and 4 years at Dimond Hospital. Known for her compassionate care and clinical expertise, Dr. Vaghani has consistently provided high-quality healthcare services to women across all stages of life.",
         education: "MBBS, MS, OBS & GYN",
         availability: {

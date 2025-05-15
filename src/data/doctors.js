@@ -44,7 +44,7 @@ const doctors = [
         name: "Dr. Riddhi Vaghani",
         department: "GYNECOLOGY",
         experience: 13,
-        imageUrl: "/IMG/doc/png",
+        imageUrl: "/IMG/doc/9.png",
         bio: "Dr. Riddhi Vaghani is an experienced and dedicated Gynecologist with a rich clinical background spanning over 13 years. She has served in several reputed institutions, including 5 years at Simmer Hospital, 3 years at Gujarat Adani Institute of Medical Sciences, 1 year at Balaji Hospital, and 4 years at Dimond Hospital. Known for her compassionate care and clinical expertise, Dr. Vaghani has consistently provided high-quality healthcare services to women across all stages of life.",
         education: "MBBS, MS, OBS & GYN",
         availability: {
@@ -57,7 +57,7 @@ const doctors = [
         name: "Dr. Akash G. Sanghani",
         department: "OPHTHALOMOLOGY",
         experience: 2,
-        imageUrl: "/IMG/doc/5.png",
+        imageUrl: "/IMG/doc/4.png",
         bio: "Dr. Akash Sanghani is a dedicated Ophthalmologist with 2 years of experience in private practice. He specializes in diagnosing and treating a wide range of eye conditions, with a focus on personalized patient care and the latest advancements in eye health. Dr. Sanghani is committed to preserving and enhancing vision through expert clinical services and a patient-first approach.",
         education: "MBBS, MS",
         availability: {
@@ -109,7 +109,7 @@ const doctors = [
         name: "Dr. Khushi Mavani",
         department: "PHYSIOTHERAPY",
         experience: 2,
-        imageUrl: "/IMG/doc/.png",
+        imageUrl: "/IMG/doc/16.png",
         bio: "Dr. Khushi Mavani is a passionate and dedicated Physiotherapist who has recently started her professional journey in the field of physical therapy. As a fresher, she is committed to helping patients improve their mobility, reduce pain, and regain strength through tailored therapeutic treatments. Dr. Mavani brings a fresh perspective to physiotherapy with a focus on holistic care and patient well-being.",
         education: "Bachelor of Physiotherapy",
         availability: {
@@ -133,7 +133,7 @@ const doctors = [
         name: "Dr. Karina Ribadiya",
         department: "PHYSIOTHERAPY",
         experience: 3,
-        imageUrl: "/IMG/doc/.png",
+        imageUrl: "/IMG/doc/15.png",
         bio: "Dr. Karina Ribadiya is a dedicated Physiotherapist with 2 years of experience at P P Savani Hospital. She specializes in helping patients recover from injuries, manage chronic pain, and improve mobility through personalized physiotherapy treatments. Dr. Ribadiya is committed to providing compassionate care and evidence-based interventions to support patients on their journey to better physical health.",
         education: "Bachelor of Physiotherapy",
         availability: {

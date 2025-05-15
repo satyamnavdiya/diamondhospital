@@ -49,6 +49,31 @@
     .div-info {
         padding-top: 2rem;
     }
+
+    /* diamond page */
+    .msg-heading{
+        font-size:1rem;
+    }
+    .chairman-img-div{
+        width: 18rem;
+        height: 18rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: block;
+        margin: 0 auto;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
+    }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
@@ -69,6 +94,31 @@
 
     .div-info {
         padding-top: 2rem;
+    }
+
+    /* diamond page */
+    .msg-heading{
+        font-size:1rem;
+    }
+    .chairman-img-div{
+        width: 18rem;
+        height: 18rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: block;
+        margin: 0 auto;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
     }
 }
 
@@ -91,6 +141,30 @@
     .div-info {
         padding-top: 2rem;
     }
+    /* diamond page */
+    .msg-heading{
+        font-size:1.5rem;
+    }
+    .chairman-img-div{
+        width: 18rem;
+        height: 18rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: block;
+        margin: 0 auto;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
+    }
 }
 
 @media (min-width: 641px) and (max-width: 767px) {
@@ -111,6 +185,30 @@
 
     .div-info{
         padding-top: 2rem;
+    }
+    /* diamond page */
+    .msg-heading{
+        font-size:1.5rem;
+    }
+    .chairman-img-div{
+        width: 18rem;
+        height: 18rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: block;
+        margin: 0 auto;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
     }
 }
 
@@ -134,6 +232,31 @@
     .div-info{
         padding-top: 2.5rem;
     }
+
+    /* diamond page */
+    .msg-heading{
+        font-size:1.5rem;
+    }
+    .chairman-img-div{
+        width: 25rem;
+        height: 25rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: block;
+        margin: 0 auto;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
+    }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -149,9 +272,35 @@
         font-size: 1.5rem;
     }
 
-
     .div-info{
         padding-top: 2.5rem;
+    }
+
+    /* diamond page */
+    .msg-heading{
+        font-size: 2rem;
+    }
+    .chairman-img-div{
+        width: 20rem;
+        height: 20rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1rem;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
     }
 }
 
@@ -171,6 +320,33 @@
     .div-info{
         padding-top: 2.5rem;
     }
+
+        /* diamond page */
+        .msg-heading{
+            font-size: 2rem;
+        }
+        .chairman-img-div{
+            width: 20rem;
+            height: 20rem;
+        }
+        .msg-logo-div{
+            width: 5rem;
+            height: 5rem;
+        }
+        .main-msg-div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 1rem;
+        }
+        .sub-msg-div{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .secretary-img-div{
+            width: 5rem;
+            height: 5rem;
+        }
 }
 
 @media (min-width: 1441px) and (max-width: 1920px) {
@@ -189,6 +365,33 @@
     .div-info{
         padding-top: 2.5rem;
     }
+
+     /* diamond page */
+     .msg-heading{
+        font-size: 2rem;
+    }
+    .chairman-img-div{
+        width: 20rem;
+        height: 20rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1rem;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width:7rem;
+        height:7rem;
+    }
 }
 
 @media (min-width: 1921px) {
@@ -205,5 +408,32 @@
 
     .div-info{
         padding-top: 2.5rem;
+    }
+
+     /* diamond page */
+     .msg-heading{
+        font-size: 2rem;
+    }
+    .chairman-img-div{
+        width: 20rem;
+        height: 20rem;
+    }
+    .msg-logo-div{
+        width: 5rem;
+        height: 5rem;
+    }
+    .main-msg-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1rem;
+    }
+    .sub-msg-div{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .secretary-img-div{
+        width: 5rem;
+        height: 5rem;
     }
 }
