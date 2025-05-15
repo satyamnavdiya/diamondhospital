@@ -296,6 +296,10 @@
     background-color: rgb(228, 0, 0);
 }
 
+.certifications{
+    display: none;
+}
+
 /* Responivce Styles */
 /* Ultra-Wide Screens */
 @media (min-width: 1921px) {
