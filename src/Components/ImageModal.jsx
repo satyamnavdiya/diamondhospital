@@ -12,7 +12,7 @@ const ImageModal = ({ image, onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80" onClick={onClose}>
+        <div className="fixed mt-[6rem] inset-0 z-50 flex items-center justify-center p-4 bg-black/80" onClick={onClose}>
             <div
                 className="relative bg-white rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-2xl flex flex-col md:flex-row"
                 onClick={(e) => e.stopPropagation()}
@@ -24,11 +24,11 @@ const ImageModal = ({ image, onClose }) => {
                     <X size={20} />
                 </button>
 
-                <div className="w-full bg-gray-100 flex items-center justify-center">
+                <div className="w-full max-h-[60vh] bg-gray-100 flex items-center justify-center">
                     <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-auto max-h-[90vh] object-contain"
+                        className="w-full h-auto  object-cover"
                     />
                 </div>
             </div>

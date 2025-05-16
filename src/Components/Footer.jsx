@@ -27,26 +27,26 @@ function Footer() {
 
                 <div className='p-2 footer-div div2-footer'>
                     <h1 className='text-[#26362c] font-bold footer-div-heading'>Quick Links</h1>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Kiran-2 Hospital</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>About Us</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>About us</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Kiran-2 hospital</p>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>News & Media</p>
                     <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Academics</p>
-                    <Link to="/privacypolicy" className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'><p>Privacy Policy</p></Link>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Terms & Comditions</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Contact Us</p>
-                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Statutory Compliances</p>
+                    <Link to="/privacypolicy" className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'><p>Privacy policy</p></Link>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Terms & Conditions</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Contact us</p>
+                    <p className='mb-1.5 text-[#005b41] cursor-pointer hover:underline hover:decoration-[#005b41] footer-text'>Statutory compliances</p>
                 </div>
 
                 <div className='p-2 footer-div div3-footer'>
-                    <h1 className='text-[#26362c] font-bold footer-div-heading'>Meet Us On</h1>
-                    <p className='text-[#005b41] footer-text'>Swati Society, Chikuwadi, <br />  Varachcha Road, Surat</p>
+                    <h1 className='text-[#26362c] font-bold footer-div-heading'>Visit us</h1>
+                    <p className='text-[#005b41] footer-text'>Swati Society, Chikuwadi, <br />  Varachha Road, Surat</p>
                     <br />                    
-                    <h1 className='text-[#26362c] font-bold footer-div-heading'>Mail Us On</h1>
-                    <p className='text-[#005b41] text-[15px] footer-text'>admin@sdahospitalsurat.com</p>
+                    <h1 className='text-[#26362c] font-bold footer-div-heading'>Mail us</h1>
+                    <p className='text-[#005b41] text-[15px] footer-text'>admin@diamondhospitalsurat.com</p>
                     <br />
 
                     <div className="div4-footer max-sm:mt-0">
-                        <h1 className='mb-5 text-[#26362c] font-bold footer-div-heading'>Follow Us On</h1>
+                        <h1 className='mb-5 text-[#26362c] font-bold footer-div-heading'>Follow us</h1>
                         <div className='flex justify-start'>
                             {/* instagram */}
                             <a target='_blank' href="https://www.instagram.com/sda_diamond_hospital/">

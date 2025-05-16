@@ -36,6 +36,7 @@ mobile navbar
 Book responsivenes
 Book Last pages
 remove all extra css
+fitered doctors for all department
 department with doctors recheack
 
     - pulomonology
@@ -111,14 +112,11 @@ responsive:
 @media (min-width: 1921px) {}
 
 heading      font
-2rem       1rem
-3rem       1rem
-3.5rem     1rem
+2.5 rem  all screen
+2 rem 1024px
+1 rem   - 640px
 
-4rem      1.5rem
-4rem      1.5rem
-4rem      1.5rem
-
-4rem      1.5rem
-4rem      1.5rem
-4rem      1.5rem
+chnages:
+book - tables view 
+chnage photo height at diamond page
+book apointment remove - docter

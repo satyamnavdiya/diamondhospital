@@ -1,5 +1,5 @@
 .Team-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -17,25 +17,28 @@
 }
 
 @keyframes float2 {
+
     0%,
     100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-5px);
     }
 }
+
 .animate-float-about {
     animation: float2 5s ease-in-out infinite;
 }
 
 @media (max-width: 375px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 5rem;
-    } 
+    }
 
     .Team-heading {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .dimond-text {
@@ -51,37 +54,43 @@
     }
 
     /* diamond page */
-    .msg-heading{
-        font-size:1rem;
+    .msg-heading {
+        font-size: 1rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 18rem;
         height: 18rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: block;
         margin: 0 auto;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 5rem;
-    } 
+    }
+
     .Team-heading {
-        font-size: 3rem;
+        font-size: 1rem;
     }
 
     .dimond-text {
@@ -97,37 +106,43 @@
     }
 
     /* diamond page */
-    .msg-heading{
-        font-size:1rem;
+    .msg-heading {
+        font-size: 1rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 18rem;
         height: 18rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: block;
         margin: 0 auto;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }
 }
 
 @media (min-width: 481px) and (max-width: 640px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 5rem;
-    } 
+    }
+
     .Team-heading {
-        font-size: 3.5rem;
+        font-size: 1rem;
     }
 
     .dimond-text {
@@ -141,38 +156,45 @@
     .div-info {
         padding-top: 2rem;
     }
+
     /* diamond page */
-    .msg-heading{
-        font-size:1.5rem;
+    .msg-heading {
+        font-size: 1.5rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 18rem;
         height: 18rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: block;
         margin: 0 auto;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }
 }
 
 @media (min-width: 641px) and (max-width: 767px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 5rem;
-    } 
+    }
+
     .Team-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .dimond-text {
@@ -183,42 +205,48 @@
         height: 50vh;
     }
 
-    .div-info{
+    .div-info {
         padding-top: 2rem;
     }
+
     /* diamond page */
-    .msg-heading{
-        font-size:1.5rem;
+    .msg-heading {
+        font-size: 1.5rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 18rem;
         height: 18rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: block;
         margin: 0 auto;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 5rem;
-    } 
+    }
 
     .Team-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .dimond-text {
@@ -229,210 +257,236 @@
         height: 50vh;
     }
 
-    .div-info{
+    .div-info {
         padding-top: 2.5rem;
     }
 
     /* diamond page */
-    .msg-heading{
-        font-size:1.5rem;
+    .msg-heading {
+        font-size: 1.5rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 25rem;
         height: 25rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: block;
         margin: 0 auto;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 7.2rem;
-    } 
+    }
 
     .Team-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .dimond-text {
         font-size: 1.5rem;
     }
 
-    .div-info{
+    .div-info {
         padding-top: 2.5rem;
     }
 
     /* diamond page */
-    .msg-heading{
+    .msg-heading {
         font-size: 2rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 20rem;
         height: 20rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 1rem;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 7rem;
-    } 
+    }
 
     .Team-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .dimond-text {
         font-size: 1.5rem;
     }
 
-    .div-info{
+    .div-info {
         padding-top: 2.5rem;
     }
 
-        /* diamond page */
-        .msg-heading{
-            font-size: 2rem;
-        }
-        .chairman-img-div{
-            width: 20rem;
-            height: 20rem;
-        }
-        .msg-logo-div{
-            width: 5rem;
-            height: 5rem;
-        }
-        .main-msg-div{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            column-gap: 1rem;
-        }
-        .sub-msg-div{
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-        .secretary-img-div{
-            width: 5rem;
-            height: 5rem;
-        }
-}
-
-@media (min-width: 1441px) and (max-width: 1920px) {
-    .aboutus-dimond{
-        padding-top: 8.5rem;
-    }    
-
-    .Team-heading {
-        font-size: 4rem;
-    }
-
-    .dimond-text {
-        font-size: 1.5rem;
-    }
-
-    .div-info{
-        padding-top: 2.5rem;
-    }
-
-     /* diamond page */
-     .msg-heading{
+    /* diamond page */
+    .msg-heading {
         font-size: 2rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 20rem;
         height: 20rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 1rem;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
-        width:7rem;
-        height:7rem;
+
+    .secretary-img-div {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+    .aboutus-dimond {
+        padding-top: 8.5rem;
+    }
+
+    .Team-heading {
+        font-size: 2.5rem;
+    }
+
+    .dimond-text {
+        font-size: 1.5rem;
+    }
+
+    .div-info {
+        padding-top: 2.5rem;
+    }
+
+    /* diamond page */
+    .msg-heading {
+        font-size: 2rem;
+    }
+
+    .chairman-img-div {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .msg-logo-div {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .main-msg-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1rem;
+    }
+
+    .sub-msg-div {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .secretary-img-div {
+        width: 7rem;
+        height: 8rem;
     }
 }
 
 @media (min-width: 1921px) {
-    .aboutus-dimond{
+    .aboutus-dimond {
         padding-top: 12rem;
     }
+
     .Team-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .dimond-text {
         font-size: 1.5rem;
     }
 
-    .div-info{
+    .div-info {
         padding-top: 2.5rem;
     }
 
-     /* diamond page */
-     .msg-heading{
+    /* diamond page */
+    .msg-heading {
         font-size: 2rem;
     }
-    .chairman-img-div{
+
+    .chairman-img-div {
         width: 20rem;
         height: 20rem;
     }
-    .msg-logo-div{
+
+    .msg-logo-div {
         width: 5rem;
         height: 5rem;
     }
-    .main-msg-div{
+
+    .main-msg-div {
         display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 1rem;
     }
-    .sub-msg-div{
+
+    .sub-msg-div {
         width: 100%;
         margin-bottom: 1rem;
     }
-    .secretary-img-div{
+
+    .secretary-img-div {
         width: 5rem;
         height: 5rem;
     }

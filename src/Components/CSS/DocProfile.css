@@ -1,5 +1,5 @@
 .doc-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -18,11 +18,11 @@
 
 @media (max-width: 375px) {
     .doc-heading {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .doc-subheading {
-        font-size: 1rem;
+        font-size: 10px;
     }
 
     .doctor-div {
@@ -34,11 +34,11 @@
 
 @media (min-width: 376px) and (max-width: 480px) {
     .doc-heading {
-        font-size: 3rem;
+        font-size: 1rem;
     }
 
     .doc-subheading {
-        font-size: 1rem;
+        font-size: 10px;
     }
 
     .doctor-div {
@@ -51,11 +51,11 @@
 
 @media (min-width: 481px) and (max-width: 640px) {
     .doc-heading {
-        font-size: 3.5rem;
+        font-size:1rem;
     }
 
     .doc-subheading {
-        font-size: 1rem;
+        font-size: 10px;
     }
 
     .doctor-div {
@@ -67,11 +67,11 @@
 
 @media (min-width: 641px) and (max-width: 767px) {
     .doc-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .doc-subheading {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .doctor-div {
@@ -83,11 +83,11 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .doc-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .doc-subheading {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .doctor-div {
@@ -99,11 +99,11 @@
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     .doc-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .doc-subheading {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .doctor-div {
@@ -115,11 +115,11 @@
 
 @media (min-width: 1281px) and (max-width: 1440px) {
     .doc-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .doc-subheading {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .doctor-div {
@@ -131,11 +131,11 @@
 
 @media (min-width: 1441px) and (max-width: 1920px) {
     .doc-heading {
-        font-size: 4.5rem;
+        font-size: 2.5rem;
     }
 
     .doc-subheading {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .doctor-div {
@@ -147,11 +147,11 @@
 
 @media (min-width: 1921px) {
     .doc-heading {
-        font-size: 5rem;
+        font-size: 2.5rem;
     }
 
     .doc-subheading {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .doctor-div {

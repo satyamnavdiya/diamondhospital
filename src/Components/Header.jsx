@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import DropdownMenu from "./DropdownMenu";
 import Logo from './Images/Logo.png'
 import Nabh from './Images/NABH.png'
 import Tri from './Images/tri.png'
@@ -12,11 +13,12 @@ import { Link } from "react-router-dom";
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
+    const [openDropdown, setOpenDropdown] = useState(null); // Track open 
+    const dropdownRef = useRef(null);
 
     const toggleDropdown = (index) => {
-        // This will close the current dropdown if it's already open,
-        // or close any other open dropdown and open this one
+        // This will close the current  if it's already open,
+        // or close any other open  and open this one
         setOpenDropdown(openDropdown === index ? null : index);
     };
 
@@ -44,6 +46,29 @@ export default function Header() {
     };
 
 
+    // Close on outside click
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+    
+    useEffect(() => {
+        if (isOpen) {
+            const timer = setTimeout(() => {
+                setIsOpen(false);
+            }, 10000); // 10 seconds
+
+            // Cleanup timer if  closes before 10s or component unmounts
+            return () => clearTimeout(timer);
+        }
+    }, [isOpen]);
+
 
 
     // Mobile Navbar More Menu
@@ -57,7 +82,7 @@ export default function Header() {
                 { label: 'Our Trustees', to: '/Hospital-Team', delay: 0 },
             ]
         },
-        { icon: BriefcaseMedical, label: "Doctor's prfile", to: '/Doctor-Profile', delay: 200 },
+        { icon: BriefcaseMedical, label: "Doctor's Profile", to: '/Doctor-Profile', delay: 200 },
         {
             icon: Stethoscope, label: 'Specialties', delay: 300, submenu: [
                 { label: 'Obstetric & Gynecology', to: '/ObsGyne', delay: 0 },
@@ -70,32 +95,32 @@ export default function Header() {
                 { label: 'Neurology', to: '/Neurology', delay: 350 },
                 { label: 'ENT', to: '/ENT', delay: 400 },
                 { label: 'Dental', to: '/DentalSurgery', delay: 450 },
-                { label: 'Physio Therapy', to: '/PhysioTherapy', delay: 500 },
+                { label: 'Physiotherapy', to: '/PhysioTherapy', delay: 500 },
             ]
         },
         {
             icon: ClipboardPlus, label: 'Services', to: '/', delay: 400, submenu: [
-                { label: 'Laboratory', to: '/Laboratory' },
-                { label: 'Radiology', to: '/Radiology' },
-                { label: 'NICU', to: '/NICU' },
-                { label: 'Dialysis', to: '/Dialysis' },
-                { label: 'Pharmacy', to: '/Pharmacy' },
-                { label: 'IPD', to: '/IPD' },
-                { label: 'Ambulance', to: '/Ambulance' },
-                { label: 'Government Schemes', to: '/' },
+                { label: 'Laboratory', to: '/Laboratory', delay: 0 },
+                { label: 'Radiology', to: '/Radiology0', delay: 50 },
+                { label: 'NICU', to: '/NICU', delay: 100 },
+                { label: 'Dialysis', to: '/Dialysis', delay: 150 },
+                { label: 'Pharmacy', to: '/Pharmacy', delay: 200 },
+                { label: 'IPD', to: '/IPD', delay: 250 },
+                { label: 'Ambulance', to: '/Ambulance', delay: 300 },
+                { label: 'Government Schemes', to: '/', delay: 350 },
             ]
         },
         {
             icon: Accessibility, label: 'Patient Guide', to: '/Patient-Guide', delay: 500, submenu: [
-                { label: 'Floor Plan', to: '/Floorplan' },
-                { label: 'General Guide', to: '/GeneralGuide' },
-                { label: "Do's & Don'ts", to: '/DoAndDonts' },
+                { label: 'Floor Plan', to: '/Floorplan', delay: 0 },
+                { label: 'General Guide', to: '/GeneralGuide', delay: 50 },
+                { label: "Do's & Don'ts", to: '/DoAndDonts', delay: 100 },
             ]
         },
         {
             icon: HeartPulse, label: 'Health Information', to: '/', delay: 600, submenu: [
-                { label: 'Blog', to: '/' },
-                { label: 'Video', to: '/Video' },
+                { label: 'Blog', to: '/', delay: 0 },
+                { label: 'Video', to: '/Video', delay: 100 },
             ]
         },
         { icon: Images, label: 'Gallery', to: '/Gallery', delay: 700 },
@@ -174,71 +199,76 @@ export default function Header() {
                         <ul className="hidden md:flex items-center nav-custom-space">
                             <li className="hover:bg-red-600 navbar-link"><Link to="/" className="nav-a">Home</Link></li>
 
-                            <li className="hover:bg-red-600 navbar-link dropdown1">
-                                <a href="#" className="nav-a">About <ChevronDown className="inline drop-icon" /></a>
-                                <div className="dropdown-div1">
-                                    <ul className="p-2">
-                                        <Link to="/Dimond-Hospital" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600"> <div className="div-bg1"></div>  Dimond Hospital</li></Link>
-                                        <Link to="/Hospital-Team" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Our Trustees</li></Link>
-                                    </ul>
-                                </div>
+                            <li className="hover:bg-red-600 navbar-link dropdown" onClick={() => toggleDropdown(1)}>
+                                <a className="nav-a">About <ChevronDown className="inline drop-icon" /></a>
+                                <DropdownMenu
+                                    isOpen={openDropdown === 1}
+                                    items={[
+                                        { label: 'Diamond Hospital', to: '/Dimond-Hospital' },
+                                        { label: 'Our Trustees', to: '/Hospital-Team' },
+                                    ]}
+                                />
                             </li>
 
                             <li className="hover:bg-red-600 navbar-link"><Link to="/Doctor-Profile" className="nav-a">Doctor's Profile</Link></li>
 
-                            <li className="hover:bg-red-600 navbar-link dropdown2">
-                                <a href="#" className="nav-a">Specialties <ChevronDown className="inline drop-icon" /></a>
-                                <div className="dropdown-div2">
-                                    <ul className="p-2">
-                                        <Link to="/ObsGyne" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600"><div className="div-bg3"></div>Obstetric & Gynecology</li></Link>
-                                        <Link to="/Pediatrics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600"><div className="div-bg4"></div>Pediatrics</li></Link>
-                                        <Link to="/Orthopedics" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600"><div className="div-bg5"></div>Orthopedics</li></Link>
-                                        <Link to="/GeneralSurgery" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">General Surgery</li></Link>
-                                        <Link to="/Ophthalmology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ophthalmology</li></Link>
-                                        <Link to="/Pulmonology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pulmonology</li></Link>
-                                        <Link to="/Urology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Urology</li></Link>
-                                        <Link to="/Neurology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Neurology</li ></Link>
-                                        <Link to="/ENT" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">ENT</li ></Link>
-                                        <Link to="/DentalSurgery" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Dental</li ></Link>
-                                        <Link to="/PhysioTherapy" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Physio Therapy</li ></Link>
-                                    </ul >
-                                </div>
+                            <li className="hover:bg-red-600 navbar-link dropdown" onClick={() => toggleDropdown(2)}>
+                                <a className="nav-a">Specialties <ChevronDown className="inline drop-icon" /></a>
+                                <DropdownMenu
+                                    isOpen={openDropdown === 2}
+                                    items={[
+                                        { label: 'Obstetric & Gynecology', to: '/ObsGyne', },
+                                        { label: 'Pediatrics', to: '/Pediatrics' },
+                                        { label: 'Orthopedics', to: '/Orthopedics' },
+                                        { label: 'General Surgery', to: '/GeneralSurgery' },
+                                        { label: 'Ophthalmology', to: '/Ophthalmology' },
+                                        { label: 'Pulmonology', to: '/Pulmonology' },
+                                        { label: 'Urology', to: '/Urology' },
+                                        { label: 'Neurology', to: '/Neurology' },
+                                        { label: 'ENT', to: '/ENT' },
+                                        { label: 'Dental', to: '/DentalSurgery' },
+                                        { label: 'Physiotherapy', to: '/PhysioTherapy' },
+                                    ]}
+                                />
                             </li >
 
-                            <li className="hover:bg-red-600 navbar-link dropdown3">
+                            <li className="hover:bg-red-600 navbar-link dropdown" onClick={() => toggleDropdown(3)}>
                                 <a href="#" className="nav-a">Services <ChevronDown className="inline drop-icon" /></a>
-                                <div className="dropdown-div3">
-                                    <ul className="p-2">
-                                        <Link to="/Laboratory" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Laboratory</li></Link>
-                                        <Link to="/Radiology" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Radiology</li></Link>
-                                        <Link to="/NICU" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">NICU</li></Link>
-                                        <Link to="/Dialysis" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Dialysis</li></Link>
-                                        <Link to="/Pharmacy" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Pharmacy</li></Link>
-                                        <Link to="/IPD" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">IPD</li></Link>
-                                        <Link to="/Ambulance" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Ambulance</li></Link>
-                                        <Link to="/GovermentSchemes" className="drop-a"><li className="drop-li mb-1 p-1.5 hover:bg-red-600">Government Schemes</li></Link>
-                                    </ul>
-                                </div>
+                                <DropdownMenu
+                                    isOpen={openDropdown === 3}
+                                    items={[
+                                        { label: 'Laboratory', to: '/Laboratory' },
+                                        { label: 'Radiology', to: '/Radiology' },
+                                        { label: 'NICU', to: '/NICU' },
+                                        { label: 'Dialysis', to: '/Dialysis' },
+                                        { label: 'Pharmacy', to: '/Pharmacy' },
+                                        { label: 'IPD', to: '/IPD' },
+                                        { label: 'Ambulance', to: '/Ambulance' },
+                                        { label: 'Government Schemes', to: '/' },
+                                    ]}
+                                />
                             </li>
-                            <li className="hover:bg-red-600 navbar-link dropdown4">
-                                <Link to="/" className="nav-a">Patient Guide <ChevronDown className="inline drop-icon" /></Link>
-                                <div className="dropdown-div4">
-                                    <ul className="p-2">
-                                        <Link to="/Floorplan" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Floor Plan</li></Link>
-                                        <Link to="/GeneralGuide" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">General Guide</li></Link>
-                                        <Link to="/DoAndDonts" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Do's & Don'ts</li></Link>
-                                    </ul>
-                                </div>
+                            <li className="hover:bg-red-600 navbar-link dropdown" onClick={() => toggleDropdown(4)}>
+                                <Link className="nav-a">Patient Guide <ChevronDown className="inline drop-icon" /></Link>
+                                <DropdownMenu
+                                    isOpen={openDropdown === 4}
+                                    items={[
+                                        { label: 'Floor Plan', to: '/Floorplan' },
+                                        { label: 'General Guide', to: '/GeneralGuide' },
+                                        { label: "Do's & Don'ts", to: '/DoAndDonts' },
+                                    ]}
+                                />
                             </li>
 
-                            <li className="hover:bg-red-600 navbar-link dropdown4">
+                            <li className="hover:bg-red-600 navbar-link dropdown" onClick={() => toggleDropdown(5)}>
                                 <a href="#" className="nav-a">Health Information<ChevronDown className="inline drop-icon" /></a>
-                                <div className="dropdown-div4">
-                                    <ul className="p-2">
-                                        <a href="/" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Blog</li></a>
-                                        <Link to="/Video" className="drop-a"><li className=" drop-li mb-1 p-1.5 hover:bg-red-600">Video</li></Link>
-                                    </ul>
-                                </div>
+                                <DropdownMenu
+                                    isOpen={openDropdown === 5}
+                                    items={[
+                                        { label: 'Blog', to: '/' },
+                                        { label: 'Video', to: '/Video' },
+                                    ]}
+                                />
                             </li>
                             <li className="hover:bg-red-600 navbar-link"><Link to="/Gallery" className="nav-a">Gallery</Link></li>
                             <li className="hover:bg-red-600 navbar-link"><Link to="/Career" className="nav-a">Career</Link></li>

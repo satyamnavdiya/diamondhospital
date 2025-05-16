@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { X, Filter, Calendar } from 'lucide-react';
-import { tagOptions } from '../data/images';
+import { X,  Calendar } from 'lucide-react';
 
 const FilterBar = ({ filters, onFilterChange }) => {
     const [isTagMenuOpen, setIsTagMenuOpen] = useState(false);
@@ -42,43 +41,7 @@ const FilterBar = ({ filters, onFilterChange }) => {
     return (
         <div className="sticky top-0 z-10 bg-white border-b border-gray-200 py-4 px-6">
             <div className="flex flex-wrap items-center gap-3">
-                <div className="relative">
-                    <button
-                        className={`flex items-center gap-2 px-4 py-2 rounded-full border ${filters.tags.length > 0 ? 'border-blue-500 text-blue-500' : 'border-gray-300 hover:border-gray-400'
-                            } transition-colors duration-200`}
-                        onClick={() => {
-                            setIsTagMenuOpen(!isTagMenuOpen);
-                            setIsDateMenuOpen(false);
-                        }}
-                    >
-                        <Filter size={16} />
-                        <span>Tags</span>
-                        {filters.tags.length > 0 && (
-                            <span className="ml-1 flex items-center justify-center w-5 h-5 bg-blue-500 text-white text-xs rounded-full">
-                                {filters.tags.length}
-                            </span>
-                        )}
-                    </button>
-
-                    {isTagMenuOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 p-4 z-20 transition-all transform origin-top">
-                            <div className="flex flex-wrap gap-2">
-                                {tagOptions.map(tag => (
-                                    <button
-                                        key={tag}
-                                        onClick={() => handleTagToggle(tag)}
-                                        className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${filters.tags.includes(tag)
-                                                ? 'bg-blue-500 text-white'
-                                                : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
-                                            }`}
-                                    >
-                                        {tag}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                </div>
+                
 
                 <div className="relative">
                     <button

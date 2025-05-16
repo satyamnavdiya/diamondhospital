@@ -1,7 +1,8 @@
 .hostipal-name-span {
     font-family: "Noto Serif Gujarati", serif;
 }
-.mobile-nav{
+
+.mobile-nav {
     overflow: auto;
 }
 
@@ -510,6 +511,7 @@
     }
 
     .navbar-link {
+        position: relative;
         padding: 5px 7px;
         transition: all 0.5s;
     }
@@ -523,47 +525,11 @@
         color: white;
     }
 
-    .dropdown1:hover .dropdown-div1,
-    .dropdown2:hover .dropdown-div2,
-    .dropdown3:hover .dropdown-div3,
-    .dropdown4:hover .dropdown-div4 {
-        display: block;
-        visibility: visible;
-        transition: all 1s;
-    }
-
-    .dropdown1:hover .drop-icon,
-    .dropdown2:hover .drop-icon,
-    .dropdown3:hover .drop-icon,
-    .dropdown4:hover .drop-icon {
+    .dropdown:hover .drop-icon {
         transform: rotate(180deg);
     }
 
-    /* dropdown */
-    .dropdown-div1,
-    .dropdown-div2,
-    .dropdown-div3,
-    .dropdown-div4 {
-        display: none;
-        visibility: hidden;
-        position: absolute;
-        min-width: 15rem;
-        border-top: 2px solid blue;
-        border-radius: 7px;
-        z-index: 99;
-        background: white;
-        margin-top: 0.5rem;
-        margin-left: -0.4rem;
-        padding-top: 0.5rem;
-    }
 
-    .drop-li {
-        border-radius: 10px;
-    }
-
-    .drop-li:hover {
-        color: white;
-    }
 
     /* Mobile Navbar */
     .mobile-nav {
@@ -683,46 +649,8 @@
         color: white;
     }
 
-    .dropdown1:hover .dropdown-div1,
-    .dropdown2:hover .dropdown-div2,
-    .dropdown3:hover .dropdown-div3,
-    .dropdown4:hover .dropdown-div4 {
-        display: block;
-        visibility: visible;
-        transition: all 1s;
-    }
-
-    .dropdown1:hover .drop-icon,
-    .dropdown2:hover .drop-icon,
-    .dropdown3:hover .drop-icon,
-    .dropdown4:hover .drop-icon {
+    .dropdown:hover .drop-icon {
         transform: rotate(180deg);
-    }
-
-    /* dropdown */
-    .dropdown-div1,
-    .dropdown-div2,
-    .dropdown-div3,
-    .dropdown-div4 {
-        display: none;
-        visibility: hidden;
-        position: absolute;
-        min-width: 15rem;
-        border-top: 2px solid blue;
-        border-radius: 7px;
-        z-index: 99;
-        background: white;
-        margin-top: 0.5rem;
-        margin-left: -0.4rem;
-        padding-top: 0.5rem;
-    }
-
-    .drop-li {
-        border-radius: 10px;
-    }
-
-    .drop-li:hover {
-        color: white;
     }
 
     /* Mobile Navbar */
@@ -844,46 +772,8 @@
         color: white;
     }
 
-    .dropdown1:hover .dropdown-div1,
-    .dropdown2:hover .dropdown-div2,
-    .dropdown3:hover .dropdown-div3,
-    .dropdown4:hover .dropdown-div4 {
-        display: block;
-        visibility: visible;
-        transition: all 1s;
-    }
-
-    .dropdown1:hover .drop-icon,
-    .dropdown2:hover .drop-icon,
-    .dropdown3:hover .drop-icon,
-    .dropdown4:hover .drop-icon {
+   .dropdown:hover .drop-icon {
         transform: rotate(180deg);
-    }
-
-    /* dropdown */
-    .dropdown-div1,
-    .dropdown-div2,
-    .dropdown-div3,
-    .dropdown-div4 {
-        display: none;
-        visibility: hidden;
-        position: absolute;
-        min-width: 15rem;
-        border-top: 2px solid blue;
-        border-radius: 7px;
-        z-index: 99;
-        background: white;
-        margin-top: 0.5rem;
-        margin-left: -0.4rem;
-        padding-top: 0.5rem;
-    }
-
-    .drop-li {
-        border-radius: 10px;
-    }
-
-    .drop-li:hover {
-        color: white;
     }
 
     /* Mobile Navbar */
@@ -1002,46 +892,8 @@
         color: teal;
     }
 
-    .dropdown1:hover .dropdown-div1,
-    .dropdown2:hover .dropdown-div2,
-    .dropdown3:hover .dropdown-div3,
-    .dropdown4:hover .dropdown-div4 {
-        display: block;
-        visibility: visible;
-        transition: all 1s;
-    }
-
-    .dropdown1:hover .drop-icon,
-    .dropdown2:hover .drop-icon,
-    .dropdown3:hover .drop-icon,
-    .dropdown4:hover .drop-icon {
+    .dropdown:hover .drop-icon {
         transform: rotate(180deg);
-    }
-
-    /* dropdown */
-    .dropdown-div1,
-    .dropdown-div2,
-    .dropdown-div3,
-    .dropdown-div4 {
-        display: none;
-        visibility: hidden;
-        position: absolute;
-        min-width: 15rem;
-        border-top: 2px solid blue;
-        border-radius: 7px;
-        z-index: 99;
-        background: white;
-        margin-top: 0.5rem;
-        margin-left: -0.4rem;
-        padding-top: 0.5rem;
-    }
-
-    .drop-li {
-        border-radius: 10px;
-    }
-
-    .drop-li:hover {
-        color: white;
     }
 
     /* Mobile Navbar */

@@ -41,7 +41,7 @@ function AboutUsBook() {
       <section className='about-book'>
 
         <div className='about-div'>
-          <h1 className='about-heading about-gradient'>About Us</h1>
+          <h1 className='about-heading about-gradient'>About us</h1>
         </div>
 
         <div className="flex items-center justify-center p-1">

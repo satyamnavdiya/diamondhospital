@@ -1,5 +1,5 @@
 .gallery-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -24,7 +24,7 @@
         padding-top: 6rem;
     }
     .gallery-heading{
-        font-size: 2rem;
+        font-size: 1rem;
     }
 }
 
@@ -35,7 +35,7 @@
         padding-top: 6rem;
     }
     .gallery-heading{
-        font-size: 3rem;
+        font-size: 1rem;
     }
 }
 
@@ -46,7 +46,7 @@
         padding-top: 6rem;
     }
     .gallery-heading{
-        font-size: 3.5rem;
+        font-size: 1rem;
     }
 }
 
@@ -57,7 +57,7 @@
         padding-top: 6rem;
     }
     .gallery-heading{
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }
 
@@ -68,7 +68,7 @@
         padding-top: 7rem;
     }
     .gallery-heading{
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }
 
@@ -79,7 +79,7 @@
         padding-top: 8rem;
     }
     .gallery-heading{
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -90,7 +90,7 @@
         padding-top: 8rem;
     }
     .gallery-heading{
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -101,7 +101,7 @@
         padding-top: 8rem;
     }
     .gallery-heading{
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -112,6 +112,6 @@
         padding-top: 15rem;
     }
     .gallery-heading{
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }

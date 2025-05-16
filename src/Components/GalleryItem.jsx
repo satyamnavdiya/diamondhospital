@@ -41,13 +41,6 @@ const GalleryItem = ({ image, onClick }) => {
                         }`}
                 >
                     <div className="text-white space-y-2">
-                        <div className="flex flex-wrap gap-1">
-                            {image.tags.map(tag => (
-                                <span key={tag} className="px-2 py-0.5 bg-black/30 backdrop-blur-sm text-white text-xs rounded-full">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
                         <div className="text-xs text-gray-200">
                             {formatDate(image.date)}
                         </div>

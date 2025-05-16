@@ -31,7 +31,20 @@ const doctors = [
       morning: "Morning - Mon to Sun: 10 AM - 1 AM",
       evening: "Evening - Mon to Sun: 5 PM - 8 PM"
     },
-  }
+  },
+  {
+    id: 5,
+    name: "Dr. Akash G. Sanghani",
+    department: "OPHTHALOMOLOGY",
+    experience: 2,
+    imageUrl: "/IMG/doc/4.png",
+    bio: "Dr. Akash Sanghani is a dedicated Ophthalmologist with 2 years of experience in private practice. He specializes in diagnosing and treating a wide range of eye conditions, with a focus on personalized patient care and the latest advancements in eye health. Dr. Sanghani is committed to preserving and enhancing vision through expert clinical services and a patient-first approach.",
+    education: "MBBS, MS",
+    availability: {
+      morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+      evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+    }
+  },
 ]
 
 const Ophthalmology = () => {
@@ -41,7 +54,7 @@ const Ophthalmology = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.4 }
   };
 
   // Handle opening the modal with doctor data
@@ -221,9 +234,6 @@ const Ophthalmology = () => {
 
                   {/* Book Appointment Button */}
                   <div className="mt-6">
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
-                      Book an Appointment
-                    </button>
                     {/* Close button */}
                     <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 mt-5" onClick={handleCloseModal}>
                       Close

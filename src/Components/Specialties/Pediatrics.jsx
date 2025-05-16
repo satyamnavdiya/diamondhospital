@@ -5,47 +5,47 @@ import { Award, Calendar } from 'lucide-react';
 import "../CSS/Specialities.css"
 import pedi from '../Images/pedi.jpg'
 
-const doctors = [
-    {
-        id: 4,
-        name: "Dr. Riddhi Vaghani",
-        department: "GYNECOLOGY",
-        experience: 13,
-        imageUrl: "/IMG/doc/.png",
-        bio: "Dr. Riddhi Vaghani is an experienced and dedicated Gynecologist with a rich clinical background spanning over 13 years. She has served in several reputed institutions, including 5 years at Simmer Hospital, 3 years at Gujarat Adani Institute of Medical Sciences, 1 year at Balaji Hospital, and 4 years at Dimond Hospital. Known for her compassionate care and clinical expertise, Dr. Vaghani has consistently provided high-quality healthcare services to women across all stages of life.",
-        education: "MBBS, MS, OBS & GYN",
-        availability: {
-            morning: "Morning - Mon to Sun: 10 AM - 1 AM",
-            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
-        }
-    },
-    {
-        id: 3,
-        name: "Dr. Kalpana Patel",
-        department: "GYNECOLOGY",
-        experience: 7,
-        imageUrl: "/IMG/doc/.png",
-        bio: "Dr. Kalpana Patel is a skilled and compassionate Gynecologist with 7 years of experience in women's healthcare. Throughout her career, she has been dedicated to providing comprehensive gynecological services, focusing on patient comfort, education, and evidence-based care. Dr. Patel is committed to empowering women through all stages of reproductive health with professionalism and empathy.",
-        education: "MBBS, DGO",
-        availability: {
-            morning: "Morning - Mon to Sun: 10 AM - 1 AM",
-            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
-        }
-    },
-    {
-        id: 1,
-        name: "Dr. Bhavesh Parmar",
-        department: "GYNECOLOGY",
-        experience: 9,
-        imageUrl: "/IMG/doc/.png",
-        bio: "Dr. Bhavesh Parmar has been serving in the field of Gynecology since 2015, bringing nearly a decade of dedicated experience in women’s healthcare. With a strong commitment to patient well-being and clinical excellence, Dr. Parmar has continually contributed to advancements in gynecological care through both practice and ongoing medical engagement.",
-        education: "MBBS, DNB",
-        availability: {
-            morning: "Morning - Mon to Sun: 10 AM - 1 AM",
-            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
-        }
-    },
-]
+// const doctors = [
+//     {
+//         id: 4,
+//         name: "Dr. Riddhi Vaghani",
+//         department: "GYNECOLOGY",
+//         experience: 13,
+//         imageUrl: "/IMG/doc/.png",
+//         bio: "Dr. Riddhi Vaghani is an experienced and dedicated Gynecologist with a rich clinical background spanning over 13 years. She has served in several reputed institutions, including 5 years at Simmer Hospital, 3 years at Gujarat Adani Institute of Medical Sciences, 1 year at Balaji Hospital, and 4 years at Dimond Hospital. Known for her compassionate care and clinical expertise, Dr. Vaghani has consistently provided high-quality healthcare services to women across all stages of life.",
+//         education: "MBBS, MS, OBS & GYN",
+//         availability: {
+//             morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+//             evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+//         }
+//     },
+//     {
+//         id: 3,
+//         name: "Dr. Kalpana Patel",
+//         department: "GYNECOLOGY",
+//         experience: 7,
+//         imageUrl: "/IMG/doc/.png",
+//         bio: "Dr. Kalpana Patel is a skilled and compassionate Gynecologist with 7 years of experience in women's healthcare. Throughout her career, she has been dedicated to providing comprehensive gynecological services, focusing on patient comfort, education, and evidence-based care. Dr. Patel is committed to empowering women through all stages of reproductive health with professionalism and empathy.",
+//         education: "MBBS, DGO",
+//         availability: {
+//             morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+//             evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+//         }
+//     },
+//     {
+//         id: 1,
+//         name: "Dr. Bhavesh Parmar",
+//         department: "GYNECOLOGY",
+//         experience: 9,
+//         imageUrl: "/IMG/doc/.png",
+//         bio: "Dr. Bhavesh Parmar has been serving in the field of Gynecology since 2015, bringing nearly a decade of dedicated experience in women’s healthcare. With a strong commitment to patient well-being and clinical excellence, Dr. Parmar has continually contributed to advancements in gynecological care through both practice and ongoing medical engagement.",
+//         education: "MBBS, DNB",
+//         availability: {
+//             morning: "Morning - Mon to Sun: 10 AM - 1 AM",
+//             evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+//         }
+//     },
+// ]
 
 
 const Pediatrics = () => {
@@ -135,119 +135,7 @@ const Pediatrics = () => {
             </section>
 
             {/* About Doctors */}
-            <div className='w-[80%] div-center'>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-                    {doctors.map((doctor) => (
 
-                        <div key={doctor.id} className="bg-white flex overflow-hidden shadow rounded-lg transition-all duration-200 hover:shadow-lg">
-
-                            <div className="p-2 w-[50%] ">
-                                <img
-                                    src={doctor.imageUrl}
-                                    alt={doctor.name}
-                                    className="w-full h-full object-cover rounded-2xl"
-                                    loading='lazy'
-                                />
-                            </div>
-
-                            <div className="px-4 py-5 sm:p-6">
-                                <h3 className="text-lg font-medium text-gray-900">{doctor.name}</h3>
-                                <div className="mt-1 flex items-center">
-                                    <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
-                                        {doctor.department}
-                                    </span>
-                                </div>
-                                <p className="mt-1 text-sm text-gray-500">{doctor.experience} years experience</p>
-                                <div className="mt-4">
-                                    <button
-                                        className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                        onClick={() => handleViewProfile(doctor)}
-                                    >
-                                        View Profile
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                    ))}
-                </div>
-
-                {/* Doctor Profile Modal */}
-                {modalOpen && selectedDoctorData && (
-                    <div
-                        className="fixed inset-0 z-50 overflow-y-auto modal-overlay bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
-                        onClick={handleOutsideClick}
-                    >
-                        <div className="relative bg-white rounded-lg shadow-xl doc-profile overflow-y-auto" onClick={e => e.stopPropagation()}>
-                            <div className="flex flex-col md:flex-row">
-                                {/* Doctor image - left side */}
-                                <div className="doc-image">
-                                    <img
-                                        src={selectedDoctorData.imageUrl.replace('w=300', 'w=600')}
-                                        alt={selectedDoctorData.name}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-
-                                {/* Doctor details - right side */}
-                                <div className="md:w-2/3 p-6">
-                                    <div className="border-b pb-4 mb-4">
-                                        <h2 className="text-2xl font-bold text-gray-900">{selectedDoctorData.name}</h2>
-                                        <div className="flex flex-wrap gap-2 mt-2">
-                                            <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
-                                                {selectedDoctorData.department}
-                                            </span>
-                                            {/* <span className="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">
-                      {selectedDoctorData.specialty}
-                    </span> */}
-                                            <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">
-                                                {selectedDoctorData.experience} years experience
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {/* Bio */}
-                                    <div className="mb-6">
-                                        <h3 className="text-lg font-semibold text-gray-900 mb-2">About</h3>
-                                        <p className="text-gray-600">{selectedDoctorData.bio}</p>
-                                    </div>
-
-                                    {/* Education */}
-                                    <div className="mb-6 flex items-start">
-                                        <Award className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Education</h3>
-                                            <p className="text-gray-600">{selectedDoctorData.education}</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Availability */}
-                                    <div className="mb-6 flex items-start">
-                                        <Calendar className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">Availability</h3>
-                                            <p className="text-gray-600">{selectedDoctorData.availability.morning}</p>
-                                            <p className="text-gray-600">{selectedDoctorData.availability.evening}</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Book Appointment Button */}
-                                    <div className="mt-6">
-                                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
-                                            Book an Appointment
-                                        </button>
-                                        {/* Close button */}
-                                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 mt-5" onClick={handleCloseModal}>
-                                            Close
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </div>
 
         </div>
     );

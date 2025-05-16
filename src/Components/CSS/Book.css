@@ -24,7 +24,7 @@
 }
 
 .about-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -71,20 +71,6 @@
     animation: slideInRight 1s infinite ease-in-out forwards;
 }
 
-/* @keyframes slideInRight {
-    0% {
-      transform: scale(1) rotate(0deg);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.02) rotate(0.5deg);
-      opacity: 0.95;
-    }
-    100% {
-      transform: scale(1) rotate(0deg);
-      opacity: 1;
-    }
-  } */
 
 .page-corner-hint::after {
     content: 'click\Ahere';
@@ -145,7 +131,7 @@
     }
 
     .about-heading {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
 }
@@ -156,7 +142,7 @@
     }
 
     .about-heading {
-        font-size: 3rem;
+        font-size: 1rem;
     }
 
     .book-sub-div {
@@ -183,7 +169,7 @@
     }
 
     .about-heading {
-        font-size: 3.5rem;
+        font-size: 1rem;
     }
 
     .yt-video-div {
@@ -201,7 +187,7 @@
 
 @media (min-width: 641px) and (max-width: 767px) {
     .about-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .yt-video-div {
@@ -220,7 +206,7 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .about-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .yt-video-div {
@@ -239,13 +225,13 @@
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     .about-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
     .about-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .yt-video-div {
@@ -259,7 +245,7 @@
 
 @media (min-width: 1441px) and (max-width: 1920px) {
     .about-heading {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
         text-decoration: 5px underline rgb(177, 177, 177);
         text-underline-offset: 8px;
         transition: all linear 5s;
@@ -280,7 +266,7 @@
 
 @media (min-width: 1921px) {
     .about-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     .yt-video-div {

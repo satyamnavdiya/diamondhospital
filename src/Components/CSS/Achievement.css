@@ -8,7 +8,7 @@
 }
 
 .achievement-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -20,55 +20,55 @@
 
 @media (max-width: 375px) {
     .achievement-heading {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
     .achievement-heading {
-        font-size: 3rem;
+        font-size: 1rem;
     }
 }
 
 @media (min-width: 481px) and (max-width: 640px) {
     .achievement-heading {
-        font-size: 3.5rem;
+        font-size: 1rem;
     }
 }
 
 @media (min-width: 641px) and (max-width: 767px) {
     .achievement-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .achievement-heading {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     .achievement-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
     .achievement-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
 }
 
 @media (min-width: 1441px) and (max-width: 1920px) {
     .achievement-heading {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1921px) {
     .achievement-heading {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }

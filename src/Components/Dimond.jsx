@@ -107,7 +107,7 @@ const Dimond = () => {
                 <div className="mx-auto my-0 px-4 py-16 md:py-24">
                     <div className="flex justify-center mb-8">
                         <div className="inline-block rounded-full border-2 border-teal-600 bg-[#e6f4f1] px-6 py-2 shadow-sm">
-                            <p className="text-gray-700 font-semibold msg-heading text-center">Chairman's Massage</p>
+                            <p className="text-gray-700 font-semibold msg-heading text-center">Chairman's Message</p>
                         </div>
                     </div>
 
@@ -189,59 +189,20 @@ const Dimond = () => {
                     <div className="sub-msg-div p-5 h-auto border-2 border-green-800 rounded-2xl">
                         <div className="flex justify-center mb-8">
                             <div className="inline-block rounded-full border-2 border-teal-600 bg-[#e6f4f1] px-6 py-2 shadow-sm">
-                                <p className="text-gray-700 msg-heading font-semibold text-center">Secretary's Massage</p>
+                                <p className="text-gray-700 msg-heading font-semibold text-center">Secretary's Message</p>
                             </div>
                         </div>
 
-                        <div>
-                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
-                                <Quote size={32} className="text-gray-400" />
-                                Namaskar,
-                            </p>
-                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
-                                Welcome to our RTSV Diamond Hospital managed by Surat Diamond Association
-                                Arogya Samiti, a place where compassion, care, and affordability come together to
-                                serve our community. As a trust-managed institution, we are dedicated to
-                                providing high-quality healthcare services at very low costs, ensuring that financial
-                                constraints never stand in the way of receiving essential treatment.
-                            </p>
-                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
-                                Our hospital is NABH accredited, reflecting our commitment to maintaining the
-                                highest standards of patient care and safety. With 150 beds, including a 14-bed
-                                ICU, 30-bed NICU, and state-of-the-art facilities, we are fully equipped to handle a
-                                wide range of medical needs. Including 13 dialysis beds, 6 CPAP machines, and 6
-                                modular operation theatres to cater to critical care requirements we offer 24-
-                                hour treatment services.
-                            </p>
-                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
-                                We run free cataract surgery, free dentures and free girl child maternity, 1 lakh
-                                bonds under many charity and government schemes.
-                            </p>
-                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
-                                We are proud to offer such comprehensive services at an affordable cost,
-                                ensuring that you and your loved ones receive the care you deserve, no matter
-                                the circumstances. Thank you for choosing us as your healthcare provider.</p>
-                        </div>
-
-                        <div className="flex items-center justify-start gap-5 mt-5 border-t-2 border-zinc-300 p-2">
+                        <div className="flex items-center justify-start gap-5 mt-5 border-b-2 border-zinc-300 p-2">
                             <div className="secretary-img-div overflow-hidden rounded-xl border-2 border-teal-700">
                                 <img src={secretary} className="w-full h-full object-[100%]" />
                             </div>
 
                             <div>
-                                <p className="msg-heading font-semibold">Dinesh Navadiya</p>
+                                <p className="msg-heading font-semibold">Mr. Dinesh Navadiya</p>
                                 <p className="dimond-text">Secretary, RTSV Diamond Hospital</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="sub-msg-div p-5 h-auto border-2 border-green-800 rounded-2xl">
-                        <div className="flex justify-center mb-8">
-                            <div className="inline-block rounded-full border-2 border-teal-600 bg-[#e6f4f1] px-6 py-2 shadow-sm">
-                                <p className="text-gray-700 msg-heading font-semibold text-center">Administer's Massage</p>
-                            </div>
-                        </div>
-
                         <div>
                             <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
                                 <Quote size={32} className="text-gray-400" />
@@ -266,13 +227,23 @@ const Dimond = () => {
                                 We run free cataract surgery, free dentures and free girl child maternity, 1 lakh
                                 bonds under many charity and government schemes.
                             </p>
-                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
+                            <p className="text-gray-700 mb-4 dimond-text leading-relaxed">
                                 We are proud to offer such comprehensive services at an affordable cost,
                                 ensuring that you and your loved ones receive the care you deserve, no matter
                                 the circumstances. Thank you for choosing us as your healthcare provider.</p>
                         </div>
 
-                        <div className="flex items-center justify-start gap-5 mt-5 border-t-2 border-zinc-300 p-2">
+
+                    </div>
+
+                    <div className="sub-msg-div p-5 h-auto border-2 border-green-800 rounded-2xl">
+                        <div className="flex justify-center mb-8">
+                            <div className="inline-block rounded-full border-2 border-teal-600 bg-[#e6f4f1] px-6 py-2 shadow-sm">
+                                <p className="text-gray-700 msg-heading font-semibold text-center">Administer's Message</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-start gap-5 mt-5 border-b-2 border-zinc-300 p-2">
                             <div className="secretary-img-div overflow-hidden rounded-xl border-2 border-teal-700">
                                 <img src={administer} className="w-full h-full object-[100%]" />
                             </div>
@@ -282,6 +253,26 @@ const Dimond = () => {
                                 <p className="dimond-text">Administer, RTSV Diamond Hospital</p>
                             </div>
                         </div>
+
+                        <div>
+                            <p className="text-gray-700 mb-5 dimond-text leading-relaxed">
+                                <Quote size={32} className="text-gray-400" />
+                                Namaskar,
+                            </p>
+                            <p className="text-gray-700 mb-7 dimond-text leading-relaxed">
+                                It is with great pride and humility that I share a few words on behalf of our entire team. Our hospital was founded with a singular vision — to provide quality, affordable, and compassionate healthcare to all sections of society, regardless of their economic background. At the heart of our mission lies service, care, and humanity.
+                            </p>
+
+                            <p className="text-gray-700 mb-7 dimond-text leading-relaxed">
+                                We are equipped with modern medical infrastructure and are supported by a dedicated team of doctors, nurses, and support staff who are committed to delivering patient-centered care. For us, every patient is not just a case, but a life that deserves dignity, empathy, and the best possible treatment.
+                            </p>
+                            <p className="text-gray-700 mb-7 dimond-text leading-relaxed">
+                                As a Trust-run institution, we emphasize ethical practices, transparency, and community welfare. We regularly conduct free health camps, awareness programs, and outreach activities to serve those who may not have access to basic healthcare..</p>
+                            <p className="text-gray-700 dimond-text mb-7 leading-relaxed">
+                                Through this website, we aim to provide you with easy access to information about our hospital services, departments, facilities, visiting hours, and contact details. We also encourage feedback from our patients and their families, as it helps us improve and serve better.</p>
+                        </div>
+
+
                     </div>
                 </div>
             </section>

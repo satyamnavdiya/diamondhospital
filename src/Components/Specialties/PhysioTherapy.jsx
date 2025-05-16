@@ -42,6 +42,19 @@ const doctors = [
       evening: "Evening - Mon to Sun: 4 PM - 8 PM"
     }
   },
+  {
+        id: 12,
+        name: "Dr. Chirag Parmar",
+        department: "PHYSIOTHERAPY",
+        experience: 2,
+        imageUrl: "/IMG/doc/7.png",
+        bio: "Dr. Chirag Parmar is an enthusiastic and dedicated Physiotherapist who has recently embarked on his professional career in the field of physiotherapy. As a fresher, he is passionate about helping patients recover from injuries, alleviate pain, and improve their overall mobility through personalized treatment plans. Dr. Parmar is committed to providing high-quality care with a focus on patient well-being and rehabilitation.",
+        education: "Bachelor of Physiotherapy",
+        availability: {
+            morning: "Morning - Mon to Sun: 9 AM - 12 AM", 
+            evening: "Evening - Mon to Sun: 5 PM - 8 PM"
+        }
+    }, 
 ]
 
 const PhysioTherapy = () => {
@@ -234,9 +247,6 @@ const PhysioTherapy = () => {
 
                   {/* Book Appointment Button */}
                   <div className="mt-6">
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
-                      Book an Appointment
-                    </button>
                     {/* Close button */}
                     <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 mt-5" onClick={handleCloseModal}>
                       Close
