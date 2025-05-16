@@ -1,4 +1,5 @@
-import React from 'react'
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import { BrowserRouter, Routes, Route } from "react-router";
@@ -52,6 +53,9 @@ import Career from './Components/Career';
 // Privacy Policy
 import PrivacyPolicy from './Components/PrivacyPolicy ';
 
+import { setupTranslation } from './utils/transletor';
+
+
 
 function App() {
 
@@ -60,6 +64,8 @@ function App() {
     <div>
       <BrowserRouter>
         <ScrollToTop />
+        <Analytics />
+        <SpeedInsights />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />

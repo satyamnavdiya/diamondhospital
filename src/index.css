@@ -33,6 +33,8 @@ body {
     font-optical-sizing: auto;
     font-size: 1.1rem;
     overflow-x: hidden;
+    top: 0px !important;
+
 }
 
 body::-webkit-scrollbar-track {
@@ -63,4 +65,27 @@ body::-webkit-scrollbar-thumb:hover {
 /* temp Style */
 .div-border {
     border: 2px solid green;
+}
+
+/* Google Transter */
+/* Hide Google top frame */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+/* Hide Google popout dropdown */
+.goog-logo-link,
+.goog-te-gadget span {
+    display: none !important;
+}
+
+/* Style your dropdown cleanly */
+.translate-dropdown select {
+    background-color: white;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.skiptranslate{
+    visibility: hidden;
 }

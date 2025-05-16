@@ -30,9 +30,11 @@ export default function DropdownMenu({ isOpen, items = [], parentClass = '' }) {
                     variants={dropdownVariants}
                 >
                     {items.map((item, index) => (
-                        <li key={index} className="px-4 py-2 hover:bg-red-600 rounded mx-2 my-1 bg-teal-500 text-white  hover:text-white cursor-pointer">
-                            <Link to={item.to}>{item.label}</Link>
-                        </li>
+                        <Link to={item.to}>
+                            <li key={index} className="px-4 py-2 hover:bg-red-600 rounded mx-2 my-1 bg-teal-500 text-white  hover:text-white cursor-pointer">
+                                {item.label}
+                            </li>
+                        </Link>
                     ))}
                 </motion.ul>
             )}
