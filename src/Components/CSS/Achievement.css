@@ -1,5 +1,5 @@
 .achievement-gradient {
-    background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
+    background-image: linear-gradient(45deg, rgb(0, 88, 88), rgba(0, 128, 128, 0.516) 30%, white 60%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -13,8 +13,15 @@
     line-height: 1.2;
     text-align: center;
     margin-bottom: 2rem;
-    color: #2d3748;
+    text-decoration: 5px underline rgb(177, 177, 177);
+    text-underline-offset: 8px;
+    transition: all linear 5s;
 }
+
+.achievement-heading:hover {
+    text-decoration: 5px underline rgb(0, 88, 88);
+}
+
 
 
 

@@ -1,7 +1,7 @@
 /* Achievement style */
 
 .cer-gradient {
-    background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
+    background-image: linear-gradient(45deg, rgb(0, 88, 88), rgba(0, 128, 128, 0.516) 30%, white 60%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -15,7 +15,13 @@
     line-height: 1.2;
     text-align: center;
     margin-bottom: 2rem;
-    color: #2d3748;
+    text-decoration: 5px underline rgb(177, 177, 177);
+    text-underline-offset: 8px;
+    transition: all linear 5s;
+}
+
+.cer-heading :hover {
+    text-decoration: 5px underline rgb(0, 88, 88);
 }
 
 .achi-sec {
@@ -296,7 +302,7 @@
     background-color: rgb(228, 0, 0);
 }
 
-.certifications{
+.certifications {
     display: none;
 }
 
@@ -310,6 +316,10 @@
     /* certification */
     .cer-gradient {
         font-size: 2.5rem;
+    }
+
+    .mobile-book {
+        display: none;
     }
 }
 
@@ -327,6 +337,10 @@
     /* certification */
     .cer-gradient {
         font-size: 2.5rem;
+    }
+
+    .mobile-book {
+        display: none;
     }
 
 }
@@ -347,6 +361,9 @@
         font-size: 2.5rem;
     }
 
+    .mobile-book {
+        display: none;
+    }
 
 
     .slide-title {
@@ -368,6 +385,10 @@
     /* certification */
     .cer-gradient {
         font-size: 2.5rem;
+    }
+
+    .mobile-book {
+        display: none;
     }
 
 }
@@ -401,6 +422,10 @@
         font-size: 1.125rem;
     }
 
+    .mobile-book {
+        display: none;
+    }
+
 }
 
 /*mobiles*/
@@ -418,6 +443,10 @@
     /* certification */
     .cer-gradient {
         font-size: 2rem;
+    }
+
+    .mobile-book {
+        display: block;
     }
 }
 
@@ -442,6 +471,10 @@
         width: 2.5rem;
         height: 2.5rem;
     }
+
+    .mobile-book {
+        display: block;
+    }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
@@ -460,6 +493,7 @@
         font-size: 1rem;
     }
 
+
 }
 
 @media (max-width: 375px) {
@@ -473,32 +507,15 @@
         object-fit: cover;
     }
 
-    /* About Book */
-
-    /* certification */
-    .cer-gradient {
-        background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-    }
-
-    .cer-heading {
-        font-size: 1rem;
-        font-weight: 700;
-        line-height: 1.2;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #2d3748;
-    }
-
     .achi-sec {
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
         width: 80%;
+    }
+
+    .mobile-book {
+        margin-left: 10px;
     }
 
 }

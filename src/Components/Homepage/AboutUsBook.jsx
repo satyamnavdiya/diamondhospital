@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import HTMLFlipBook from 'react-pageflip';
-import Logo from '../Images/Logo.png'
 import page1 from '../Images/book/1.jpg'
 import page2 from '../Images/book/2.jpg'
 import page3 from '../Images/book/3.jpg'

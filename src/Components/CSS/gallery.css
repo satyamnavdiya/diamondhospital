@@ -4,11 +4,17 @@
     line-height: 1.2;
     text-align: center;
     margin-bottom: 2rem;
-    color: #2d3748;
+    text-decoration: 5px underline rgb(177, 177, 177);
+    text-underline-offset: 8px;
+    transition: all linear 5s;
+}
+
+.gallery-heading:hover {
+    text-decoration: 5px underline rgb(0, 88, 88);
 }
 
 .gallery-gradient {
-    background-image: linear-gradient(45deg, rgb(127, 0, 0), rgba(127, 0, 0, 0.501) 30%, white 60%);
+    background-image: linear-gradient(45deg, rgb(0, 88, 88), rgba(0, 128, 128, 0.516) 30%, white 60%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -18,100 +24,109 @@
 
 
 @media (max-width: 375px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 6rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 1rem;
     }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 6rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 1rem;
     }
 }
 
 @media (min-width: 481px) and (max-width: 640px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 6rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 1rem;
     }
 }
 
 @media (min-width: 641px) and (max-width: 767px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 6rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 2rem;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 7rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 2rem;
     }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 8rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 8rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1441px) and (max-width: 1920px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 8rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1921px) {
-    .gallery{
+    .gallery {
         width: 80%;
         margin: 0 auto;
         padding-top: 15rem;
     }
-    .gallery-heading{
+
+    .gallery-heading {
         font-size: 2.5rem;
     }
 }
