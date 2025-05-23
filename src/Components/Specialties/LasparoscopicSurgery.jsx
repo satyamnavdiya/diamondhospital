@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import "../CSS/Specialities.css"
-import lasparoscopicsurgery from '../Images/lasparoscopicsurgery.jpg'
+import lasparoscopicsurgery from '../Images/Lasparo.jpg'
 
 const LasparoscopicSurgery = () => {
     const fadeInUp = {
