@@ -56,7 +56,7 @@ const NICU = () => {
                 <br /><br />
                 Equipped with cutting-edge technology and modern monitoring systems, our NICU offers comprehensive services including respiratory support, nutritional therapy, and infection control. We tailor our care to meet the unique needs of every newborn, ensuring rapid intervention and continuous evaluation to foster healthy development and optimal outcomes.
                 <br /><br />
-                We also understand the crucial role families play in the healing process. Our team is committed to involving parents in every step of their baby’s care, offering education, support, and counseling during this sensitive time. At RTSV - SDA Dimond Hospital, our NICU strives to create a nurturing environment where every child is given the best possible start in life.
+                We also understand the crucial role families play in the healing process. Our team is committed to involving parents in every step of their baby’s care, offering education, support, and counseling during this sensitive time. At RTSV - SDA Dimond Hospital, our NICU strives to create a nurturing environment where every child is given the best possible start in life. <b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 

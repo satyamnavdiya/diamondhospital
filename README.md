@@ -20,30 +20,6 @@ youtube video thumbnail formula
 http://img.youtube.com/vi/VIDEOID/maxresdefault.jpg (replace VIDEOID with Youtube video id)
 
 
-bug:
-onclick: 
-navbar font color: white
-navbar top sapce on scroll
-Book open And close 
-Bottom Navbar burgur menu
-Achievemnet bug with idea (table vi)
-on doctors profile back side is scroll too - stop scrolling in background
-repsonsive in 375 mobile view
-
-
-panding work: 
-mobile navbar
-Book responsivenes
-Book Last pages
-remove all extra css
-fitered doctors for all department
-department with doctors recheack
-
-    - pulomonology
-    - neurology
-    - Ophthalmology
-    - ENT
-    
 
 
 responsive:
@@ -116,7 +92,4 @@ heading      font
 2 rem 1024px
 1 rem   - 640px
 
-chnages:
-book - tables view 
-chnage photo height at diamond page
-book apointment remove - docter
+image tag alt text refine it

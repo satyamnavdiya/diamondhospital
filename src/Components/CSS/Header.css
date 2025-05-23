@@ -2,9 +2,7 @@
     font-family: "Noto Serif Gujarati", serif;
 }
 
-.mobile-nav {
-    overflow: auto;
-}
+
 
 @media (max-width: 375px) {
     .nav-header {

@@ -56,7 +56,7 @@ const Pharmacy = () => {
                                 <br /><br />
                                 We offer a full range of services, including prompt dispensing of prescriptions, thorough medication counseling, and vigilant monitoring of drug interactions. Our state-of-the-art pharmacy utilizes advanced technologies to streamline processes, ensuring both efficiency and safety. We also provide educational resources to empower patients to better understand their treatment plans and achieve optimal health outcomes.
                                 <br /><br />
-                                Committed to excellence in healthcare, our Pharmacy Department plays a crucial role in supporting the overall well-being of our community. At RTSV - SDA Dimond Hospital, we are here to ensure that every step of your medication journey is managed with precision, care, and a focus on your health.
+                                Committed to excellence in healthcare, our Pharmacy Department plays a crucial role in supporting the overall well-being of our community. At RTSV - SDA Dimond Hospital, we are here to ensure that every step of your medication journey is managed with precision, care, and a focus on your health. <b>We offer all our services at competitive prices.</b>
                             </p>
                         </div>
 

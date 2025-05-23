@@ -56,7 +56,7 @@ const IPD = () => {
                 <br /><br />
                 Our multidisciplinary team of physicians, nurses, and allied health specialists work together to manage each patient's unique needs—from pre-admission assessments and surgical interventions to post-operative recovery and rehabilitation. This integrated approach not only prioritizes clinical excellence but also focuses on patient comfort, safety, and well-being.
                 <br /><br />
-                We understand that hospitalization can be challenging, which is why our IPD services are designed to provide both expert medical care and empathetic support. At RTSV - SDA Dimond Hospital, we are committed to ensuring a smooth, compassionate, and successful recovery journey for every patient.
+                We understand that hospitalization can be challenging, which is why our IPD services are designed to provide both expert medical care and empathetic support. At RTSV - SDA Dimond Hospital, we are committed to ensuring a smooth, compassionate, and successful recovery journey for every patient. <b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 

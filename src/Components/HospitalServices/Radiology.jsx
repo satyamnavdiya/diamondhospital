@@ -56,7 +56,7 @@ const Radiology = () => {
                 <br /><br />
                 Utilizing the latest in imaging technology, we deliver high-resolution images that facilitate early detection and informed treatment decisions. Our department is committed to maintaining the highest standards of patient safety and comfort, with a focus on reducing wait times and streamlining the diagnostic process.
                 <br /><br />
-                By combining innovative technology with expert interpretation, our Radiology team plays a crucial role in guiding treatment plans and improving patient outcomes. Contact RTSV - SDA Dimond Hospital today to learn more about our comprehensive imaging services and experience precision diagnostic care.
+                By combining innovative technology with expert interpretation, our Radiology team plays a crucial role in guiding treatment plans and improving patient outcomes. Contact RTSV - SDA Dimond Hospital today to learn more about our comprehensive imaging services and experience precision diagnostic care. <b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 

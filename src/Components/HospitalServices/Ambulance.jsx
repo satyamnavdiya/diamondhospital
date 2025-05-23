@@ -56,7 +56,7 @@ const Ambulance = () => {
                 <br /><br />
                 Our team is committed to excellence in emergency care, working seamlessly with our hospital staff to ensure that patients receive timely, coordinated treatment. From the moment you call for help, our experts are prepared to assess your condition, initiate necessary interventions, and provide continuous monitoring during transport. This integrated approach not only minimizes delays but also enhances patient outcomes by delivering critical care en route to our facility.
                 <br /><br />
-                Trust our Ambulance Service to be your lifeline during emergencies. At RTSV - SDA Dimond Hospital, we pride ourselves on a compassionate, efficient response that prioritizes your health and safety, ensuring that every journey begins with expert care and swift action.
+                Trust our Ambulance Service to be your lifeline during emergencies. At RTSV - SDA Dimond Hospital, we pride ourselves on a compassionate, efficient response that prioritizes your health and safety, ensuring that every journey begins with expert care and swift action. <b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 

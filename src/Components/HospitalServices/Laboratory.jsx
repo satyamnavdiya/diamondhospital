@@ -61,7 +61,7 @@ const Laboratory = () => {
                                 <br /><br />
                                 Our comprehensive range of laboratory services includes clinical chemistry, hematology, microbiology, immunology, molecular diagnostics, and pathology. By integrating advanced automated systems with rigorous quality control protocols, we maintain the highest standards of accuracy and efficiency. Our team works closely with physicians and specialists, ensuring that every test is performed with precision and tailored to meet the specific needs of each patient.
                                 <br /><br />
-                                Dedicated to enhancing patient outcomes, our laboratory not only delivers essential diagnostic information but also continually adopts the latest innovations in medical testing. At RTSV - SDA Dimond Hospital, we are proud to contribute to the overall excellence of healthcare by ensuring that every result is a step towards better, more informed patient care.
+                                Dedicated to enhancing patient outcomes, our laboratory not only delivers essential diagnostic information but also continually adopts the latest innovations in medical testing. At RTSV - SDA Dimond Hospital, we are proud to contribute to the overall excellence of healthcare by ensuring that every result is a step towards better, more informed patient care. <b>We offer all our services at competitive prices.</b>
                             </p>
                         </div>
 

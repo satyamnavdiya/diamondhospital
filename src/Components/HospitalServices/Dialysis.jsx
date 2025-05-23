@@ -13,7 +13,7 @@ const Dialysis = () => {
   return (
     <div className="spec-hero">
       {/* Hero Section */}
-      <section className="hero-spec-hero relative flex items-center justify-center overflow-hidden mix-blend-multiply">
+      <section className="hero-sec-img relative flex items-center justify-center overflow-hidden mix-blend-multiply">
         <div className="absolute inset-0">
           <img
             src={dialysis}
@@ -27,15 +27,15 @@ const Dialysis = () => {
             className="font-display text-5xl md:text-6xl mb-4 font-bold"
             {...fadeInUp}
           >
-            <span className='spec-hero-heading'>Dialysis</span>
+            <span className='spec-hero-heading'>Nephrology And Dialysis</span>
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
           >
-            <span className='spec-sub-heading'>Advanced Dialysis Care: Ensuring Quality Kidney Health</span>
+            <span className='spec-sub-heading'>Reliable and Safe Dialysis with Expert Nephrology Guidance</span>
           </motion.p>
         </div>
       </section>
@@ -52,11 +52,11 @@ const Dialysis = () => {
             <div className="mb-12">
               {/* <h2 className="font-display text-4xl mb-4">Urology</h2> */}
               <p className="text-gray-600 spec-text">
-                At RTSV - SDA Dimond Hospital, our Dialysis Department is dedicated to providing life-sustaining treatment with advanced technology and a compassionate, patient-centered approach. We offer comprehensive dialysis services designed to support individuals with chronic kidney disease and those requiring renal replacement therapy.
+                The Nephrology Department at SDA Diamond Hospital is dedicated to the diagnosis, treatment, and long-term management of kidney-related diseases. Our experienced nephrologists provide expert care for a range of conditions, including chronic kidney disease (CKD), acute kidney injury, kidney infections, electrolyte imbalances, and hypertension-related complications. With a patient-first approach, we offer personalized treatment plans that aim to preserve kidney function and improve overall health.
                 <br /><br />
-                Our experienced team delivers both hemodialysis and peritoneal dialysis in a state-of-the-art setting, ensuring optimal treatment outcomes and patient comfort. With a focus on personalized care, we tailor each dialysis plan to meet individual needs, closely monitoring progress and adjusting treatments to promote long-term kidney health.
+                Our Dialysis Unit is equipped with modern hemodialysis machines and strict infection control protocols to ensure safe and comfortable treatment for patients with end-stage renal disease. We provide both outpatient and inpatient dialysis services, including emergency dialysis support. The unit is staffed by skilled technicians and nurses under the supervision of nephrologists, ensuring high-quality care and continuous monitoring during each session.
                 <br /><br />
-                Committed to improving quality of life, our Dialysis Department also emphasizes patient education and ongoing support. We work collaboratively with patients and their families, providing resources and guidance to help manage treatment, enhance wellness, and maintain an active lifestyle. Contact RTSV - SDA Dimond Hospital today to learn more about our advanced dialysis services and begin your journey toward improved kidney health.
+                At SDA Diamond Hospital, we understand the challenges of living with kidney disease. Our team offers not only medical treatment but also nutritional counseling, lifestyle guidance, and emotional support to help patients manage their condition effectively. Through regular monitoring, education, and compassionate care, our goal is to enhance the quality of life for every patient on their journey to better kidney health. <b>We offer all our services at competitive prices.</b>
               </p>
             </div>
 

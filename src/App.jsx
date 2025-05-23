@@ -1,10 +1,10 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import Footer from './Components/Footer'
 import { BrowserRouter, Routes, Route } from "react-router";
 // Homepage
-import HomePage from './Components/Homepage/HomePage'
+import HomePage from './Components/Home/HomePage'
 // About Us
 import Dimond from './Components/Dimond';
 import AboutTeam from './Components/AboutTeam';
@@ -20,6 +20,12 @@ import Neurology from './Components/Specialties/Neurology';
 import ENT from './Components/Specialties/ENT';
 import DentalSurgery from './Components/Specialties/DentalSurgery';
 import PhysioTherapy from './Components/Specialties/PhysioTherapy';
+import PlasticSurgery from './Components/Specialties/PlasticSurgery'
+import SkinDepartment from './Components/Specialties/SkinDepartment';
+import Gastroenterology from './Components/Specialties/Gastroenterology';
+import GeneralMedicine from './Components/Specialties/GeneralMedicine';
+import LasparoscopicSurgery from './Components/Specialties/LasparoscopicSurgery';
+import FetalMedicines from './Components/Specialties/FetalMedicines';
 
 // Doc Profile
 import DocProfile from './Components/DocProfile'
@@ -34,6 +40,8 @@ import IPD from './Components/HospitalServices/IPD';
 import Laboratory from './Components/HospitalServices/Laboratory';
 import NICU from './Components/HospitalServices/NICU';
 import Radiology from './Components/HospitalServices/Radiology';
+import ICU from './Components/HospitalServices/ICU';
+import OPD from './Components/HospitalServices/OPD';
 
 // Patient Guide
 import FloorPlan from './Components/PatientGuide/FloorPlan';
@@ -53,7 +61,6 @@ import Career from './Components/Career';
 // Privacy Policy
 import PrivacyPolicy from './Components/PrivacyPolicy ';
 
-import { setupTranslation } from './utils/transletor';
 
 
 
@@ -85,6 +92,12 @@ function App() {
           <Route path="/ENT" element={<ENT />} />
           <Route path="/DentalSurgery" element={<DentalSurgery />} />
           <Route path="/PhysioTherapy" element={<PhysioTherapy />} />
+          <Route path="/PlasticSurgery" element={<PlasticSurgery />} />
+          <Route path="/Skin" element={<SkinDepartment />} />
+          <Route path="/Gastroenterology" element={<Gastroenterology />} />
+          <Route path="/GeneralMedicine" element={<GeneralMedicine />} />
+          <Route path="/LasparoscopicSurgery" element={<LasparoscopicSurgery />} />
+          <Route path="/FetalMedicines" element={<FetalMedicines />} />
 
           {/* Doctotr Profile */}
           <Route path="/Doctor-Profile" element={<DocProfile />} />
@@ -98,6 +111,9 @@ function App() {
           <Route path="/Laboratory" element={<Laboratory />} />
           <Route path="/NICU" element={<NICU />} />
           <Route path="/Radiology" element={<Radiology />} />
+          <Route path="/ICU" element={<ICU />} />
+          <Route path="/OPD" element={<OPD />} />
+
 
           {/* Patient Guide */}
           <Route path="/GeneralGuide" element={<GeneralGuide />} />

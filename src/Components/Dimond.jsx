@@ -32,7 +32,7 @@ const Dimond = () => {
                         className="font-display text-5xl md:text-6xl mb-4 font-bold"
                         {...fadeInUp}
                     >
-                        <span className='spec-hero-heading'>The RTSV - Diamond Hospital <br />  and Research Center </span>
+                        <span className='spec-hero-heading'>The SDA Diamond Hospital <br />  and Research Centre </span>
                     </motion.h1>
                     <motion.p
                         className="text-xl md:text-2xl max-w-2xl mx-auto"
@@ -54,7 +54,7 @@ const Dimond = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 1.2 }}
+                                transition={{ duration: 0.6, delay: 1.0 }}
                                 className="p-6 rounded-2xl bg-white shadow-lg border-2 border-[#000080] hover:shadow-2xl"
                             >
                                 <Shield className="h-12 w-12 text-teal-500 mb-4" />
