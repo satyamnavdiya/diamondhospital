@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import DropdownMenu from "./DropdownMenu";
-import Logo from '../../../public/Logo.png'
+import Logo from '/Logo.png'
 import Nabh from '../Images/NABH.png'
 import Tri from '../Images/tri.png'
 import MobileNav from "./MobileNav";
